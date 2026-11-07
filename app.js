@@ -20,7 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const fmt = jpy => state.currency === 'JPY' ? `${formatNumber(jpy)} JPY` : `≈ ${formatNumber(Math.round(jpy * plan.exchangeRate))} THB`;
   const costText = cost => state.currency === 'JPY' ? String(cost || 'ตามจริง') : String(cost || 'ตามจริง').replace(/([\d,]+)(?:\s*[–-]\s*([\d,]+))?\s*JPY/gi, (_, low, high) => `≈ ${formatNumber(Math.round(Number(low.replace(/,/g, '')) * plan.exchangeRate))}${high ? `–${formatNumber(Math.round(Number(high.replace(/,/g, '')) * plan.exchangeRate))}` : ''} THB`);
   const navUrl = checkpoint => `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(checkpoint.navigationQuery || `${checkpoint.lat},${checkpoint.lng}`)}`;
-  const mapSearchUrl = checkpoint => checkpoint.link || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(checkpoint.name)}`;
+  const isMapLink = url => String(url || '').startsWith('https://www.google.com/maps/');
+  const mapSearchUrl = checkpoint => {
+    if (isMapLink(checkpoint.link)) return checkpoint.link;
+    const query = checkpoint.navigationQuery || (Number.isFinite(checkpoint.lat) && Number.isFinite(checkpoint.lng) ? `${checkpoint.lat},${checkpoint.lng}` : checkpoint.name);
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+  };
   const checkpointMatches = cp => (state.category === 'all' || cp.category === state.category) && (!state.query || `${cp.name} ${cp.jpName || ''} ${cp.desc} ${cp.transportInfo} ${cp.cost}`.toLocaleLowerCase().includes(state.query));
   const safeLink = (url, label) => `<a href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(label)} ↗</a>`;
 
@@ -96,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const warning = cautionParts.length ? `<p class="checkpoint-warning compact-note"><strong>ข้อควรจำ</strong>${escapeHTML(cautionParts.join(' · '))}</p>` : '';
     const options = (cp.optionalActivities || []).map(item => `<span class="optional-tag">เสริม: ${escapeHTML(item)}</span>`).join(' ');
     const choice = cp.choiceNote ? `<p class="choice-note">${escapeHTML(cp.choiceNote)}</p>` : '';
-    card.innerHTML = `<div class="time-col">${escapeHTML(cp.time)}<br><span>${escapeHTML(cat?.name || '')}</span></div><div class="stop-card"><h3>${escapeHTML(cp.name)}</h3>${cp.jpName ? `<p class="jp">${escapeHTML(cp.jpName)}</p>` : ''}<p class="desc">${summary}${expandable && summary.length < fullDescription.length ? '…' : ''}</p>${options ? `<div class="activity-options">${options}</div>` : ''}${choice}${warning}${expandable ? `<details><summary>รายละเอียดทั้งหมด</summary><p class="long-detail">${escapeHTML(fullDescription)}</p></details>` : ''}<div class="stop-meta"><span>การเดินทาง: ${escapeHTML(cp.transportInfo || 'ตรวจเส้นทางจริง')}</span><span>ค่าใช้จ่าย: ${escapeHTML(costText(cp.cost))}</span></div><div class="stop-actions"><button type="button" data-map-id="${escapeHTML(cp.id)}">แสดงบนแผนที่</button>${safeLink(navUrl(cp), 'นำทาง Google Maps')}${safeLink(mapSearchUrl(cp), cp.link && /google\.com\/maps/i.test(cp.link) ? 'ค้นหาบนแผนที่' : 'แหล่งข้อมูล')}</div></div>`;
+    card.innerHTML = `<div class="time-col">${escapeHTML(cp.time)}<br><span>${escapeHTML(cat?.name || '')}</span></div><div class="stop-card"><h3>${escapeHTML(cp.name)}</h3>${cp.jpName ? `<p class="jp">${escapeHTML(cp.jpName)}</p>` : ''}<p class="desc">${summary}${expandable && summary.length < fullDescription.length ? '…' : ''}</p>${options ? `<div class="activity-options">${options}</div>` : ''}${choice}${warning}${expandable ? `<details><summary>รายละเอียดทั้งหมด</summary><p class="long-detail">${escapeHTML(fullDescription)}</p></details>` : ''}<div class="stop-meta"><span>การเดินทาง: ${escapeHTML(cp.transportInfo || 'ตรวจเส้นทางจริง')}</span><span>ค่าใช้จ่าย: ${escapeHTML(costText(cp.cost))}</span></div><div class="stop-actions"><button type="button" data-map-id="${escapeHTML(cp.id)}">แสดงบนแผนที่</button>${safeLink(navUrl(cp), 'นำทาง Google Maps')}${safeLink(mapSearchUrl(cp), 'ค้นหาสถานที่')}${cp.link && !isMapLink(cp.link) ? safeLink(cp.link, 'แหล่งข้อมูล') : ''}</div></div>`;
     $('[data-map-id]', card).addEventListener('click', () => focusCheckpoint(cp)); return card;
   }
   function inlineMarkdown(text) {
@@ -178,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const number = index + 1;
         const label = state.day === 0 ? `${day.dayNum}-${number}` : String(number);
         const icon = L.divIcon({ className: 'numbered-marker', html: `<span>${escapeHTML(label)}</span>`, iconSize: [32, 32], iconAnchor: [16, 16], popupAnchor: [0, -16] });
-        const marker = L.marker([cp.lat, cp.lng], { icon, title: `Day ${day.dayNum} · จุด ${number} · ${cp.name}` }).bindPopup(`<strong>Day ${day.dayNum} · จุด ${number}: ${escapeHTML(cp.name)}</strong><br>${escapeHTML(cp.time)}<br>${safeLink(navUrl(cp), 'นำทาง')} · ${safeLink(mapSearchUrl(cp), 'ข้อมูล')}`);
+        const marker = L.marker([cp.lat, cp.lng], { icon, title: `Day ${day.dayNum} · จุด ${number} · ${cp.name}` }).bindPopup(`<strong>Day ${day.dayNum} · จุด ${number}: ${escapeHTML(cp.name)}</strong><br>${escapeHTML(cp.time)}<br>${safeLink(navUrl(cp), 'นำทาง')} · ${safeLink(mapSearchUrl(cp), 'ค้นหาสถานที่')}${cp.link && !isMapLink(cp.link) ? ` · ${safeLink(cp.link, 'แหล่งข้อมูล')}` : ''}`);
         marker.addTo(state.markerGroup); state.markers.set(cp.id, marker);
       });
     });
@@ -224,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <h3>${escapeHTML(hotel.name)}</h3>
           <p>${escapeHTML(hotel.address)}
           ${escapeHTML(hotel.nights)} · ${escapeHTML(hotel.features)}</p>
-          ${safeLink(hotel.sourceLink, 'เว็บไซต์โรงแรม')} · ${safeLink(hotel.mapLink, 'แผนที่')}
+          ${safeLink(hotel.sourceLink, 'เว็บไซต์โรงแรม')} · ${safeLink(hotel.mapLink, 'ค้นหาสถานที่')}
         </section>
         <section class="info-card">
           <h3>เวลาตามแผน</h3>
@@ -233,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>`;
     const tips = (plan.travelTips || []).map(tip => `<section class="info-card"><h3>${escapeHTML(tip.title)}</h3><p>${escapeHTML(tip.desc)}</p>${tip.link ? safeLink(tip.link, tip.linkLabel || 'แหล่งข้อมูล') : ''}${tip.secondaryLink ? ` · ${safeLink(tip.secondaryLink, tip.secondaryLinkLabel || 'ข้อมูลเพิ่มเติม')}` : ''}</section>`).join('');
     const checklist = ['เทียบ MM092/MM091 เวลา กระเป๋า และเงื่อนไขเช็คอินกับใบจองล่าสุด', 'ยืนยันฝากกระเป๋าและภาษีที่พักจากราคาต่อคนต่อคืนกับโรงแรม', 'เลือก Usucha หรือคอร์สลงมือชง และจอง Taiho-an ตามปฏิทินจริง; หากเลือก CHAZUNA ตรวจตารางเดือน ธ.ค. ที่ประกาศ 28 ต.ค. และจองรอบ', 'Haruka ซื้อใหม่ 2,700 เยน/เที่ยว หากมีตั๋วเดิมตรวจเงื่อนไขก่อน เลือกช่องทางให้ชัด; จองขากลับเพื่อรักษาเป้าหมายถึง T2 16:00', 'Murin-an เลือกแทนคาเฟ่ จองรอบ 16:00 ตามที่ว่างและตรวจเงื่อนไขยกเลิก; Menami จองทางโทรศัพท์โดยเผื่อออกจาก Eikando', 'Kaiyukan 5 ธ.ค. รอบเป้าหมาย 13:00 ตามที่ว่าง ตรวจราคาและเวลาเปิดก่อนซื้อ; Shimogamo เป็นแผนหลัก Day 4 แทนวัดเงินแล้ว', '24–27 พ.ย. ตรวจวันหยุดร้าน รอบรถ/ค่าโดยสาร สภาพใบไม้และประกาศไฟประดับ', 'เตรียม VJW และวิธีรับเงินคืนตามร้าน ตรวจแผนผัง Tax-free ที่ KIX T2 International; ยืนยันสินค้าก่อนโหลดกระเป๋าที่บรรจุสินค้า', 'ก่อนแต่ละวัน ดูฝนและสถานะรถ กำหนดจุดหลักหนึ่งถึงสองแห่งและตัดกิจกรรมเสริมเมื่อช้า'];
-    const alternatives = (plan.alternatives || []).map(item => `<li><strong>${escapeHTML(item.name)}</strong> — ${escapeHTML(item.replaces)}. ${escapeHTML(item.note)} ${item.link ? safeLink(item.link, 'ข้อมูลสถานที่') : ''}</li>`).join('');
+    const alternatives = (plan.alternatives || []).map(item => `<li><strong>${escapeHTML(item.name)}</strong> — ${escapeHTML(item.replaces)}. ${escapeHTML(item.note)} ${safeLink(mapSearchUrl(item), 'ค้นหาสถานที่')}${item.link && !isMapLink(item.link) ? ` · ${safeLink(item.link, 'ข้อมูลสถานที่')}` : ''}</li>`).join('');
     const contingencies = (plan.contingencies || []).map(item => `<section class="info-card"><h3>${escapeHTML(item.title)}</h3><p>${escapeHTML(item.detail)}</p></section>`).join('');
     host.innerHTML = `${flights}
       <section class="info-card">
@@ -252,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
     $('#restaurantNote').textContent = plan.nearbyRestaurantsNote || 'เวลาเดินเป็นค่าประมาณ ร้านบางแห่งอยู่คนละฝั่งสถานีหรือภายในห้าง โปรดเผื่อเวลาเดินและตรวจวันเปิด/คิว';
     const host = $('#restaurantContent'); const groups = new Map();
     (plan.nearbyRestaurants || []).forEach(item => { if (!groups.has(item.category)) groups.set(item.category, []); groups.get(item.category).push(item); });
-    host.innerHTML = [...groups.entries()].map(([category, items]) => `<section class="info-card"><h3>${escapeHTML(category)}</h3>${items.map(item => `<p><strong>${escapeHTML(item.name)}</strong><br>${escapeHTML(item.walkTime)} · ${escapeHTML(item.desc)}<br>${safeLink(item.link, 'เปิดแผนที่')}</p>`).join('<hr>')}</section>`).join('');
+    host.innerHTML = [...groups.entries()].map(([category, items]) => `<section class="info-card"><h3>${escapeHTML(category)}</h3>${items.map(item => `<p><strong>${escapeHTML(item.name)}</strong><br>${escapeHTML(item.walkTime)} · ${escapeHTML(item.desc)}<br>${safeLink(mapSearchUrl(item), 'ค้นหาสถานที่')}</p>`).join('<hr>')}</section>`).join('');
   }
   function renderBudget() {
     const data = plan.budget; const host = $('#budgetContent'); if (!data) return;
