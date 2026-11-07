@@ -9,7 +9,7 @@ const PLAN_A_DATA = {
   dateRange: "1 - 6 ธันวาคม 2026",
   airline: "Peach Aviation (BKK ↔ KIX Terminal 2)",
   totalICCardCostJPY: 13900,
-  exchangeRate: 0.24, // 1 JPY ~ 0.24 THB
+  exchangeRate: 0.212, // ค่าเริ่มต้น: 1 JPY ≈ 0.212 THB (อ้างอิง 6 พ.ย. 2026 ที่ 1 THB ≈ 4.716 JPY) ผู้ใช้ปรับเองได้ที่หน้างบประมาณ
 
   // Numeric values are canonical for both currency views; the published totals are plan estimates.
   budget: {
@@ -20,7 +20,7 @@ const PLAN_A_DATA = {
     beforeReserve: { minJPY: 49900, maxJPY: 61400 },
     reserve: { minJPY: 5000, maxJPY: 5000, note: "เงินสำรองบางส่วน ไม่ใช่งบรับประกันกิจกรรมเสริม" },
     total: { minJPY: 54900, maxJPY: 66400 },
-    exchangeRate: 0.24,
+    exchangeRate: 0.212,
     accommodationTaxBands: [
       { threshold: "ต่ำกว่า 6,000 เยน", amountJPY: 200 },
       { threshold: "6,000–ต่ำกว่า 20,000 เยน", amountJPY: 400 },
@@ -38,38 +38,38 @@ const PLAN_A_DATA = {
   budgetSummary: [
     {
       item: "1. งบรถสาธารณะรวม Haruka ไป-กลับ",
-      costTHB: "~3,336 ฿",
+      costTHB: "~2,947 ฿",
       note: "13,900 เยน รวมเงินเผื่อรายวัน เป็นงบวางแผน ไม่ใช่ยอดค่าโดยสารที่ยืนยันครบทุกช่วง และไม่รวมแท็กซี่"
     },
     {
       item: "2. อาหารและคาเฟ่ทั่วไป",
-      costTHB: "~6,000 - 8,160 ฿",
+      costTHB: "~5,300 - 7,208 ฿",
       note: "25,000–34,000 เยน ไม่รวมกิจกรรมชา Taiho-an ที่นับในค่าเข้าชมด้านล่าง"
     },
     {
       item: "3. ค่าเข้าชม / Taiho-an / Kaiyukan",
-      costTHB: "~2,160 - 2,760 ฿",
+      costTHB: "~1,908 - 2,438 ฿",
       note: "9,000–11,500 เยน รวม Taiho-an Usucha และ Kaiyukan งบเผื่อ 3,500; Phoenix Hall / คอร์สลงมือชงเป็นตัวเลือก"
     },
     {
       item: "4. ภาษีที่พัก Kyoto (สมมติ)",
-      costTHB: "~480 ฿",
+      costTHB: "~424 ฿",
       note: "2,000 เยน จากสมมติฐาน 400 เยน × 5 คืน; โรงแรมต้องยืนยันตามราคาที่พักต่อคนต่อคืนจริง"
     },
     {
       item: "รวมก่อนเงินสำรอง",
-      costTHB: "~11,976 - 14,736 ฿",
+      costTHB: "~10,579 - 13,017 ฿",
       note: "49,900–61,400 เยน / คน ไม่รวมตั๋วเครื่องบิน ค่าห้อง และช้อปปิ้ง"
     },
     {
       item: "เงินสำรองทั่วไป",
-      costTHB: "~1,200 ฿",
+      costTHB: "~1,060 ฿",
       note: "5,000 เยน สำหรับค่าใช้จ่ายเพิ่มบางส่วน ไม่ใช่งบรับประกันสำหรับทุกกิจกรรมเสริม"
     },
     {
       item: "รวมพร้อมเงินสำรอง",
-      costTHB: "~13,176 - 15,936 ฿",
-      note: "54,900–66,400 เยน / คน ที่อัตราอ้างอิงเดิม 1 เยน ≈ 0.24 บาท ไม่ใช่อัตราแลกเปลี่ยนสด"
+      costTHB: "~11,639 - 14,077 ฿",
+      note: "54,900–66,400 เยน / คน ที่เรทอ้างอิง 6 พ.ย. 2026 (1 เยน ≈ 0.212 บาท) ไม่ใช่เรทที่แลกจริง; ปรับเรทได้ที่หน้างบประมาณในเว็บแอป"
     }
   ],
 

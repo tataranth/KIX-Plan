@@ -1011,3 +1011,33 @@ main {
 .compact-note strong {
   font-size:11px
 }
+.rate-box {
+  margin:14px 0 18px
+}
+.rate-row {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:10px
+}
+.rate-row label {
+  font-weight:700
+}
+.rate-row input {
+  width:7.5em;
+  padding:6px 10px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink);
+  font:inherit;
+  font-size:16px
+}
+.rate-row input[aria-invalid="true"] {
+  border-color:var(--accent)
+}
+.rate-note {
+  margin:8px 0 0;
+  color:var(--muted);
+  font-size:.9em
+}

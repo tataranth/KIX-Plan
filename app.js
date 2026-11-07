@@ -17,6 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const currentDay = () => allDays().find(day => day.dayNum === state.day);
   const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
   const formatNumber = value => Number(value).toLocaleString('en-US');
+  // เรทแลกเปลี่ยน: ค่าเริ่มต้นจาก data.js; ผู้ใช้กรอกเองได้ที่หน้างบประมาณ และจำไว้ใน localStorage
+  const RATE_KEY = 'kyoto-handbook-rate';
+  const defaultRate = Number(plan.exchangeRate) || 0.212;
+  const validRate = value => Number.isFinite(value) && value >= 0.1 && value <= 0.5;
+  const applyRate = value => { plan.exchangeRate = value; if (plan.budget) plan.budget.exchangeRate = value; };
+  const saveRate = value => { try { if (value === defaultRate) localStorage.removeItem(RATE_KEY); else localStorage.setItem(RATE_KEY, String(value)); } catch (error) { /* storage unavailable */ } };
+  try { const saved = Number(localStorage.getItem(RATE_KEY)); if (localStorage.getItem(RATE_KEY) !== null && validRate(saved)) applyRate(saved); } catch (error) { /* storage unavailable */ }
   const fmt = jpy => state.currency === 'JPY' ? `${formatNumber(jpy)} JPY` : `≈ ${formatNumber(Math.round(jpy * plan.exchangeRate))} THB`;
   const costText = cost => state.currency === 'JPY' ? String(cost || 'ตามจริง') : String(cost || 'ตามจริง').replace(/([\d,]+)(?:\s*[–-]\s*([\d,]+))?\s*JPY/gi, (_, low, high) => `≈ ${formatNumber(Math.round(Number(low.replace(/,/g, '')) * plan.exchangeRate))}${high ? `–${formatNumber(Math.round(Number(high.replace(/,/g, '')) * plan.exchangeRate))}` : ''} THB`);
   const navUrl = checkpoint => `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(checkpoint.navigationQuery || `${checkpoint.lat},${checkpoint.lng}`)}`;
@@ -296,6 +303,29 @@ document.addEventListener('DOMContentLoaded', () => {
         </section>
       </div>`;
   }
+  function setupRateInput() {
+    const input = $('#rateInput'); const note = $('#rateNote'); const reset = $('#rateReset');
+    if (!input || !note) return;
+    const updateNote = () => {
+      const rate = plan.exchangeRate; const total = plan.budget && plan.budget.total;
+      const custom = rate !== defaultRate ? ' · ใช้เรทที่กรอกเอง' : ' · ค่าเริ่มต้น (อ้างอิง 6 พ.ย. 2026)';
+      note.textContent = (total ? `งบรวมพร้อมสำรอง ${formatNumber(total.minJPY)}–${formatNumber(total.maxJPY)} JPY ≈ ${formatNumber(Math.round(total.minJPY * rate))}–${formatNumber(Math.round(total.maxJPY * rate))} THB` : '') + ` (1 THB ≈ ${(1 / rate).toFixed(3)} JPY)${custom}`;
+    };
+    const rerenderAll = () => { renderTimeline(); renderRail(); renderBudget(); renderMap(); };
+    input.value = String(plan.exchangeRate); updateNote();
+    input.addEventListener('input', () => {
+      const value = Number(input.value); const ok = input.value !== '' && validRate(value);
+      input.setAttribute('aria-invalid', String(!ok));
+      if (!ok) return;
+      applyRate(value); saveRate(value); updateNote(); renderBudget();
+    });
+    input.addEventListener('change', () => {
+      const value = Number(input.value);
+      if (input.value === '' || !validRate(value)) { input.value = String(plan.exchangeRate); input.setAttribute('aria-invalid', 'false'); }
+      updateNote(); rerenderAll();
+    });
+    reset.addEventListener('click', () => { applyRate(defaultRate); saveRate(defaultRate); input.value = String(defaultRate); input.setAttribute('aria-invalid', 'false'); updateNote(); rerenderAll(); });
+  }
   async function copyDay() {
     const lines = ['Kyoto Trip Handbook'];
     const days = state.day === 0 ? allDays() : [currentDay()];
@@ -324,5 +354,5 @@ document.addEventListener('DOMContentLoaded', () => {
   $('#themeToggle').addEventListener('click', () => { const active = document.body.classList.toggle('dark'); $('#themeToggle').setAttribute('aria-pressed', String(active)); $('#themeToggle').textContent = active ? 'ธีมสว่าง' : 'ธีมมืด'; try { localStorage.setItem('kyoto-handbook-theme', active ? 'dark' : 'light'); } catch (_) { /* storage can be unavailable for file URLs */ } });
   try { if (localStorage.getItem('kyoto-handbook-theme') === 'dark') { document.body.classList.add('dark'); $('#themeToggle').setAttribute('aria-pressed', 'true'); $('#themeToggle').textContent = 'ธีมสว่าง'; } } catch (_) { /* storage can be unavailable for file URLs */ }
   $('#currencyToggle').addEventListener('click', () => { state.currency = state.currency === 'JPY' ? 'THB' : 'JPY'; $('#currencyToggle').innerHTML = state.currency === 'JPY' ? 'JPY <span>↔</span> THB' : 'THB <span>↔</span> JPY'; $('#currencyToggle').setAttribute('aria-label', `สกุลเงินปัจจุบัน ${state.currency}; กดเพื่อสลับ`); renderTimeline(); renderRail(); renderBudget(); renderMap(); });
-  renderDayTabs(); renderFilters(); renderTimeline(); renderRail(); renderEssentials(); renderRestaurants(); renderBudget(); initializeMap();
+  renderDayTabs(); renderFilters(); renderTimeline(); renderRail(); renderEssentials(); renderRestaurants(); renderBudget(); setupRateInput(); initializeMap();
 });
