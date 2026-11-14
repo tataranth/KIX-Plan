@@ -4,21 +4,45 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!plan) return;
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
-  const state = { day: 1, category: 'all', query: '', currency: 'JPY', routes: true, map: null, markerGroup: null, routeGroup: null, markers: new Map(), toastTimer: null };
-  const dayNotes = [
-    { short: 'ถึงแล้วพัก', route: 'KIX → กินใกล้สถานี → เช็คอิน / นอนพัก → Gion ตามแรง', critical: 'เช็คอิน 15:00 แล้วพักถึงราว 17:30', risk: 'เที่ยวเย็นเป็นตัวเลือกทั้งหมด ถ้ายังเพลียให้กินใกล้โรงแรมแล้วพักต่อ' },
-    { short: 'Uji & Nara', route: 'Kyoto → Uji → Nara → Kyoto', critical: 'ออกจาก Uji ไม่เกิน 12:30–13:00', risk: 'รักษารอบชาที่จองไว้ แล้วเข้าวิหาร Todaiji ก่อนเดินเล่นกับกวาง' },
-    { short: 'Arashiyama', route: 'Kyoto → Arashiyama → Randen → Kinkakuji', critical: 'เลือกร้านหลักหนึ่งร้าน', risk: 'เลือก Yoshimura หรือ eX café; ถ้ารอเกิน 30 นาทีให้เปลี่ยนร้าน' },
-    { short: 'East Kyoto', route: 'Kiyomizu → Asahido / ถนนเก่า → Shimogamo → Nanzenji → พัก → Eikando', critical: 'Kiyomizu / Shimogamo / Eikando เป็นจุดหลัก', risk: 'เมื่อช้าลดเดินป่าและ Nanzenji ก่อน รักษามื้อกลางวันและเวลานั่งพัก' },
-    { short: 'Osaka day', route: 'Kyoto → Osaka Castle → Kaiyukan → Dotonbori → Kyoto', critical: 'Kaiyukan เป้าหมายรอบ 13:00 · กลับ Kyoto 60–90 นาที', risk: 'ซื้อตั๋วระบุวัน/เวลาตามที่ว่าง; เมื่อช้าลดเดินสวนปราสาทก่อน' },
-    { short: 'กลับไทย', route: 'โรงแรม → Fushimi ช่วงล่าง → Nishiki แบบสั้น → รับกระเป๋า → KIX T2', critical: 'ออกจาก Nishiki ไม่เกิน 11:15 · ถึง T2 ไม่เกิน 16:00', risk: 'ออกจาก Fushimi หลัง 09:30 ให้งดตลาด; กลับโรงแรมราว 12:00 รับกระเป๋า/เข้าสถานี 12:00–13:00' }
-  ];
+  const state = { day: 1, page: 'daily', category: 'all', query: '', currency: 'JPY', routes: true, mapStyle: 'google', tiles: null, map: null, markerGroup: null, routeGroup: null, markers: new Map(), toastTimer: null };
   const allDays = () => plan.days.slice().sort((a, b) => a.dayNum - b.dayNum);
   const currentDay = () => allDays().find(day => day.dayNum === state.day);
   const escapeHTML = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
   const formatNumber = value => Number(value).toLocaleString('en-US');
+  const root = document.documentElement;
+  const store = {
+    get(key) { try { return localStorage.getItem(key); } catch (_) { return null; } },
+    set(key, value) { try { localStorage.setItem(key, value); } catch (_) { /* storage unavailable */ } }
+  };
+  const PAGES = ['daily', 'essentials', 'food', 'budget'];
+  // วันของทริปตามเวลาญี่ปุ่น; คืน null เมื่อวันนี้อยู่นอกช่วงทริป
+  const tripDayToday = () => {
+    if (!plan.tripStartDate) return null;
+    try {
+      const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Tokyo' }).format(new Date());
+      const dayNum = Math.round((Date.parse(today) - Date.parse(plan.tripStartDate)) / 864e5) + 1;
+      return plan.days.some(day => day.dayNum === dayNum) ? dayNum : null;
+    } catch (_) { return null; }
+  };
+  const todayNum = tripDayToday();
+  const defaultDay = todayNum || 1;
+  const moneyRange = (min, max) => {
+    const convert = value => state.currency === 'JPY' ? value : Math.round(value * plan.exchangeRate);
+    return `${state.currency === 'JPY' ? '' : '≈ '}${formatNumber(convert(min))}${max !== min ? `–${formatNumber(convert(max))}` : ''} ${state.currency}`;
+  };
+  function syncUrl() {
+    const query = new URLSearchParams();
+    if (state.page !== 'daily') query.set('page', state.page);
+    if (state.day !== defaultDay) query.set('day', state.day === 0 ? 'all' : String(state.day));
+    const search = query.toString();
+    try { history.replaceState(null, '', `${location.pathname}${search ? `?${search}` : ''}${location.hash}`); } catch (_) { /* file URLs can refuse history changes */ }
+  }
   // เรทแลกเปลี่ยน: ค่าเริ่มต้นจาก data.js; ผู้ใช้กรอกเองได้ที่หน้างบประมาณ และจำไว้ใน localStorage
   const RATE_KEY = 'kyoto-handbook-rate';
+  const CHECKLIST_KEY = 'kyoto-handbook-checklist';
+  const CURRENCY_KEY = 'kyoto-handbook-currency';
+  const MAP_KEY = 'kyoto-handbook-map';
+  const THEME_KEY = 'kyoto-handbook-theme';
   const defaultRate = Number(plan.exchangeRate) || 0.212;
   const validRate = value => Number.isFinite(value) && value >= 0.1 && value <= 0.5;
   const applyRate = value => { plan.exchangeRate = value; if (plan.budget) plan.budget.exchangeRate = value; };
@@ -41,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     clearTimeout(state.toastTimer); state.toastTimer = setTimeout(() => toast.classList.remove('show'), 2500);
   }
   function setPage(name) {
+    state.page = name; syncUrl();
     $$('.page').forEach(page => { page.hidden = page.id !== `page-${name}`; });
     $$('.main-nav button').forEach(button => { if (button.dataset.page === name) button.setAttribute('aria-current', 'page'); else button.removeAttribute('aria-current'); });
     if (name === 'daily' && state.map) setTimeout(() => state.map.invalidateSize(), 80);
@@ -49,10 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const host = $('#dayTabs');
     if (!host.children.length) {
       allDays().forEach(day => {
-        const note = dayNotes[day.dayNum - 1]; const button = document.createElement('button');
+        const button = document.createElement('button');
         button.type = 'button'; button.className = 'day-tab'; button.dataset.day = String(day.dayNum);
         const weekday = day.date.match(/\(([^)]+)\)/)?.[1];
-        button.innerHTML = `<small>DAY ${day.dayNum} · ${escapeHTML(day.date.split(' ')[0])} ธ.ค.${weekday ? ` · ${escapeHTML(weekday)}` : ''}</small><strong>${escapeHTML(note.short)}</strong>`;
+        button.innerHTML = `<small>DAY ${day.dayNum} · ${escapeHTML(day.date.split(' ')[0])} ธ.ค.${weekday ? ` · ${escapeHTML(weekday)}` : ''}${day.dayNum === todayNum ? ' · <b>วันนี้</b>' : ''}</small><strong>${escapeHTML(day.short || day.theme || '')}</strong>`;
         button.addEventListener('click', () => selectDay(day.dayNum)); host.append(button);
       });
     }
@@ -70,15 +95,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     $$('button', host).forEach(button => button.setAttribute('aria-pressed', String(button.dataset.category === state.category)));
   }
+  function announceResults(count) {
+    const status = $('#resultStatus'); if (!status) return;
+    status.textContent = state.query || state.category !== 'all' ? `พบ ${count} จุดที่ตรงกับการค้นหาหรือตัวกรอง` : '';
+  }
   function renderTimeline() {
     const host = $('#timeline'); host.replaceChildren();
     if (state.day === 0) { renderOverview(host); return; }
     const day = currentDay(); if (!day) return;
-    const note = dayNotes[day.dayNum - 1]; const intro = document.createElement('header'); intro.className = 'day-intro';
-    intro.innerHTML = `<div class="date">DAY ${day.dayNum} / ${escapeHTML(day.date)} · งบรถ ${fmt(day.totalFareJPY)} / คน</div><h2>${escapeHTML(day.title)}</h2><p class="route-summary">${escapeHTML(note.route)}</p>`; host.append(intro);
-    const notice = document.createElement('aside'); notice.className = 'critical-note'; notice.innerHTML = `<strong>${escapeHTML(note.critical)}</strong>${escapeHTML(note.risk)}`; host.append(notice);
+    const intro = document.createElement('header'); intro.className = 'day-intro';
+    intro.innerHTML = `<div class="date">DAY ${day.dayNum} / ${escapeHTML(day.date)} · งบรถ ${fmt(day.totalFareJPY)} / คน</div><h2>${escapeHTML(day.title)}</h2><p class="route-summary">${escapeHTML(day.routeSummary || '')}</p>`; host.append(intro);
+    const notice = document.createElement('aside'); notice.className = 'critical-note'; notice.innerHTML = `<strong>${escapeHTML(day.critical || '')}</strong>${escapeHTML(day.risk || '')}`; host.append(notice);
     const shown = day.checkpoints.filter(checkpointMatches).sort((a, b) => a.order - b.order);
     shown.forEach(cp => host.append(makeCheckpoint(day, cp)));
+    announceResults(shown.length);
     if (!shown.length) host.insertAdjacentHTML('beforeend', '<div class="empty-state"><p>ไม่พบจุดที่ตรงกับการค้นหาหรือตัวกรอง</p><button type="button" class="text-button" id="resetFilters">ล้างการค้นหาและตัวกรอง</button></div>');
     const reset = $('#resetFilters', host); if (reset) reset.addEventListener('click', clearFilters);
     host.append(makeSourceNotes(day));
@@ -90,25 +120,31 @@ document.addEventListener('DOMContentLoaded', () => {
       const checkpoints = day.checkpoints.filter(checkpointMatches).sort((a, b) => a.order - b.order); if (!checkpoints.length) return;
       visibleCount += checkpoints.length;
       const wrap = document.createElement('section'); wrap.className = 'overview-day'; wrap.innerHTML = `<header class="day-intro"><div class="date">DAY ${day.dayNum} · ${escapeHTML(day.date)} · งบรถ ${fmt(day.totalFareJPY)} / คน</div><h2>${escapeHTML(day.title)}</h2></header>`;
-      const note = document.createElement('aside'); note.className = 'critical-note'; note.innerHTML = `<strong>${escapeHTML(dayNotes[day.dayNum - 1].critical)}</strong>${escapeHTML(dayNotes[day.dayNum - 1].risk)}`; wrap.append(note);
+      const note = document.createElement('aside'); note.className = 'critical-note'; note.innerHTML = `<strong>${escapeHTML(day.critical || '')}</strong>${escapeHTML(day.risk || '')}`; wrap.append(note);
       checkpoints.forEach(cp => wrap.append(makeCheckpoint(day, cp)));
       wrap.append(makeSourceNotes(day)); host.append(wrap);
     });
+    announceResults(visibleCount);
     if (!visibleCount) host.insertAdjacentHTML('beforeend', '<div class="empty-state"><p>ไม่พบจุดที่ตรงกับการค้นหาหรือตัวกรอง</p><button type="button" class="text-button" id="resetFilters">ล้างการค้นหาและตัวกรอง</button></div>');
     const reset = $('#resetFilters', host); if (reset) reset.addEventListener('click', clearFilters);
   }
   function makeCheckpoint(day, cp) {
     const card = document.createElement('article'); card.className = 'timeline-card'; card.id = `card-${cp.id}`;
     const cat = plan.categories[cp.category];
+    // สรุป = ช่วงแรกของ desc (คั่นด้วย ;) หรือ cp.summary ถ้ากำหนดไว้; ส่วนที่เหลืออยู่ใน "รายละเอียดเพิ่มเติม" โดยไม่ซ้ำกับสรุป
     const fullDescription = cp.desc || 'ดูรายละเอียดจากแหล่งข้อมูลของสถานที่';
-    const descriptionParts = fullDescription.split(/(?<=[.!?])\s+|[;；]\s*/).map(part => part.trim()).filter(Boolean);
-    const expandable = fullDescription.length > 145;
-    const summary = escapeHTML(expandable ? (descriptionParts[0] || fullDescription).slice(0, 155) : fullDescription);
-    const cautionParts = expandable ? [...new Set(descriptionParts.filter(part => /ไม่|หาก|ต้อง|อย่า|เผื่อ|เป้าหมาย|ตรวจ|คิว|จอง|รับประกัน|สำรอง|ก่อน|ช้า|ตัวเลือก|เสริม|ระวัง/i.test(part) && part !== descriptionParts[0]))] : [];
-    const warning = cautionParts.length ? `<p class="checkpoint-warning compact-note"><strong>ข้อควรจำ</strong>${escapeHTML(cautionParts.join(' · '))}</p>` : '';
+    const parts = fullDescription.split(/[;；]\s*/).map(part => part.trim()).filter(Boolean);
+    let summary = cp.summary || parts[0] || fullDescription;
+    let rest = cp.summary ? parts : parts.slice(1);
+    if (!cp.summary && summary.length > 170) {
+      const cutAt = summary.lastIndexOf(' ', 160);
+      if (cutAt > 60) { rest = [`… ${summary.slice(cutAt + 1)}`, ...rest]; summary = `${summary.slice(0, cutAt)} …`; }
+    }
+    const warning = cp.warning ? `<p class="checkpoint-warning"><strong>ข้อควรจำ</strong>${escapeHTML(cp.warning)}</p>` : '';
+    const more = rest.length ? `<details><summary>รายละเอียดเพิ่มเติม</summary><ul class="long-detail">${rest.map(part => `<li>${escapeHTML(part)}</li>`).join('')}</ul></details>` : '';
     const options = (cp.optionalActivities || []).map(item => `<span class="optional-tag">เสริม: ${escapeHTML(item)}</span>`).join(' ');
     const choice = cp.choiceNote ? `<p class="choice-note">${escapeHTML(cp.choiceNote)}</p>` : '';
-    card.innerHTML = `<div class="time-col">${escapeHTML(cp.time)}<br><span>${escapeHTML(cat?.name || '')}</span></div><div class="stop-card"><h3>${escapeHTML(cp.name)}</h3>${cp.jpName ? `<p class="jp">${escapeHTML(cp.jpName)}</p>` : ''}<p class="desc">${summary}${expandable && summary.length < fullDescription.length ? '…' : ''}</p>${options ? `<div class="activity-options">${options}</div>` : ''}${choice}${warning}${expandable ? `<details><summary>รายละเอียดทั้งหมด</summary><p class="long-detail">${escapeHTML(fullDescription)}</p></details>` : ''}<div class="stop-meta"><span>การเดินทาง: ${escapeHTML(cp.transportInfo || 'ตรวจเส้นทางจริง')}</span><span>ค่าใช้จ่าย: ${escapeHTML(costText(cp.cost))}</span></div><div class="stop-actions"><button type="button" data-map-id="${escapeHTML(cp.id)}">แสดงบนแผนที่</button>${safeLink(navUrl(cp), 'นำทาง Google Maps')}${safeLink(mapSearchUrl(cp), 'ค้นหาสถานที่')}${cp.link && !isMapLink(cp.link) ? safeLink(cp.link, 'แหล่งข้อมูล') : ''}</div></div>`;
+    card.innerHTML = `<div class="time-col">${escapeHTML(cp.time)}<br><span>${escapeHTML(cat?.name || '')}</span></div><div class="stop-card"><h3>${escapeHTML(cp.name)}</h3>${cp.jpName ? `<p class="jp">${escapeHTML(cp.jpName)}</p>` : ''}<p class="desc">${escapeHTML(summary)}</p>${options ? `<div class="activity-options">${options}</div>` : ''}${choice}${warning}${more}<div class="stop-meta"><span>การเดินทาง: ${escapeHTML(cp.transportInfo || 'ตรวจเส้นทางจริง')}</span><span>ค่าใช้จ่าย: ${escapeHTML(costText(cp.cost))}</span></div><div class="stop-actions"><button type="button" data-map-id="${escapeHTML(cp.id)}">แสดงบนแผนที่</button>${safeLink(navUrl(cp), 'นำทาง Google Maps')}${safeLink(mapSearchUrl(cp), 'ค้นหาสถานที่')}${cp.link && !isMapLink(cp.link) ? safeLink(cp.link, 'แหล่งข้อมูล') : ''}</div></div>`;
     $('[data-map-id]', card).addEventListener('click', () => focusCheckpoint(cp)); return card;
   }
   function inlineMarkdown(text) {
@@ -145,13 +181,13 @@ document.addEventListener('DOMContentLoaded', () => {
     return markdown.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '$1 ($2)').replace(/\*\*(.+?)\*\*/g, '$1').replace(/\*(.+?)\*/g, '$1');
   }
   function clearFilters() { state.category = 'all'; state.query = ''; $('#searchInput').value = ''; $('#clearSearch').hidden = true; renderFilters(); renderTimeline(); renderMap(); }
-  function selectDay(day) { state.day = day; renderDayTabs(); renderTimeline(); renderRail(); renderMap(); if (state.map) fitMap(); }
+  function selectDay(day) { state.day = day; syncUrl(); renderDayTabs(); renderTimeline(); renderRail(); renderMap(); if (state.map) fitMap(); }
   function renderRail() {
     if (state.day === 0) { $('#routeList').innerHTML = '<li><span>06</span><span>ภาพรวม · Kyoto / Uji / Nara / Osaka</span></li>'; $('#dayFare').textContent = state.currency === 'JPY' ? formatNumber(plan.totalICCardCostJPY) : formatNumber(Math.round(plan.totalICCardCostJPY * plan.exchangeRate)); $('#fareUnit').textContent = state.currency; $('#contingencySummary').textContent = 'เลือกวันด้านบนเพื่ออ่านเส้นทาง เวลาเตือน และแผนสำรองรายวัน'; return; }
     const day = currentDay(); if (!day) return;
     $('#routeList').innerHTML = day.checkpoints.map((cp, i) => `<li><span>${String(i + 1).padStart(2, '0')}</span><span>${escapeHTML(cp.name)}</span></li>`).join('');
     $('#dayFare').textContent = state.currency === 'JPY' ? formatNumber(day.totalFareJPY) : formatNumber(Math.round(day.totalFareJPY * plan.exchangeRate)); $('#fareUnit').textContent = state.currency;
-    $('#contingencySummary').textContent = plan.contingencies?.find(item => item.title.toLowerCase().includes(`day ${day.dayNum}`))?.detail || dayNotes[day.dayNum - 1].risk;
+    $('#contingencySummary').textContent = plan.contingencies?.find(item => item.title.toLowerCase().includes(`day ${day.dayNum}`))?.detail || day.risk || '';
   }
   function initializeMap() {
     const mapHost = $('#map');
@@ -159,6 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof L === 'undefined') {
       const script = document.createElement('script');
       script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'; script.async = true;
+      script.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo='; script.crossOrigin = '';
       script.onload = () => createMap();
       script.onerror = () => { mapHost.hidden = true; $('#mapFallback').hidden = false; };
       document.head.append(script);
@@ -171,12 +208,22 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       state.map = L.map(mapHost, { zoomControl: true, scrollWheelZoom: false }).setView([34.9858, 135.7588], 11);
       if ($('.map-section').classList.contains('expanded')) state.map.scrollWheelZoom.enable();
-      const tiles = L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en', { maxZoom: 20, subdomains: ['mt0', 'mt1', 'mt2', 'mt3'], attribution: '&copy; <a href="https://maps.google.com" target="_blank" rel="noopener">Google Maps</a>' });
-      tiles.on('tileerror', () => { $('#mapFallback').hidden = false; }); tiles.addTo(state.map);
+      setTileLayer();
       state.markerGroup = L.layerGroup().addTo(state.map); state.routeGroup = L.layerGroup().addTo(state.map);
-      state.map.on('load', () => { $('#mapFallback').hidden = true; });
       setTimeout(() => state.map.invalidateSize(), 100); renderMap();
     } catch (_) { mapHost.hidden = true; $('#mapFallback').hidden = false; }
+  }
+  // แผนที่ฐาน 2 แบบ: Google Maps และ Esri World Street Map (ไม่ต้องใช้ API key และไม่บล็อกเมื่อเปิดจากไฟล์ในเครื่อง)
+  function setTileLayer() {
+    if (!state.map) return;
+    if (state.tiles) state.tiles.remove();
+    state.tiles = state.mapStyle === 'esri'
+      ? L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', { maxZoom: 19, attribution: 'Tiles &copy; <a href="https://www.esri.com/" target="_blank" rel="noopener">Esri</a>' })
+      : L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en', { maxZoom: 20, subdomains: ['mt0', 'mt1', 'mt2', 'mt3'], attribution: '&copy; <a href="https://maps.google.com" target="_blank" rel="noopener">Google Maps</a>' });
+    $('#mapFallback').hidden = true;
+    state.tiles.on('tileerror', () => { $('#mapFallback').hidden = false; });
+    state.tiles.on('load', () => { $('#mapFallback').hidden = true; });
+    state.tiles.addTo(state.map); state.tiles.bringToBack();
   }
   function visibleDays() { return state.day === 0 ? allDays() : allDays().filter(day => day.dayNum === state.day); }
   function renderMap() {
@@ -240,17 +287,19 @@ document.addEventListener('DOMContentLoaded', () => {
         </section>
         <section class="info-card">
           <h3>เวลาตามแผน</h3>
-          <p>ปรับแผน 6 พ.ย. 2026: Osaka Castle / Kaiyukan / Dotonbori พร้อมงบใหม่; Shimogamo เป็น Day 4 โดยเก็บวัดทอง Day 3; ข้อมูลสถานที่เดิมตรวจ 3 พ.ย. ตารางบินอ้างอิงฉบับ 21 ต.ค. 2026 ยังต้องยืนยันใบจอง ขบวนรถ ที่ว่างกิจกรรม และวันเปิดพิเศษของร้านสำรอง เวลารายวันเป็นกรอบเผื่อเดินและรอ ไม่ใช่รอบรถที่จองแล้ว ให้ตรวจใบจองและประกาศก่อนเดินทาง</p>
+          <p>${escapeHTML(plan.revisionNote || '')}</p>
         </section>
       </div>`;
     const tips = (plan.travelTips || []).map(tip => `<section class="info-card"><h3>${escapeHTML(tip.title)}</h3><p>${escapeHTML(tip.desc)}</p>${tip.link ? safeLink(tip.link, tip.linkLabel || 'แหล่งข้อมูล') : ''}${tip.secondaryLink ? ` · ${safeLink(tip.secondaryLink, tip.secondaryLinkLabel || 'ข้อมูลเพิ่มเติม')}` : ''}</section>`).join('');
-    const checklist = ['เทียบ MM092/MM091 เวลา กระเป๋า และเงื่อนไขเช็คอินกับใบจองล่าสุด', 'ยืนยันฝากกระเป๋าและภาษีที่พักจากราคาต่อคนต่อคืนกับโรงแรม', 'เลือก Usucha หรือคอร์สลงมือชง และจอง Taiho-an ตามปฏิทินจริง; หากเลือก CHAZUNA ตรวจตารางเดือน ธ.ค. ที่ประกาศ 28 ต.ค. และจองรอบ', 'Haruka ซื้อใหม่ 2,700 เยน/เที่ยว หากมีตั๋วเดิมตรวจเงื่อนไขก่อน เลือกช่องทางให้ชัด; จองขากลับเพื่อรักษาเป้าหมายถึง T2 16:00', 'Murin-an เลือกแทนคาเฟ่ จองรอบ 16:00 ตามที่ว่างและตรวจเงื่อนไขยกเลิก; Menami จองทางโทรศัพท์โดยเผื่อออกจาก Eikando', 'Kaiyukan 5 ธ.ค. รอบเป้าหมาย 13:00 ตามที่ว่าง ตรวจราคาและเวลาเปิดก่อนซื้อ; Shimogamo เป็นแผนหลัก Day 4 แทนวัดเงินแล้ว', '24–27 พ.ย. ตรวจวันหยุดร้าน รอบรถ/ค่าโดยสาร สภาพใบไม้และประกาศไฟประดับ', 'เตรียม VJW และวิธีรับเงินคืนตามร้าน ตรวจแผนผัง Tax-free ที่ KIX T2 International; ยืนยันสินค้าก่อนโหลดกระเป๋าที่บรรจุสินค้า', 'ก่อนแต่ละวัน ดูฝนและสถานะรถ กำหนดจุดหลักหนึ่งถึงสองแห่งและตัดกิจกรรมเสริมเมื่อช้า'];
+    const checklist = plan.preTripChecklist || [];
+    let checkedItems = [];
+    try { checkedItems = JSON.parse(store.get(CHECKLIST_KEY) || '[]'); } catch (_) { checkedItems = []; }
     const alternatives = (plan.alternatives || []).map(item => `<li><strong>${escapeHTML(item.name)}</strong> — ${escapeHTML(item.replaces)}. ${escapeHTML(item.note)} ${safeLink(mapSearchUrl(item), 'ค้นหาสถานที่')}${item.link && !isMapLink(item.link) ? ` · ${safeLink(item.link, 'ข้อมูลสถานที่')}` : ''}</li>`).join('');
     const contingencies = (plan.contingencies || []).map(item => `<section class="info-card"><h3>${escapeHTML(item.title)}</h3><p>${escapeHTML(item.detail)}</p></section>`).join('');
     host.innerHTML = `${flights}
       <section class="info-card">
         <h3>ก่อนเดินทาง · เช็กลิสต์</h3>
-        <ul class="checklist">${checklist.map(item => `<li><label><input type="checkbox">${escapeHTML(item)}</label></li>`).join('')}</ul>
+        <ul class="checklist">${checklist.map((item, index) => `<li><label><input type="checkbox" data-check="${index}"${checkedItems.includes(item) ? ' checked' : ''}>${escapeHTML(item)}</label></li>`).join('')}</ul>
       </section>
       <div class="content-grid">${tips}</div>
       <section class="info-card">
@@ -259,6 +308,11 @@ document.addEventListener('DOMContentLoaded', () => {
       </section>
       <h2>แผนสำรองรายวัน</h2>
       <div class="content-grid">${contingencies}</div>`;
+    // จำรายการที่ติ๊กไว้ในเบราว์เซอร์นี้ โดยอ้างจากข้อความของรายการ
+    host.addEventListener('change', event => {
+      if (!event.target.matches('[data-check]')) return;
+      store.set(CHECKLIST_KEY, JSON.stringify($$('[data-check]', host).filter(box => box.checked).map(box => checklist[Number(box.dataset.check)])));
+    });
   }
   function renderRestaurants() {
     $('#restaurantNote').textContent = plan.nearbyRestaurantsNote || 'เวลาเดินเป็นค่าประมาณ ร้านบางแห่งอยู่คนละฝั่งสถานีหรือภายในห้าง โปรดเผื่อเวลาเดินและตรวจวันเปิด/คิว';
@@ -270,12 +324,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const data = plan.budget; const host = $('#budgetContent'); if (!data) return;
     const rows = [['รถสาธารณะ รวม Haruka', data.transport], ['อาหารและคาเฟ่', data.meals], ['ค่าเข้าชม + Taiho-an + Kaiyukan', data.admissions], ['ภาษีที่พัก · สมมติ 400 × 5 คืน', data.accommodationTax], ['รวมก่อนเงินสำรอง', data.beforeReserve], ['เงินสำรอง', data.reserve], ['รวมพร้อมเงินสำรอง', data.total]];
     const budgetRows = rows.map(([label, item], index) => {
-      const maximum = item.maxJPY !== item.minJPY
-        ? `–${formatNumber(state.currency === 'JPY' ? item.maxJPY : Math.round(item.maxJPY * data.exchangeRate))} ${state.currency}`
-        : '';
       return `<div class="budget-row ${index === rows.length - 1 ? 'total' : ''}">
         <span>${escapeHTML(label)}</span>
-        <strong>${fmt(item.minJPY)}${maximum}</strong>
+        <strong>${moneyRange(item.minJPY, item.maxJPY)}</strong>
         <small>${escapeHTML(item.note || '')}</small>
       </div>`;
     }).join('');
@@ -351,8 +402,31 @@ document.addEventListener('DOMContentLoaded', () => {
   $('#fitMap').setAttribute('aria-label', 'ขยายแผนที่');
   $('#fitMap').addEventListener('click', () => setMapExpanded(!$('.map-section').classList.contains('expanded')));
   document.addEventListener('keydown', event => { if (event.key === 'Escape' && $('.map-section').classList.contains('expanded')) { setMapExpanded(false); $('#fitMap').focus(); } });
-  $('#themeToggle').addEventListener('click', () => { const active = document.body.classList.toggle('dark'); $('#themeToggle').setAttribute('aria-pressed', String(active)); $('#themeToggle').textContent = active ? 'ธีมสว่าง' : 'ธีมมืด'; try { localStorage.setItem('kyoto-handbook-theme', active ? 'dark' : 'light'); } catch (_) { /* storage can be unavailable for file URLs */ } });
-  try { if (localStorage.getItem('kyoto-handbook-theme') === 'dark') { document.body.classList.add('dark'); $('#themeToggle').setAttribute('aria-pressed', 'true'); $('#themeToggle').textContent = 'ธีมสว่าง'; } } catch (_) { /* storage can be unavailable for file URLs */ }
-  $('#currencyToggle').addEventListener('click', () => { state.currency = state.currency === 'JPY' ? 'THB' : 'JPY'; $('#currencyToggle').innerHTML = state.currency === 'JPY' ? 'JPY <span>↔</span> THB' : 'THB <span>↔</span> JPY'; $('#currencyToggle').setAttribute('aria-label', `สกุลเงินปัจจุบัน ${state.currency}; กดเพื่อสลับ`); renderTimeline(); renderRail(); renderBudget(); renderMap(); });
+  function applyTheme(dark) {
+    root.classList.toggle('dark', dark);
+    $('#themeToggle').setAttribute('aria-pressed', String(dark)); $('#themeToggle').textContent = dark ? 'ธีมสว่าง' : 'ธีมมืด';
+    const meta = $('meta[name="theme-color"]'); if (meta) meta.content = dark ? '#232821' : '#f7f4ed';
+  }
+  // ธีมเริ่มต้นถูกตั้งโดยสคริปต์ใน <head> (ค่าที่บันทึกไว้ หรือค่าของระบบ) ก่อนหน้าเว็บวาดครั้งแรก
+  applyTheme(root.classList.contains('dark'));
+  $('#themeToggle').addEventListener('click', () => { const dark = !root.classList.contains('dark'); applyTheme(dark); store.set(THEME_KEY, dark ? 'dark' : 'light'); });
+  function applyCurrencyLabel() {
+    $('#currencyToggle').innerHTML = state.currency === 'JPY' ? 'JPY <span>↔</span> THB' : 'THB <span>↔</span> JPY';
+    $('#currencyToggle').setAttribute('aria-label', `สกุลเงินปัจจุบัน ${state.currency}; กดเพื่อสลับ`);
+  }
+  $('#currencyToggle').addEventListener('click', () => { state.currency = state.currency === 'JPY' ? 'THB' : 'JPY'; store.set(CURRENCY_KEY, state.currency); applyCurrencyLabel(); renderTimeline(); renderRail(); renderBudget(); renderMap(); });
+  $('#mapStyle').addEventListener('change', event => { state.mapStyle = event.target.value === 'esri' ? 'esri' : 'google'; store.set(MAP_KEY, state.mapStyle); setTileLayer(); });
+  window.addEventListener('beforeprint', () => $$('details').forEach(details => { details.open = true; }));
+
+  // คืนค่าสถานะที่จำไว้: สกุลเงินและแบบแผนที่จาก localStorage, หน้าและวันจาก URL (ถ้าไม่ระบุวัน ใช้วันนี้ระหว่างทริป)
+  if (store.get(CURRENCY_KEY) === 'THB') state.currency = 'THB';
+  if (store.get(MAP_KEY) === 'esri') state.mapStyle = 'esri';
+  $('#mapStyle').value = state.mapStyle; applyCurrencyLabel();
+  const params = new URLSearchParams(location.search);
+  const dayParam = params.get('day');
+  state.day = dayParam === 'all' ? 0 : plan.days.some(day => String(day.dayNum) === dayParam) ? Number(dayParam) : defaultDay;
+  if ($('#footerNote')) $('#footerNote').textContent = plan.footerNote || '';
   renderDayTabs(); renderFilters(); renderTimeline(); renderRail(); renderEssentials(); renderRestaurants(); renderBudget(); setupRateInput(); initializeMap();
+  setPage(PAGES.includes(params.get('page')) ? params.get('page') : 'daily');
+  if ('serviceWorker' in navigator && window.isSecureContext && location.protocol.startsWith('http')) navigator.serviceWorker.register('sw.js').catch(() => { /* offline cache is optional */ });
 });

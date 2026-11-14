@@ -35,42 +35,23 @@ const PLAN_A_DATA = {
     handsOnTeaExtraJPY: 2100
   },
 
-  budgetSummary: [
-    {
-      item: "1. งบรถสาธารณะรวม Haruka ไป-กลับ",
-      costTHB: "~2,947 ฿",
-      note: "13,900 เยน รวมเงินเผื่อรายวัน เป็นงบวางแผน ไม่ใช่ยอดค่าโดยสารที่ยืนยันครบทุกช่วง และไม่รวมแท็กซี่"
-    },
-    {
-      item: "2. อาหารและคาเฟ่ทั่วไป",
-      costTHB: "~5,300 - 7,208 ฿",
-      note: "25,000–34,000 เยน ไม่รวมกิจกรรมชา Taiho-an ที่นับในค่าเข้าชมด้านล่าง"
-    },
-    {
-      item: "3. ค่าเข้าชม / Taiho-an / Kaiyukan",
-      costTHB: "~1,908 - 2,438 ฿",
-      note: "9,000–11,500 เยน รวม Taiho-an Usucha และ Kaiyukan งบเผื่อ 3,500; Phoenix Hall / คอร์สลงมือชงเป็นตัวเลือก"
-    },
-    {
-      item: "4. ภาษีที่พัก Kyoto (สมมติ)",
-      costTHB: "~424 ฿",
-      note: "2,000 เยน จากสมมติฐาน 400 เยน × 5 คืน; โรงแรมต้องยืนยันตามราคาที่พักต่อคนต่อคืนจริง"
-    },
-    {
-      item: "รวมก่อนเงินสำรอง",
-      costTHB: "~10,579 - 13,017 ฿",
-      note: "49,900–61,400 เยน / คน ไม่รวมตั๋วเครื่องบิน ค่าห้อง และช้อปปิ้ง"
-    },
-    {
-      item: "เงินสำรองทั่วไป",
-      costTHB: "~1,060 ฿",
-      note: "5,000 เยน สำหรับค่าใช้จ่ายเพิ่มบางส่วน ไม่ใช่งบรับประกันสำหรับทุกกิจกรรมเสริม"
-    },
-    {
-      item: "รวมพร้อมเงินสำรอง",
-      costTHB: "~11,639 - 14,077 ฿",
-      note: "54,900–66,400 เยน / คน ที่เรทอ้างอิง 6 พ.ย. 2026 (1 เยน ≈ 0.212 บาท) ไม่ใช่เรทที่แลกจริง; ปรับเรทได้ที่หน้างบประมาณในเว็บแอป"
-    }
+  // วันแรกของทริปตามเวลาญี่ปุ่น ใช้เลือก "วันนี้" อัตโนมัติระหว่างเดินทาง
+  tripStartDate: "2026-12-01",
+
+  revisionNote: "ปรับแผน 14 พ.ย. 2026: ย้าย Shimogamo ไปต่อท้าย Kinkakuji ใน Day 3 ให้ Day 4 เดินทางเป็นเส้นเดียวฝั่งตะวันออก งบรถรวมเท่าเดิม; ตรวจราคา เวลาเปิด ไฟประดับ และสภาพใบไม้จากเว็บทางการ 14 พ.ย. ข้อมูลอื่นตรวจ 3 พ.ย. ตารางบินอ้างอิงฉบับ 21 ต.ค. 2026 ยังต้องยืนยันใบจอง ขบวนรถ ที่ว่างกิจกรรม และวันเปิดพิเศษของร้านสำรอง เวลารายวันเป็นกรอบเผื่อเดินและรอ ไม่ใช่รอบรถที่จองแล้ว ให้ตรวจใบจองและประกาศก่อนเดินทาง",
+  footerNote: "ปรับแผน 14 พ.ย. 2026 · Shimogamo ย้ายไปต่อท้าย Day 3 · Day 4 เหลือ Kiyomizu / ถนนเก่า / Nanzenji / Eikando · ข้อมูลสถานที่หลักตรวจ 14 พ.ย. ตามแหล่งที่แนบ · ยังต้องยืนยันที่ว่างกิจกรรม วันเปิดพิเศษของร้าน และรอบรถจริง · เวลารายวันเป็นกรอบวางแผน เผื่อเดินทางและรอ ไม่ใช่รอบรถที่จองแล้ว · ตรวจใบจองและประกาศก่อนเดินทาง",
+
+  preTripChecklist: [
+    "เทียบ MM092/MM091 เวลา กระเป๋า และเงื่อนไขเช็คอินกับใบจองล่าสุด",
+    "ยืนยันฝากกระเป๋าและภาษีที่พักจากราคาต่อคนต่อคืนกับโรงแรม",
+    "เลือก Usucha หรือคอร์สลงมือชง และจอง Taiho-an ตามปฏิทินจริง; หากเลือก CHAZUNA ตรวจตารางเดือน ธ.ค. ที่ประกาศ 28 ต.ค. และจองรอบ",
+    "Haruka ซื้อก่อนออกเดินทางเพราะตั๋วส่วนลดซื้อในญี่ปุ่นไม่ได้ ตั้งงบ 2,700 เยน/เที่ยว หากมีตั๋วเดิมตรวจเงื่อนไขก่อน เลือกช่องทางให้ชัด; จองขากลับเพื่อรักษาเป้าหมายถึง T2 16:00",
+    "Murin-an เลือกแทนคาเฟ่ จองรอบ 16:00 ตามที่ว่างและตรวจเงื่อนไขยกเลิก; Menami จองทางโทรศัพท์ 10:00–17:00 โดยเผื่อออกจาก Eikando เว็บร้านแสดงเบอร์จองสองเบอร์ ให้ยืนยันเบอร์ก่อนโทร",
+    "ซื้อ e-ticket Kaiyukan แบบระบุเวลา 5 ธ.ค. รอบเป้าหมาย 13:00 ตามที่ว่าง ตรวจราคาและเวลาเปิดก่อนซื้อ",
+    "Day 3: Shimogamo ย้ายมาต่อท้าย Kinkakuji ตรวจรอบรถบัสสาย 205 และทางกลับ Kyoto Station จริง",
+    "24–27 พ.ย. ตรวจวันหยุดร้าน รอบรถ/ค่าโดยสาร สภาพใบไม้และประกาศไฟประดับ",
+    "เตรียม VJW และวิธีรับเงินคืนตามร้าน ตรวจแผนผัง Tax-free ที่ KIX T2 International; ยืนยันสินค้าก่อนโหลดกระเป๋าที่บรรจุสินค้า",
+    "ก่อนแต่ละวัน ดูฝนและสถานะรถ กำหนดจุดหลักหนึ่งถึงสองแห่งและตัดกิจกรรมเสริมเมื่อช้า"
   ],
 
   categories: {
@@ -163,12 +144,12 @@ const PLAN_A_DATA = {
     },
     {
       icon: "fa-circle-info",
-      title: "ปรับแผน · 6 พ.ย. 2026",
-      desc: "ปรับ Day 5 เป็น Osaka Castle / Kaiyukan / Dotonbori พร้อมงบใหม่; Shimogamo เป็น Day 4 โดยเก็บวัดทอง Day 3; ข้อมูลสถานที่เดิมตรวจ 3 พ.ย.; ตารางบินอ้างอิงฉบับ 21 ต.ค. 2026 ยังต้องยืนยันใบจอง ขบวนรถ ที่ว่างกิจกรรม และวันเปิดพิเศษของร้านสำรอง เวลารายวันเป็นกรอบเผื่อเดิน/รอ ไม่ใช่รอบรถที่จองแล้ว"
+      title: "ปรับแผน · 14 พ.ย. 2026",
+      desc: "ย้าย Shimogamo ไปต่อท้าย Kinkakuji ใน Day 3 ให้ Day 4 เดินทางเป็นเส้นเดียวฝั่งตะวันออก งบรถรวมเท่าเดิม; ฉบับ 6 พ.ย. ปรับ Day 5 เป็น Osaka Castle / Kaiyukan / Dotonbori; ข้อมูลสถานที่หลักตรวจ 14 พ.ย. ข้อมูลอื่นตรวจ 3 พ.ย.; ตารางบินอ้างอิงฉบับ 21 ต.ค. 2026 ยังต้องยืนยันใบจอง ขบวนรถ ที่ว่างกิจกรรม และวันเปิดพิเศษของร้านสำรอง เวลารายวันเป็นกรอบเผื่อเดิน/รอ ไม่ใช่รอบรถที่จองแล้ว"
     },
     {"icon":"fa-landmark","title":"Byodoin — ภายใน Phoenix Hall","desc":"จำกัด 35 คน/รอบตั้งแต่ 16 ต.ค. อาจรอนานขึ้น พลาดรอบแล้วเปลี่ยนเวลาหรือคืนเงินไม่ได้; เลือกรอบที่ไม่ชน Taiho-an งานซ่อมเดือน พ.ย. ยังไม่ทับ 2 ธ.ค. ตามกำหนดปัจจุบัน","link":"https://www.byodoin.or.jp/news/cat23/20261016/","linkLabel":"Byodoin — ประกาศจำนวนคน"},
     {"icon":"fa-leaf","title":"Murin-an — ตัวเลือกแทนคาเฟ่","desc":"4 ธ.ค. ค่าเข้า 1,500 เยน เปิดจองก่อน 30 วันและยกเลิกเสียค่าธรรมเนียม 100%; เลือกรอบ 16:00 ตามที่ว่าง ออกประมาณ 16:30 เพื่อไป Eikando หากต้องการชมสวนนานให้ลดจุดก่อนหน้าและจองรอบเร็วขึ้น ตรวจแพ็กเกจเครื่องดื่มแยก","link":"https://murin-an.jp/info/","linkLabel":"Murin-an — ราคาและเงื่อนไข"},
-    {"icon":"fa-leaf","title":"ใบไม้แดง — พยากรณ์ 29 ต.ค.","desc":"Weathernews คาด Arashiyama เริ่มช่วงชมสวยราว 23 พ.ย. เป็นพยากรณ์ ไม่รับประกันสภาพวันที่ 3 ธ.ค.; ตรวจใบไม้จริงและวันหยุดร้านอีกครั้ง 24–27 พ.ย. โดยเก็บ Kinkakuji ตามแผน","link":"https://jp.weathernews.com/news/57986/","linkLabel":"Weathernews — รอบ 29 ต.ค. 2026"}
+    {"icon":"fa-leaf","title":"ใบไม้แดง — ตรวจ 14 พ.ย.","desc":"Arashiyama / Tenryuji เข้าช่วงสวยแล้ว คาดสวยสุดราว 17 พ.ย. วันที่ 3 ธ.ค. จึงน่าจะเป็นปลายช่วง; Eikando เริ่มเปลี่ยนสีราว 20% คาดสวยปลาย พ.ย.–ต้น ธ.ค. และเริ่มร่วงราว 5 ธ.ค.; Kiyomizu และ Byodoin เริ่มเปลี่ยนสี; Shimogamo ยังเขียว ปกติสวยต้น–กลาง ธ.ค. เป็นพยากรณ์ ไม่รับประกันสีใบไม้ ตรวจสภาพจริงและวันหยุดร้านอีกครั้ง 24–27 พ.ย.","link":"https://tenki.jp/kouyou/6/29/","linkLabel":"tenki.jp — Kyoto","secondaryLink":"https://weathernews.jp/koyo/spot/26120/","secondaryLinkLabel":"Weathernews — Eikando"}
   ],
 
   alternatives: [
@@ -176,7 +157,7 @@ const PLAN_A_DATA = {
     {
       name: "Kenninji",
       replaces: "Kiyomizu ใน Day 4 เมื่อฝนตกหรือไม่ไหวกับเนิน",
-      note: "เริ่ม 10:00 โดยงด Kiyomizu / Asahido แล้วเลือก Shimogamo ตามแรงก่อนต่อ Nanzenji / Eikando; รับเข้าถึง 16:30 ปิด 17:00 ค่าเข้า 800 เยนในทริปนี้ (ขึ้นเป็น 1,000 เยน 1 ม.ค. 2027); งดคัดพระสูตร 1 พ.ย.–6 ธ.ค. ตามประกาศ 22 ต.ค.",
+      note: "เริ่ม 10:00 โดยงด Kiyomizu / Asahido แล้วกินกลางวันก่อนต่อ Nanzenji / Eikando ตามแผน; รับเข้าถึง 16:30 ปิด 17:00 ค่าเข้า 800 เยนในทริปนี้ (ขึ้นเป็น 1,000 เยน 1 ม.ค. 2027); งดคัดพระสูตร 1 พ.ย.–6 ธ.ค. ตามประกาศ 22 ต.ค.",
       link: "https://www.kenninji.jp/access/"
     },
     {
@@ -190,7 +171,8 @@ const PLAN_A_DATA = {
   contingencies: [
     { title: "Day 1: พักก่อน เที่ยวเย็นตามแรง", detail: "รักษาเช็คอิน 15:00 และนอนพักถึงราว 17:30; งด Gion / Pontocho ได้ทั้งหมด ถ้าถึงหลัง 15:00 ให้เช็คอินก่อนแล้วค่อยกิน ย้าย Kiyomizu / Asahido ไป Day 4 และ Nishiki ไป Day 6 แล้ว" },
     { title: "Day 2: Uji / Nara ช้า", detail: "คง Taiho-an รอบที่จอง ตัด Phoenix Hall ภายในและการช้อปก่อน; หากออก Uji หลัง 13:00 ให้ไป Todaiji ก่อน เผื่อรถบัส Nara ล่าช้า" },
-    { title: "Day 4: Kiyomizu / Shimogamo / Eikando", detail: "เมื่อช้าลดเดิน Tadasu no Mori และเวลาชม Nanzenji ก่อน งด Murin-an แต่เก็บเวลานั่งพัก ถ้าออกจากถนนเก่าหลัง 11:00 ให้เลื่อนศาลเจ้าตามจริง เลือกมื้อคิวสั้น ไม่เพิ่มวัดเงินหรือ Philosopher’s Path; ถ้าคิว Eikando ชน Menami ปรับตามเงื่อนไขร้าน" },
+    { title: "Day 3: Shimogamo งดได้", detail: "คง Arashiyama → Randen → Kinkakuji เป็นหลัก ถ้าออกจาก Kinkakuji หลัง 15:30 ให้งด Shimogamo แล้วกลับ Kyoto Station; คิวมื้อกลางวันยาวให้ลดร้านเสริมก่อน" },
+    { title: "Day 4: Kiyomizu / Eikando", detail: "เมื่อช้าลดเวลาเดินถนนเก่าและเวลาชม Nanzenji ก่อน งด Murin-an แต่เก็บเวลานั่งพัก เลือกมื้อคิวสั้น ไม่เพิ่มวัดเงิน Philosopher’s Path หรือ Shimogamo; ถ้าคิว Eikando ชน Menami ปรับตามเงื่อนไขร้าน" },
     { title: "Day 5: รักษารอบ Kaiyukan", detail: "เมื่อช้า เหนื่อย หรือฝนหนัก ให้ลดการเดินสวนปราสาทก่อน รักษารอบ Kaiyukan และมื้อพักกลางวัน กลับจาก Dotonbori เร็วขึ้นได้ ไม่เพิ่มสถานที่ที่สี่" },
     { title: "Day 6: ตัดตลาดก่อนบีบเวลาสนามบิน", detail: "ถ้าออกจาก Fushimi หลัง 09:30 ให้งด Nishiki; ออกจากตลาดไม่เกิน 11:15 กลับโรงแรมราว 12:00 รับกระเป๋า/เข้าสถานี 12:00–13:00; ฝนหนักหรือ Haruka มีปัญหาให้ตัด Fushimi และตลาดแล้วจัดการเดินทางสนามบินทันที" },
   ],
@@ -279,6 +261,10 @@ const PLAN_A_DATA = {
   days: [
     {
       dayNum: 1,
+      short: "ถึงแล้วพัก",
+      routeSummary: "KIX → กินใกล้สถานี → เช็คอิน / นอนพัก → Gion ตามแรง",
+      critical: "เช็คอิน 15:00 แล้วพักถึงราว 17:30",
+      risk: "เที่ยวเย็นเป็นตัวเลือกทั้งหมด ถ้ายังเพลียให้กินใกล้โรงแรมแล้วพักต่อ",
       date: "1 ธ.ค. 2026 (อังคาร)",
       title: "ถึง KIX → กินใกล้สถานี → เช็คอิน / นอนพัก → Gion หัวค่ำตามแรง",
       theme: "Kyoto Arrival & Rest",
@@ -290,12 +276,16 @@ const PLAN_A_DATA = {
         { id:"pa-d1-2", order:2, time:"ประมาณ 12:15–12:45", name:"ฝากกระเป๋าที่ APA Hotel Kyoto Ekihigashi", jpName:"APAホテル〈京都駅東〉", category:"transport", lat:34.9878, lng:135.7612, desc:"ถึงโรงแรมผ่าน JR Kyoto Station Central Gate เดินราว 3 นาที หรือ Subway Exit A5 ราว 1 นาที; เช็คอิน 15:00 เช็คเอาท์ 10:00 ยืนยันเงื่อนไขฝากกระเป๋ากับโรงแรม", transportInfo:"เดินจาก Kyoto Station Central Gate / Subway Exit A5", cost:"0 JPY (ตรวจนโยบายโรงแรม)", link:"https://www3.apahotel.com/hotel/kansai/kyoto/kyoto-ekihigashi/" },
         { id:"pa-d1-3", order:3, time:"12:45–15:00", name:"กินใกล้โรงแรม แล้วนั่งพักรอเช็คอิน", jpName:"京都駅 / ポルタ", category:"food", lat:34.9858, lng:135.7588, desc:"เลือก Porta / Kyoto Ramen Koji / ร้านรอบสถานีหนึ่งแห่งตามคิว; 14:00–15:00 นั่งพัก ไม่เพิ่มวัดหรือช้อป ถามเข้าห้องก่อนเวลาได้แต่ไม่ตั้งสมมติฐานว่าจะได้ห้อง", transportInfo:"เดินใกล้โรงแรมและสถานี ไม่ไป Nishiki วันนี้", cost:"อาหารตามจริง", link:"https://www.google.com/maps/search/?api=1&query=Porta+Kyoto+Station" },
         { id:"pa-d1-4", order:4, time:"15:00–17:30", name:"เช็คอิน อาบน้ำ และนอนพัก", jpName:"APAホテル〈京都駅東〉", category:"transport", lat:34.9878, lng:135.7612, desc:"ช่วงพักหลักของวัน เริ่มเช็คอิน 15:00 ตามโรงแรม ตั้งปลุกแล้วประเมินแรงอีกครั้ง; ตื่นช้าได้โดยลดหรืองดเที่ยวเย็น Kiyomizu / Asahido ย้ายไป Day 4 แล้ว", transportInfo:"พักในโรงแรม", cost:"ค่าห้องตามการจอง", link:"https://www3.apahotel.com/hotel/kansai/kyoto/kyoto-ekihigashi/" },
-        { id:"pa-d1-5", order:5, time:"17:30–19:00 · ถ้ามีแรง", name:"เดินทางไป Gion / ริม Kamo แล้วเดินสั้น ๆ", jpName:"祇園 / 鴨川", category:"spot", lat:35.0036, lng:135.7765, desc:"เผื่อเดินทาง 17:30–18:15 แล้วเลือกเดิน Gion หรือริม Kamo ระยะสั้น; งดได้ทั้งหมดเมื่อยังเพลีย ไม่เดินขึ้น Kiyomizu คืนนี้ เคารพป้ายห้ามเข้า/ถ่ายภาพ แวะ Gion Tsujiri เฉพาะเมื่อเปิดและคิวสั้น", transportInfo:"รถสาธารณะตามเส้นทางจริง แล้วเดินสั้น ๆ", cost:"ตามจริง", link:"https://www.google.com/maps/search/?api=1&query=Gion+Kyoto" },
-        { id:"pa-d1-6", order:6, time:"19:00–20:45", name:"มื้อเย็นตามแรง แล้วกลับโรงแรม", jpName:"先斗町 / 河童寿司", category:"food", lat:35.0056, lng:135.7712, desc:"กินใกล้จุดที่อยู่; Pontocho / Kappa Sushi เป็นตัวเลือกถ้ายังไหวและร้านเปิด/คิวเหมาะสม งบอาหารเดิม 2,500–4,000 เยน ไม่จองมื้อที่ยกเลิกยาก; กลับโรงแรมราว 20:00–20:45 หรือกินใกล้โรงแรมแล้วพักต่อ", transportInfo:"เดินทางตามแรงและตำแหน่งร้านจริง", cost:"อาหารประมาณ 2,500–4,000 JPY", link:"https://www.google.com/maps/search/?api=1&query=Pontocho+Kappa+Sushi" }
+        { id:"pa-d1-5", order:5, time:"17:30–19:00 · ถ้ามีแรง", name:"เดินทางไป Gion / ริม Kamo แล้วเดินสั้น ๆ", jpName:"祇園 / 鴨川", category:"spot", lat:35.0036, lng:135.7765, desc:"เผื่อเดินทาง 17:30–18:15 แล้วเลือกเดิน Gion หรือริม Kamo ระยะสั้น; งดได้ทั้งหมดเมื่อยังเพลีย ไม่เดินขึ้น Kiyomizu คืนนี้ เคารพป้ายห้ามเข้า/ถ่ายภาพ แวะ Gion Tsujiri เฉพาะเมื่อเปิดและคิวสั้น", transportInfo:"รถสาธารณะตามเส้นทางจริง แล้วเดินสั้น ๆ", cost:"ตามจริง", link:"https://www.google.com/maps/search/?api=1&query=Gion+Kyoto", optionalActivities:["งดเที่ยวเย็นได้ทั้งหมดเมื่อเพลีย", "Gion Tsujiri เฉพาะเมื่อเปิดและคิวสั้น"] },
+        { id:"pa-d1-6", order:6, time:"19:00–20:45", name:"มื้อเย็นตามแรง แล้วกลับโรงแรม", jpName:"先斗町 / 河童寿司", category:"food", lat:35.0056, lng:135.7712, desc:"กินใกล้จุดที่อยู่; Pontocho / Kappa Sushi เป็นตัวเลือกถ้ายังไหวและร้านเปิด/คิวเหมาะสม งบอาหารเดิม 2,500–4,000 เยน ไม่จองมื้อที่ยกเลิกยาก; กลับโรงแรมราว 20:00–20:45 หรือกินใกล้โรงแรมแล้วพักต่อ", transportInfo:"เดินทางตามแรงและตำแหน่งร้านจริง", cost:"อาหารประมาณ 2,500–4,000 JPY", link:"https://www.google.com/maps/search/?api=1&query=Pontocho+Kappa+Sushi", choiceNote:"เลือกร้าน Pontocho หรือมื้อใกล้โรงแรมตามแรง" }
       ]
     },
     {
       dayNum: 2,
+      short: "Uji & Nara",
+      routeSummary: "Kyoto → Uji → Nara → Kyoto",
+      critical: "ออกจาก Uji ไม่เกิน 12:30–13:00",
+      risk: "รักษารอบชาที่จองไว้ แล้วเข้าวิหาร Todaiji ก่อนเดินเล่นกับกวาง",
       date: "2 ธ.ค. 2026 (พุธ)",
       title: "Uji: Byodoin + Taiho-an → Nara: Todaiji + กวาง → Kyoto",
       theme: "Uji Tea & Nara",
@@ -304,9 +294,9 @@ const PLAN_A_DATA = {
       routeCoords: [[34.9858,135.7588],[34.8893,135.8077],[34.8890,135.8087],[34.68899,135.83982],[34.6851,135.8430],[34.9858,135.7588]],
       checkpoints: [
         { id:"pa-d2-1", order:1, time:"07:45–08:45", name:"JR Kyoto → JR Uji", jpName:"JR京都駅 → JR宇治駅", navigationQuery:"JR Uji Station, Uji, Kyoto, Japan", category:"transport", lat:34.9858, lng:135.7588, desc:"ออกจากโรงแรมขึ้น JR Nara Line ไป JR Uji; ระวังไม่สับสนกับ Keihan Uji และเผื่อเวลารอรถ/เดิน", transportInfo:"JR Nara Line; รอบและค่าโดยสารตรวจจากผู้ให้บริการ", cost:"รวมในงบรถ 2,000 JPY โดยประมาณ", link:"https://www.google.com/maps/search/?api=1&query=JR+Uji+Station" },
-        { id:"pa-d2-2", order:2, time:"08:45–10:15", name:"Byodoin Temple", jpName:"平等院", category:"spot", lat:34.8893, lng:135.8077, desc:"สวนเปิด 08:45 พิพิธภัณฑ์ 09:00 ตั๋วสวนและพิพิธภัณฑ์ 700 เยน; ภายใน Phoenix Hall เพิ่ม 300 เยน จำกัด 35 คน/รอบตั้งแต่ 16 ต.ค. อาจรอนานขึ้น เลือกรอบที่จบก่อน Taiho-an พลาดรอบแล้วเปลี่ยนเวลาหรือคืนเงินไม่ได้ ถ้ารอบชนพิธีชาให้ชมสวน/พิพิธภัณฑ์เป็นหลัก", transportInfo:"เดินจาก JR Uji", cost:"700 JPY; Phoenix Hall เพิ่ม 300 JPY (ตัวเลือก)", link:"https://www.byodoin.or.jp/guide/" },
-        { id:"pa-d2-3", order:3, time:"ประมาณ 10:30–11:15", name:"Taiho-an Tea House (จองรอบจริง)", jpName:"対鳳庵", lat:34.8890, lng:135.8087, navigationQuery:"Taiho-an, 1-5 Uji Togawa, Uji, Kyoto, Japan", category:"food", desc:"Usucha 1,500 เยน ราว 20–30 นาที; ลงมือชง 3,600 เยน ราว 40 นาที จองก่อนอย่างน้อย 3 วัน วันที่ 2 ธ.ค. ไม่อยู่ในวันปิดที่ประกาศ แต่ยังต้องจองรอบและตรวจชนิดชา ไม่รับประกันที่ว่างหรือ Walk-in; หมุดแผนที่เป็นตำแหน่งโดยประมาณจากที่อยู่ทางการ", transportInfo:"ใช้เวลาตามรอบที่จองจริง", cost:"Usucha 1,500 JPY / ลงมือชง 3,600 JPY", link:"https://www.city.uji.kyoto.jp/map/17359.html" },
-        { id:"pa-d2-4", order:4, time:"11:15–13:00", name:"อาหารกลางวันและ Uji Omotesando", jpName:"宇治 / 宇治川", navigationQuery:"Uji Omotesando, Uji, Kyoto, Japan", category:"food", lat:34.8893, lng:135.8077, desc:"เลือกโซบะมัทฉะและเดินริมแม่น้ำ/ถนน Omotesando สั้น ๆ งบอาหาร 1,500–2,500 เยน; ตั้งเป้าออกจาก Uji ไม่เกิน 12:30–13:00", transportInfo:"เดินในย่าน Uji แล้วกลับ JR Uji", cost:"อาหารประมาณ 1,500–2,500 JPY", link:"https://www.google.com/maps/search/?api=1&query=Uji+Omotesando" },
+        { id:"pa-d2-2", order:2, time:"08:45–10:15", name:"Byodoin Temple", jpName:"平等院", category:"spot", lat:34.8893, lng:135.8077, desc:"สวนเปิด 08:45 พิพิธภัณฑ์ 09:00 ตั๋วสวนและพิพิธภัณฑ์ 700 เยน; ภายใน Phoenix Hall เพิ่ม 300 เยน จำกัด 35 คน/รอบตั้งแต่ 16 ต.ค. อาจรอนานขึ้น ชมด้านในเริ่ม 09:30 ทุก 20 นาที ต้องได้รอบ 09:30 หรือ 09:50 จึงทัน Taiho-an 10:30 พลาดรอบแล้วเปลี่ยนเวลาหรือคืนเงินไม่ได้ ถ้ารอบชนพิธีชาให้ชมสวน/พิพิธภัณฑ์เป็นหลัก", transportInfo:"เดินจาก JR Uji", cost:"700 JPY; Phoenix Hall เพิ่ม 300 JPY (ตัวเลือก)", link:"https://www.byodoin.or.jp/guide/", optionalActivities:["เข้าชมภายใน Phoenix Hall · เพิ่ม 300 เยน"] },
+        { id:"pa-d2-3", order:3, time:"ประมาณ 10:30–11:15", name:"Taiho-an Tea House (จองรอบจริง)", jpName:"対鳳庵", lat:34.8890, lng:135.8087, navigationQuery:"Taiho-an, 1-5 Uji Togawa, Uji, Kyoto, Japan", category:"food", desc:"Usucha 1,500 เยน ราว 20–30 นาที; ลงมือชง 3,600 เยน ราว 40 นาที จองก่อนอย่างน้อย 3 วัน วันที่ 2 ธ.ค. ไม่อยู่ในวันปิดที่ประกาศ แต่ยังต้องจองรอบและตรวจชนิดชา ไม่รับประกันที่ว่างหรือ Walk-in; หมุดแผนที่เป็นตำแหน่งโดยประมาณจากที่อยู่ทางการ", transportInfo:"ใช้เวลาตามรอบที่จองจริง", cost:"Usucha 1,500 JPY / ลงมือชง 3,600 JPY", link:"https://www.city.uji.kyoto.jp/map/17359.html", choiceNote:"เลือก Usucha 1,500 เยน หรือคอร์สลงมือชง 3,600 เยน · ต้องจองรอบจริง" },
+        { id:"pa-d2-4", order:4, time:"11:15–12:15 · มื้อกลางวัน / 12:15–13:45 · เดินทาง Uji → Nara", name:"อาหารกลางวันและ Uji Omotesando", jpName:"宇治 / 宇治川", navigationQuery:"Uji Omotesando, Uji, Kyoto, Japan", category:"food", lat:34.8893, lng:135.8077, desc:"มื้อกลางวันโซบะมัทฉะและเดิน Uji Omotesando/ริมแม่น้ำสั้น ๆ เวลา 11:15–12:15; ตั้งเป้าออกจาก Uji ไม่เกิน 12:30–13:00 แล้วเผื่อรถและเดินทางต่อไป Nara ช่วง 12:15–13:45", transportInfo:"เดินกลับ JR Uji แล้วต่อรถไฟไป Nara; เผื่อรอรถและเดินทาง", cost:"อาหารประมาณ 1,500–2,500 JPY", link:"https://www.google.com/maps/search/?api=1&query=Uji+Omotesando" },
         { id:"pa-d2-5", order:5, time:"13:45–15:00", name:"Todaiji Daibutsuden (Great Buddha Hall)", jpName:"東大寺大仏殿", lat:34.68899, lng:135.83982, navigationQuery:"Todai-ji Daibutsuden, Nara, Japan", category:"spot", desc:"เข้าวิหารก่อนเดินเล่นกวาง ค่าเข้า 800 เยน รับเงินสด; ฤดูหนาววิหารเปิด 08:00–17:00 พิพิธภัณฑ์รับเข้าถึง 16:30 เป็นคนละเวลาบริการ", transportInfo:"JR ไป Nara แล้วต่อรถบัสหรือเดิน; ตรวจสาย/ค่าโดยสารจริง", cost:"800 JPY (เตรียมเงินสด)", link:"https://www.todaiji.or.jp/en/access/" },
         { id:"pa-d2-6", order:6, time:"15:00–16:15", name:"Nara Park (พื้นที่เดินชมกวาง)", jpName:"奈良公園", lat:34.6851, lng:135.8430, navigationQuery:"Nara Park, Nara, Japan", category:"nature", desc:"เดินเล่นในเขตสวนตามแสงและสภาพอากาศ ระวังอาหารและของในมือใกล้กวาง; หมุดแผนที่แสดงบริเวณสวนโดยประมาณ ไม่ใช่ทางเข้าจุดเดียว", transportInfo:"เดินกลับสถานีหรือใช้รถบัสเมื่อเหนื่อย", cost:"ตามจริง", link:"https://www.pref.nara.lg.jp/n113/57798.html" },
         { id:"pa-d2-7", order:7, time:"16:15–20:00", name:"กลับ Kyoto และมื้อเย็นรอบสถานี", jpName:"奈良 → 京都", category:"food", lat:34.9873, lng:135.7607, desc:"เผื่อเดินทางกลับ Kyoto รวมรอรถ; Shinpuku Saikan เป็นตัวเลือกเมื่อยืนยันว่าเปิด ณ 3 พ.ย. ยังไม่พบประกาศวันหยุดเดือน ธ.ค. 2026 (หยุดพุธบางสัปดาห์ รับเงินสด) สำรอง Kyoto Ramen Koji / Porta", transportInfo:"รถไฟกลับ Kyoto; ค่าโดยสารตรวจตามเส้นทางจริง", cost:"อาหารตามจริง", link:"https://shinpukusaikan.net/" }
@@ -314,42 +304,53 @@ const PLAN_A_DATA = {
     },
     {
       dayNum: 3,
+      short: "Arashiyama",
+      routeSummary: "Kyoto → Arashiyama → Randen → Kinkakuji → Shimogamo (งดได้)",
+      critical: "เลือกร้านหลักหนึ่งร้าน · ออกจาก Kinkakuji ไม่เกิน 15:30",
+      risk: "เลือก Yoshimura หรือ eX café ถ้ารอเกิน 30 นาทีให้เปลี่ยนร้าน; ออกจาก Kinkakuji หลัง 15:30 ให้งด Shimogamo",
       date: "3 ธ.ค. 2026 (พฤหัสบดี)",
-      title: "Arashiyama → Randen เปลี่ยนที่ Katabiranotsuji → Kinkakuji",
-      theme: "Arashiyama & Kinkakuji",
+      title: "Arashiyama → Randen เปลี่ยนที่ Katabiranotsuji → Kinkakuji → Shimogamo ช่วงสั้น",
+      theme: "Arashiyama, Kinkakuji & Shimogamo",
       color: "#fdcb6e",
-      totalFareJPY: 1200,
-      routeCoords: [[34.9858,135.7588],[35.0170,135.6713],[35.0155,135.6777],[35.0157,135.6775],[35.0394,135.7292],[34.9858,135.7588]],
+      totalFareJPY: 1500,
+      routeCoords: [[34.9858,135.7588],[35.0170,135.6713],[35.0155,135.6777],[35.0157,135.6775],[35.0394,135.7292],[35.0389,135.773],[34.9858,135.7588]],
       checkpoints: [
         { id:"pa-d3-1", order:1, time:"07:45–11:15", name:"Bamboo Grove → Tenryuji Garden → Togetsukyo Bridge", jpName:"嵐山竹林 / 天龍寺 / 渡月橋", category:"nature", lat:35.0170, lng:135.6713, desc:"JR Sagano Line ไป Saga-Arashiyama แล้วเดินชมป่าไผ่ สวน Tenryuji ค่าเข้า 500 เยน เปิด 08:30 (เปิดพิเศษ 07:30 จบ 30 พ.ย. ไม่ครอบคลุมวันนี้) และสะพาน Togetsukyo", transportInfo:"JR Sagano Line; ตรวจรอบและค่าโดยสารจริง", cost:"Tenryuji Garden 500 JPY", link:"https://www.google.com/maps/search/?api=1&query=Arashiyama+Bamboo+Grove" },
-        { id:"pa-d3-2", order:2, time:"11:15–12:45", name:"เลือกร้านหลักหนึ่งร้าน: Yoshimura หรือ eX café", jpName:"嵐山よしむら / eXカフェ", category:"food", lat:35.0155, lng:135.6777, desc:"Yoshimura โซบะตั้งงบ 1,800–3,000 เยน ตรวจเมนูพิเศษช่วง 23 ต.ค.–7 ธ.ค. และราคาจริง หรือ eX café ดังโงะ/มัทฉะราว 1,500 เยนพร้อมมื้อกลางวันสั้นเพิ่ม; ร้านที่สองแวะเมื่อคิวสั้น รอเกิน 30 นาทีให้เปลี่ยนร้าน", transportInfo:"เดินใน Arashiyama", cost:"อาหารตามร้านที่เลือก", link:"https://www.google.com/maps/search/?api=1&query=Arashiyama+Yoshimura" },
-        { id:"pa-d3-3", order:3, time:"13:00–14:15", name:"Randen ไป Kitanohakubaicho", jpName:"嵐電", category:"transport", lat:35.0157, lng:135.6775, desc:"ขึ้น Randen จาก Arashiyama เปลี่ยนขบวนที่ Katabiranotsuji ไป Kitanohakubaicho แล้วต่อรถสาธารณะสู่วัดทอง ตรวจสายและเวลาเดินรถจริง", transportInfo:"Randen + ต่อรถสาธารณะ; fare ตามจริง", cost:"รวมในงบรถ 1,200 JPY โดยประมาณ", link:"https://www.google.com/maps/search/?api=1&query=Katabiranotsuji+Station" },
-        { id:"pa-d3-4", order:4, time:"14:15–15:30", name:"Kinkakuji", jpName:"金閣寺", category:"spot", lat:35.0394, lng:135.7292, desc:"ชมวัดทอง งบเข้า 500 เยน แล้วกลับ Kyoto Station เผื่อรอรถ/รถติด", transportInfo:"ต่อรถสาธารณะจาก Randen; ตรวจสาย/ค่าโดยสารจริง", cost:"500 JPY", link:"https://www.google.com/maps/search/?api=1&query=Kinkakuji+Temple" },
-        { id:"pa-d3-5", order:5, time:"17:00–19:00", name:"Kyoto Ramen Koji หรือ Kyotofu Fujino", jpName:"京都拉麺小路 / 京豆富 不二乃", category:"food", lat:34.9858, lng:135.7588, desc:"เลือกร้านเดียวในสถานี Kyoto แล้วกลับพัก — Night 3; Honke Daiichi Asahi สาขาหลักหยุดพฤหัสบดี จึงไม่ใช้เป็นร้านสำรองวันนี้", transportInfo:"กลับ Kyoto Station ตามเส้นทางจริง", cost:"อาหารตามจริง", link:"https://www.google.com/maps/search/?api=1&query=Kyoto+Ramen+Street" }
+        { id:"pa-d3-2", order:2, time:"11:15–12:45", name:"เลือกร้านหลักหนึ่งร้าน: Yoshimura หรือ eX café", jpName:"嵐山よしむら / eXカフェ", category:"food", lat:35.0155, lng:135.6777, desc:"Yoshimura โซบะตั้งงบ 1,800–3,000 เยน ตรวจเมนูพิเศษช่วง 23 ต.ค.–7 ธ.ค. และราคาจริง หรือ eX café ดังโงะ/มัทฉะราว 1,500 เยนพร้อมมื้อกลางวันสั้นเพิ่ม; ร้านที่สองแวะเมื่อคิวสั้น รอเกิน 30 นาทีให้เปลี่ยนร้าน", transportInfo:"เดินใน Arashiyama", cost:"อาหารตามร้านที่เลือก", link:"https://www.google.com/maps/search/?api=1&query=Arashiyama+Yoshimura", choiceNote:"เลือกร้านหลักหนึ่งร้าน: Yoshimura หรือ eX café; ร้านที่สองแวะเมื่อคิวสั้นเท่านั้น" },
+        { id:"pa-d3-3", order:3, time:"13:00–14:15", name:"Randen ไป Kitanohakubaicho", jpName:"嵐電", category:"transport", lat:35.0157, lng:135.6775, desc:"ขึ้น Randen จาก Arashiyama เปลี่ยนขบวนที่ Katabiranotsuji ไป Kitanohakubaicho แล้วต่อรถสาธารณะสู่วัดทอง ตรวจสายและเวลาเดินรถจริง", transportInfo:"Randen + ต่อรถสาธารณะ; fare ตามจริง", cost:"รวมในงบรถ 1,500 JPY โดยประมาณ", link:"https://www.google.com/maps/search/?api=1&query=Katabiranotsuji+Station" },
+        { id:"pa-d3-4", order:4, time:"14:15–15:15", name:"Kinkakuji", jpName:"金閣寺", category:"spot", lat:35.0394, lng:135.7292, desc:"ชมวัดทอง งบเข้า 500 เยน แล้วต่อรถบัสไป Shimogamo; ออกหลัง 15:30 ให้งดศาลเจ้าแล้วกลับ Kyoto Station", transportInfo:"ต่อรถสาธารณะจาก Randen; ตรวจสาย/ค่าโดยสารจริง", cost:"500 JPY", link:"https://www.google.com/maps/search/?api=1&query=Kinkakuji+Temple" },
+        { id:"pa-d3-6", order:5, time:"15:15–16:00 เดินทาง / 16:00–16:50 ศาลเจ้า", name:"Shimogamo Shrine / Tadasu no Mori ช่วงสั้น", jpName:"下鴨神社 / 糺の森", category:"spot", lat:35.0389, lng:135.773, desc:"ต่อจากวัดทองเพราะอยู่โซนเหนือเหมือนกัน ชมศาลเจ้าและป่าช่วงสั้น เข้าสักการะฟรี 06:30–17:00 ชมพิเศษจ่ายแยก; งดได้ทั้งหมดเมื่อออกจาก Kinkakuji หลัง 15:30; ย้ายมาจาก Day 4 เมื่อ 14 พ.ย. ใช้แทน Ginkakuji / Omen / Philosopher’s Path; ป่ายังเขียว ณ 14 พ.ย. ปกติสวยต้น–กลาง ธ.ค.", transportInfo:"City Bus สาย 205 จาก Kinkakuji-michi → Shimogamo-jinja-mae; เวลาเป็นค่าประมาณ ตรวจรอบและค่าโดยสารจริง", cost:"เข้าสักการะ 0 JPY; ชมพิเศษจ่ายแยก", link:"https://www.shimogamo-jinja.or.jp/prayers/question", choiceNote:"จุดต่อท้ายที่งดได้ · ศาลเจ้าปิด 17:00" },
+        { id:"pa-d3-5", order:6, time:"17:45–19:15", name:"Kyoto Ramen Koji หรือ Kyotofu Fujino", jpName:"京都拉麺小路 / 京豆富 不二乃", category:"food", lat:34.9858, lng:135.7588, desc:"เลือกร้านเดียวในสถานี Kyoto แล้วกลับพัก — Night 3; Honke Daiichi Asahi สาขาหลักหยุดพฤหัสบดี จึงไม่ใช้เป็นร้านสำรองวันนี้", transportInfo:"จาก Shimogamo กลับ Kyoto Station ด้วยรถบัส หรือเดินไป Demachiyanagi แล้วต่อรถไฟ; ตรวจเส้นทางจริง", cost:"อาหารตามจริง", link:"https://www.google.com/maps/search/?api=1&query=Kyoto+Ramen+Street" }
       ]
     },
     {
       dayNum: 4,
+      short: "East Kyoto",
+      routeSummary: "Kiyomizu → Asahido / ถนนเก่า → กลางวันแถว Gion → Nanzenji → พักยาว → Eikando",
+      critical: "Kiyomizu / Eikando เป็นจุดหลัก · ถึง Eikando ก่อน 17:30",
+      risk: "เมื่อช้าลดเวลาเดินถนนเก่าและ Nanzenji ก่อน รักษามื้อกลางวันและเวลานั่งพัก",
       date: "4 ธ.ค. 2026 (ศุกร์)",
-      title: "Kiyomizu → Asahido / ถนนเก่า → Shimogamo Shrine → Nanzenji → พัก → Eikando รอบค่ำ",
-      theme: "Kiyomizu, Shimogamo & Eikando",
+      title: "Kiyomizu → Asahido / ถนนเก่า → Nanzenji → พักยาว → Eikando รอบค่ำ",
+      theme: "Kiyomizu, Nanzenji & Eikando",
       color: "#6c5ce7",
-      totalFareJPY: 1700,
-      routeCoords: [[34.9878,135.7612],[34.9949,135.785],[34.9958,135.7828],[35.0389,135.773],[35.0301,135.7723],[35.0112,135.7939],[35.0118,135.7895],[35.0144,135.7956],[35.0076,135.7709],[34.9878,135.7612]],
+      totalFareJPY: 1400,
+      routeCoords: [[34.9878,135.7612],[34.9949,135.785],[34.9958,135.7828],[35.0037,135.7786],[35.0112,135.7939],[35.0118,135.7895],[35.0144,135.7956],[35.0076,135.7709],[34.9878,135.7612]],
       checkpoints: [
         {"id":"pa-d4-1","order":1,"time":"07:15–09:20 · รวมเดินทาง","name":"Kiyomizu-dera เช้า (ย้ายจาก Day 1)","jpName":"清水寺","category":"spot","lat":34.9949,"lng":135.785,"desc":"ออกโรงแรม 07:15 เผื่อรถและเดินขึ้นเนิน เข้าวัดประมาณ 08:00–09:20 วัดเปิด 06:00 ค่าเข้า 500 เยน; ไฟประดับฤดูใบไม้แดงปี 2026 จบ 30 พ.ย. จึงชมเช้าตามแผน รักษาเวลานั่งพักช่วงบ่าย","transportInfo":"รถสาธารณะและเดินขึ้นเนิน; แท็กซี่คิดเพิ่มหากเลือกใช้","cost":"500 JPY","link":"https://www.kiyomizudera.or.jp/en/location/"},
-        {"id":"pa-d4-9","order":2,"time":"09:30–10:15","name":"Asahido + Sannenzaka / Ninenzaka แบบสั้น","jpName":"朝日堂 / 三年坂 / 二寧坂","category":"shopping","lat":34.9958,"lng":135.7828,"desc":"ย้ายจาก Day 1; Asahido สาขาหลักเปิด 09:30–18:00 แวะ 15–25 นาทีแล้วเดินถนนเก่าสั้น ๆ ไม่เพิ่มคาเฟ่คิวยาวหรือกิจกรรมปั้นเซรามิก","transportInfo":"เดินลงจาก Kiyomizu แล้วไปจุดขึ้นรถ","cost":"ซื้อของตามจริง","link":"https://www.asahido.co.jp/shops/"},
-        {"id":"pa-d4-2","order":3,"time":"10:15–11:30 เดินทาง / 11:30–12:30 ศาลเจ้า","name":"Shimogamo Shrine / Tadasu no Mori ช่วงสั้น","jpName":"下鴨神社 / 糺の森","category":"spot","lat":35.0389,"lng":135.773,"desc":"เดินลงไป Keihan Kiyomizu-gojo → Demachiyanagi แล้วเดินเข้าสู่ศาลเจ้า เผื่อเดินทางรวม 75 นาที; ชมศาลเจ้าและป่าช่วงสั้น 11:30–12:30 เข้าสักการะฟรี 06:30–17:00 ชมพิเศษจ่ายแยก ใช้แทน Ginkakuji / Omen / Philosopher’s Path โดยเก็บวัดทอง Day 3","transportInfo":"เดินลงเนิน → Keihan Kiyomizu-gojo → Demachiyanagi → เดิน; เลือกขบวนที่จอด Kiyomizu-gojo","cost":"เข้าสักการะ 0 JPY; ชมพิเศษจ่ายแยก","link":"https://www.shimogamo-jinja.or.jp/prayers/question"},
-        {"id":"pa-d4-3","order":4,"time":"12:30–13:30","name":"มื้อกลางวันและนั่งพักแถว Shimogamo / Demachiyanagi","jpName":"下鴨 / 出町柳","category":"food","lat":35.0301,"lng":135.7723,"desc":"รวมเวลาเดินออกจากศาลเจ้า เลือกร้านคิวสั้นและนั่งพัก งบประมาณ 1,000–2,000 เยน ไม่ผูกกับร้านที่ต้องรอนาน","transportInfo":"เดินออกจาก Shimogamo มาทาง Demachiyanagi ตามร้านจริง","cost":"ประมาณ 1,000–2,000 JPY","link":"https://www.google.com/maps/search/?api=1&query=restaurants+Demachiyanagi+Kyoto"},
-        {"id":"pa-d4-4","order":5,"time":"13:30–14:30","name":"เดินทาง Shimogamo / Demachiyanagi → Nanzenji","jpName":"出町柳 → 三条 → 蹴上 → 南禅寺","category":"transport","lat":35.0301,"lng":135.7723,"desc":"Keihan Demachiyanagi → Sanjo แล้วเดินเชื่อม Subway Sanjo Keihan → Keage → เดินไป Nanzenji เผื่อรวม 60 นาที ไม่เดินทั้งระยะจากศาลเจ้า","transportInfo":"Keihan + Subway Tozai + เดิน; ตรวจขบวนจริง","cost":"รวมในงบรถ Day 4 ประมาณ 1,700 JPY","link":"https://www2.city.kyoto.lg.jp/kotsu/tikadia/hyperdia/line01.htm"},
-        {"id":"pa-d4-5","order":6,"time":"14:30–15:30","name":"Nanzenji และ Suirokaku","jpName":"南禅寺 / 水路閣","category":"spot","lat":35.0112,"lng":135.7939,"desc":"แผนหลักชมภายนอก; อาคาร/สวนที่เก็บค่าเข้าเป็นตัวเลือก","transportInfo":"เดินจาก Keage หลังนั่งรถจาก Demachiyanagi","cost":"ภายนอก 0 JPY; ส่วนอื่นตามจริง","link":"https://www.google.com/maps/search/?api=1&query=Nanzenji+Temple"},
-        {"id":"pa-d4-6","order":7,"time":"15:30–16:30","name":"นั่งพักขาแถว Nanzenji","jpName":"ブルーボトル / 無鄰菴","category":"nature","lat":35.0118,"lng":135.7895,"desc":"รักษาเวลานั่งพักไว้ เลือก Blue Bottle / คาเฟ่ใกล้เคียงตามคิวเป็นหลัก; หากเลือก Murin-an แทนคาเฟ่ ให้จองรอบ 16:00 ตามที่ว่างและออกประมาณ 16:30 ค่าเข้า 1,500 เยน ตรวจแพ็กเกจเครื่องดื่มแยก เปิดจองก่อน 30 วัน ยกเลิกเสียค่าธรรมเนียม 100% หากต้องการชมสวนนานให้ลดจุดก่อนหน้าและจองรอบเร็วขึ้น","transportInfo":"เดินสั้น ๆ ในย่าน Nanzenji","cost":"คาเฟ่ตามจริง / Murin-an ค่าเข้า 1,500 JPY (ตัวเลือก)","link":"https://murin-an.jp/info/","choiceNote":"คาเฟ่เป็นหลัก; Murin-an จองรอบ 16:00 ตามที่ว่าง ออกประมาณ 16:30 เพื่อไป Eikando","optionalActivities":["Murin-an ค่าเข้า 1,500 เยน · ยกเลิกเสียค่าธรรมเนียม 100%"]},
-        {"id":"pa-d4-7","order":8,"time":"16:30–19:00","name":"Eikando รอบค่ำ","jpName":"永観堂 禅林寺","category":"spot","lat":35.0144,"lng":135.7956,"desc":"เผื่อเดินจากจุดพัก 20–30 นาทีและคิว; ประกาศปี 2026 ระบุ 20 พ.ย.–6 ธ.ค. รับเข้าชม 17:30–20:30 ปิด 21:00 ค่าเข้า 1,000 เยน รอบกลางวัน/กลางคืนแยกตั๋ว ตรวจประกาศก่อนวันจริง","transportInfo":"เดิน 20–30 นาทีจากจุดพักโดยประมาณ","cost":"1,000 JPY","link":"https://www.eikando.or.jp/osirase.html"},
-        {"id":"pa-d4-8","order":9,"time":"ประมาณ 19:00–21:45","name":"เดินทางและมื้อเย็น Menami (ถ้าจองได้)","jpName":"めなみ","category":"food","lat":35.0076,"lng":135.7709,"desc":"เผื่อเดินไป Keage ต่อ Subway Tozai → Sanjo Keihan; เลือกรอบ Menami ที่เผื่อออกจาก Eikando ร้านเปิด 15:00–22:00 สั่งสุดท้าย 21:30 หยุดพุธ รับจองทางโทรศัพท์เท่านั้น หากจองไม่ได้ให้เลือกร้านสำรอง; ขากลับขึ้น Subway จาก Kyoto Shiyakusho-mae เปลี่ยนสายที่ Karasuma Oike แล้วไป Kyoto","transportInfo":"เดินไป Keage → Subway Tozai → Sanjo Keihan; ขากลับ Kyoto Shiyakusho-mae → เปลี่ยนสาย Karasuma Oike → Kyoto","cost":"มื้อเย็นเดิมประมาณ 2,500–4,000 JPY","link":"https://www.menami.jp/"}
+        {"id":"pa-d4-9","order":2,"time":"09:30–11:00","name":"Asahido + Sannenzaka / Ninenzaka","jpName":"朝日堂 / 三年坂 / 二寧坂","category":"shopping","lat":34.9958,"lng":135.7828,"desc":"ย้ายจาก Day 1; Asahido สาขาหลักเปิด 09:30–18:00 แวะ 15–25 นาทีแล้วเดินถนนเก่าตามแรงโดยไม่ต้องเร่ง ไม่เพิ่มคาเฟ่คิวยาวหรือกิจกรรมปั้นเซรามิก","transportInfo":"เดินลงจาก Kiyomizu แล้วเดินต่อทาง Yasaka Shrine","cost":"ซื้อของตามจริง","link":"https://www.asahido.co.jp/shops/"},
+        {"id":"pa-d4-3","order":3,"time":"11:00–12:30","name":"มื้อกลางวันและนั่งพักแถว Gion / Higashiyama","jpName":"祇園 / 東山","category":"food","lat":35.0037,"lng":135.7786,"desc":"เลือกร้านคิวสั้นและนั่งพัก งบประมาณ 1,000–2,000 เยน; เดินลงจากถนนเก่าทาง Yasaka Shrine / Maruyama Park ตามแรง ไม่ผูกกับร้านที่ต้องรอนาน","transportInfo":"เดินจาก Sannenzaka / Ninenzaka ตามร้านจริง","cost":"ประมาณ 1,000–2,000 JPY","link":"https://www.google.com/maps/search/?api=1&query=restaurants+Gion+Higashiyama+Kyoto"},
+        {"id":"pa-d4-5","order":4,"time":"12:30–13:15 เดินทาง / 13:15–14:30 วัด","name":"Nanzenji และ Suirokaku","jpName":"南禅寺 / 水路閣","category":"spot","lat":35.0112,"lng":135.7939,"desc":"แผนหลักชมภายนอก; อาคาร/สวนที่เก็บค่าเข้าเป็นตัวเลือก","transportInfo":"เดินไป Subway Higashiyama → Keage (สาย Tozai หนึ่งสถานี) แล้วเดิน เผื่อรวมประมาณ 45 นาที; ตรวจขบวนจริง","cost":"ภายนอก 0 JPY; ส่วนอื่นตามจริง","link":"https://www.google.com/maps/search/?api=1&query=Nanzenji+Temple"},
+        {"id":"pa-d4-6","order":5,"time":"14:30–16:30","name":"พักยาวแถว Nanzenji","jpName":"ブルーボトル / 無鄰菴","category":"nature","lat":35.0118,"lng":135.7895,"desc":"รักษาเวลานั่งพักไว้ เลือก Blue Bottle / คาเฟ่ใกล้เคียงตามคิวเป็นหลัก; หากเลือก Murin-an แทนคาเฟ่ ให้จองรอบ 16:00 ตามที่ว่างและออกประมาณ 16:30 ค่าเข้า 1,500 เยน ตรวจแพ็กเกจเครื่องดื่มแยก เปิดจองก่อน 30 วัน ยกเลิกเสียค่าธรรมเนียม 100% หากต้องการชมสวนนานให้ลดจุดก่อนหน้าและจองรอบเร็วขึ้น","transportInfo":"เดินสั้น ๆ ในย่าน Nanzenji","cost":"คาเฟ่ตามจริง / Murin-an ค่าเข้า 1,500 JPY (ตัวเลือก)","link":"https://murin-an.jp/info/","choiceNote":"คาเฟ่เป็นหลัก; Murin-an จองรอบ 16:00 ตามที่ว่าง ออกประมาณ 16:30 เพื่อไป Eikando","optionalActivities":["Murin-an ค่าเข้า 1,500 เยน · ยกเลิกเสียค่าธรรมเนียม 100%"]},
+        {"id":"pa-d4-7","order":6,"time":"16:30–19:00","name":"Eikando รอบค่ำ","jpName":"永観堂 禅林寺","category":"spot","lat":35.0144,"lng":135.7956,"desc":"เผื่อเดินจากจุดพัก 20–30 นาทีและคิว; ประกาศปี 2026 ระบุ 20 พ.ย.–6 ธ.ค. รับเข้าชม 17:30–20:30 ปิด 21:00 ค่าเข้า 1,000 เยน รอบกลางวัน/กลางคืนแยกตั๋ว ตรวจประกาศก่อนวันจริง","transportInfo":"เดิน 20–30 นาทีจากจุดพักโดยประมาณ","cost":"1,000 JPY","link":"https://www.eikando.or.jp/osirase.html"},
+        {"id":"pa-d4-8","order":7,"time":"ประมาณ 19:00–21:45","name":"เดินทางและมื้อเย็น Menami (ถ้าจองได้)","jpName":"めなみ","category":"food","lat":35.0076,"lng":135.7709,"desc":"เผื่อเดินไป Keage ต่อ Subway Tozai → Sanjo Keihan; เลือกรอบ Menami ที่เผื่อออกจาก Eikando ร้านเปิด 15:00–22:00 สั่งสุดท้าย 21:30 หยุดพุธ รับจองทางโทรศัพท์เท่านั้น หากจองไม่ได้ให้เลือกร้านสำรอง; ขากลับขึ้น Subway จาก Kyoto Shiyakusho-mae เปลี่ยนสายที่ Karasuma Oike แล้วไป Kyoto","transportInfo":"เดินไป Keage → Subway Tozai → Sanjo Keihan; ขากลับ Kyoto Shiyakusho-mae → เปลี่ยนสาย Karasuma Oike → Kyoto","cost":"มื้อเย็นเดิมประมาณ 2,500–4,000 JPY","link":"https://www.menami.jp/"}
       ]
     },
     {
       dayNum: 5,
+      short: "Osaka day",
+      routeSummary: "Kyoto → Osaka Castle → Kaiyukan → Dotonbori → Kyoto",
+      critical: "Kaiyukan เป้าหมายรอบ 13:00 · กลับ Kyoto 60–90 นาที",
+      risk: "ซื้อตั๋วระบุวัน/เวลาตามที่ว่าง; เมื่อช้าลดเดินสวนปราสาทก่อน",
       date: "5 ธ.ค. 2026 (เสาร์)",
       title: "Osaka Castle → Osaka Aquarium Kaiyukan → Dotonbori → Kyoto",
       theme: "Osaka Day Trip",
@@ -358,16 +359,20 @@ const PLAN_A_DATA = {
       routeCoords: [[34.9858,135.7588],[34.6873,135.5262],[34.6545,135.429],[34.6687,135.5013],[34.9858,135.7588]],
       checkpoints: [
         {"id":"pa-d5-1","order":1,"time":"08:00–09:30","name":"เดินทาง Kyoto → Osaka Castle","jpName":"JR京都 → 大阪城","category":"transport","lat":34.9858,"lng":135.7588,"desc":"JR Special Rapid Kyoto → Osaka แล้ว JR Loop Line → Osakajokoen เผื่อเดินเข้าสวนและรอรถ","transportInfo":"JR Special Rapid + JR Loop Line; ตรวจขบวนจริง","cost":"รวมในงบรถ 2,500 JPY โดยประมาณ","link":"https://www.google.com/maps/search/?api=1&query=Kyoto+Station"},
-        {"id":"pa-d5-2","order":2,"time":"09:30–11:00","name":"Osaka Castle Park / วิวปราสาท","jpName":"大阪城公園","category":"spot","lat":34.6873,"lng":135.5262,"desc":"เน้นสวนทั่วไป คูน้ำและปราสาทภายนอกฟรี แล้วออกทาง Morinomiya; หากเข้า Tenshukaku 1,200 เยน ให้ใช้แทนเดินสวนยาว เปิด 09:00–18:00 รับถึง 17:30 เผื่อคิวให้ทัน Kaiyukan ไม่เพิ่ม Nishinomaru ในแผนหลัก","transportInfo":"เดินผ่านปราสาทออกทาง Morinomiya ไม่วนครบสวน","cost":"สวนทั่วไปฟรี; Tenshukaku 1,200 JPY เป็นตัวเลือก","link":"https://www.osakacastle.net/guide/"},
+        {"id":"pa-d5-2","order":2,"time":"09:30–11:00","name":"Osaka Castle Park / วิวปราสาท","jpName":"大阪城公園","category":"spot","lat":34.6873,"lng":135.5262,"desc":"เน้นสวนทั่วไป คูน้ำและปราสาทภายนอกฟรี แล้วออกทาง Morinomiya; หากเข้า Tenshukaku 1,200 เยน ให้ใช้แทนเดินสวนยาว เปิด 09:00–18:00 รับถึง 17:30 เผื่อคิวให้ทัน Kaiyukan ไม่เพิ่ม Nishinomaru ในแผนหลัก","transportInfo":"เดินผ่านปราสาทออกทาง Morinomiya ไม่วนครบสวน","cost":"สวนทั่วไปฟรี; Tenshukaku 1,200 JPY เป็นตัวเลือก","link":"https://www.osakacastle.net/guide/","optionalActivities":["ขึ้น Tenshukaku 1,200 เยนแทนเดินสวนยาว · เผื่อคิวให้ทัน Kaiyukan"]},
         {"id":"pa-d5-6","order":3,"time":"11:00–12:00","name":"เดินทาง Osaka Castle → Kaiyukan","jpName":"森ノ宮 → 大阪港","category":"transport","lat":34.6818,"lng":135.5247,"desc":"เดินไป Morinomiya แล้ว Chuo Line ตรงไป Osakako; จากทางออก 1 เดินประมาณ 5 นาทีถึง Kaiyukan เผื่อเดินออกจากสวนและรอรถ","transportInfo":"Osaka Metro Chuo Line: Morinomiya → Osakako","cost":"รวมในงบรถรายวัน","link":"https://www.kaiyukan.com/info/access/"},
         {"id":"pa-d5-7","order":4,"time":"12:00–13:00","name":"มื้อกลางวันและพักแถว Tempozan","jpName":"天保山","category":"food","lat":34.6564,"lng":135.4306,"desc":"เลือกร้านคิวสั้นแถว Tempozan Marketplace และนั่งพักก่อนเข้ารอบ Kaiyukan ไม่เพิ่มชิงช้าสวรรค์หรือเรือเที่ยว","transportInfo":"เดินใกล้ Kaiyukan","cost":"อาหารประมาณ 1,000–2,000 JPY","link":"https://www.kaiyukan.com/"},
-        {"id":"pa-d5-3","order":5,"time":"13:00–15:30","name":"Osaka Aquarium Kaiyukan","jpName":"海遊館","category":"spot","lat":34.6545,"lng":135.429,"desc":"เผื่อชม 2.5 ชั่วโมง เลือก e-ticket วันที่ 5 ธ.ค. รอบเป้าหมาย 13:00 ตามที่ว่าง; ราคาเปลี่ยนตามวัน ตั้งงบเผื่อ 3,500 เยน ไม่ใช่ราคายืนยันของวันที่ 5 ธ.ค. ตรวจราคา เวลาเปิดและที่ว่างจริงก่อนซื้อ ตั๋วหน้างานอาจต้องรอรอบ","transportInfo":"เดินจาก Tempozan / Osakako ทางออก 1 ประมาณ 5 นาที","cost":"ตั้งงบเผื่อ 3,500 JPY; ปรับตามราคาจริง","link":"https://www.kaiyukan.com/info/ticket/kaiyukan/"},
+        {"id":"pa-d5-3","order":5,"time":"13:00–15:30","name":"Osaka Aquarium Kaiyukan","jpName":"海遊館","category":"spot","lat":34.6545,"lng":135.429,"desc":"เผื่อชม 2.5 ชั่วโมง เลือก e-ticket วันที่ 5 ธ.ค. รอบเป้าหมาย 13:00 ตามที่ว่าง; ราคาเปลี่ยนตามวัน ตั้งงบเผื่อ 3,500 เยน ไม่ใช่ราคายืนยันของวันที่ 5 ธ.ค. ตรวจราคา เวลาเปิดและที่ว่างจริงก่อนซื้อ ตั๋วหน้างานอาจต้องรอรอบ","transportInfo":"เดินจาก Tempozan / Osakako ทางออก 1 ประมาณ 5 นาที","cost":"ตั้งงบเผื่อ 3,500 JPY; ปรับตามราคาจริง","link":"https://www.kaiyukan.com/info/ticket/kaiyukan/","choiceNote":"รอบเป้าหมาย 13:00 ตามที่ว่าง · ตรวจราคาและเวลาเปิดวันที่ 5 ธ.ค. ก่อนซื้อ"},
         {"id":"pa-d5-4","order":6,"time":"15:30–16:30 เดินทาง / 16:30–19:15 Dotonbori","name":"Dotonbori / Glico Sign และมื้อเย็น","jpName":"道頓堀","category":"shopping","lat":34.6687,"lng":135.5013,"desc":"Osakako → Chuo Line → Hommachi เปลี่ยน Midosuji Line ไป Namba แล้วเดินเข้า Dotonbori; เดินริมคลอง ถ่ายป้ายไฟ กิน Takoyaki / Okonomiyaki ตามคิว เช่น Wanaka หรือ Mizuno รอเกิน 30 นาทีเปลี่ยนร้าน ไม่เพิ่ม Shinsaibashi กลับเข้ามา","transportInfo":"Osakako → Hommachi → Namba แล้วเดิน","cost":"อาหารตามตัวเลือก รวมในงบอาหาร","link":"https://www.google.com/maps/search/?api=1&query=Dotonbori+Glico+Sign"},
         {"id":"pa-d5-5","order":7,"time":"19:15–20:45","name":"กลับ Kyoto","jpName":"大阪 → 京都","category":"transport","lat":34.9858,"lng":135.7588,"desc":"เดินไป Namba → Metro Umeda → เชื่อม JR Osaka → JR Special Rapid Kyoto; เผื่อ 60–90 นาที กลับเร็วขึ้นได้เมื่อเหนื่อย — Night 5","transportInfo":"Metro + JR; ตรวจรอบจริง","cost":"รวมในงบรถ 2,500 JPY โดยประมาณ","link":"https://www.google.com/maps/search/?api=1&query=Kyoto+Station"}
       ]
     },
     {
       dayNum: 6,
+      short: "กลับไทย",
+      routeSummary: "โรงแรม → Fushimi ช่วงล่าง → Nishiki แบบสั้น → รับกระเป๋า → KIX T2",
+      critical: "ออกจาก Nishiki ไม่เกิน 11:15 · ถึง T2 ไม่เกิน 16:00",
+      risk: "ออกจาก Fushimi หลัง 09:30 ให้งดตลาด; กลับโรงแรมราว 12:00 รับกระเป๋า/เข้าสถานี 12:00–13:00",
       date: "6 ธ.ค. 2026 (อาทิตย์)",
       title: "Fushimi ช่วงล่าง → Nishiki แบบสั้น → รับกระเป๋า → Haruka → KIX T2",
       theme: "Fushimi Inari, Nishiki & Return Flight",
@@ -377,7 +382,7 @@ const PLAN_A_DATA = {
       checkpoints: [
         { id:"pa-d6-1", order:1, time:"07:30–08:00", name:"เช็คเอาท์และฝากกระเป๋า", jpName:"チェックアウト", category:"transport", lat:34.9878, lng:135.7612, desc:"เช็คเอาท์และยืนยันเวลารับกระเป๋ากับโรงแรม เช็คเอาท์กำหนด 10:00; หากฝนหนักหรือรถมีปัญหาให้ตัด Fushimi และ Nishiki แล้วอยู่รอบสถานี", transportInfo:"เดินไป JR Kyoto Station", cost:"0 JPY (ยืนยันนโยบายฝากกระเป๋า)", link:"https://www3.apahotel.com/hotel/kansai/kyoto/kyoto-ekihigashi/" },
         { id:"pa-d6-2", order:2, time:"08:00–09:15 · รวมเดินทาง", name:"Fushimi Inari ช่วงล่างแบบสั้น", jpName:"伏見稲荷大社", category:"spot", lat:34.9671, lng:135.7727, desc:"JR Nara Line ที่จอด Inari; ชมศาลเจ้า/โทริอิช่วงล่าง 08:30–09:15 ไม่ขึ้นยอดเขา ถ้าอยากเดินนานให้งด Nishiki; ออกจาก Fushimi หลัง 09:30 ให้กลับ Kyoto Station โดยไม่แวะตลาด", transportInfo:"JR Kyoto → Inari; จากนั้นเดินไป Keihan Fushimi-inari เมื่อต่อ Nishiki", cost:"รวมในงบรถ 3,300 JPY โดยประมาณ", link:"https://www.google.com/maps/search/?api=1&query=Fushimi+Inari+Taisha" },
-        { id:"pa-d6-3", order:3, time:"09:15–12:00 · รวมเดินทาง", name:"Nishiki Market แบบสั้น แล้วกลับโรงแรม", jpName:"錦市場", category:"shopping", lat:35.005, lng:135.7649, desc:"Keihan Fushimi-inari → Gion-shijo แล้วเดิน 15–20 นาที เผื่อถึงตลาด 10:15; ชิม/กินสั้น 10:15–11:15 ร้านเปิดต่างกันตามร้าน รับประทานในพื้นที่ร้าน ไม่รอคิวยาว; ออกจากตลาดไม่เกิน 11:15 กลับโรงแรมราว 12:00 งด Higashi Honganji; Ippodo เป็นตัวเลือกแทนตลาดเท่านั้น ดูรายละเอียดในแผนต้นฉบับ", transportInfo:"Keihan → Gion-shijo แล้วเดิน; กลับ Subway Shijo → Kyoto และเดินถึงโรงแรม", cost:"อาหารตามจริง; รถรวมในงบประมาณ", link:"https://www.kyoto-nishiki.or.jp/en/contact/" },
+        { id:"pa-d6-3", order:3, time:"09:15–12:00 · รวมเดินทาง", name:"Nishiki Market แบบสั้น แล้วกลับโรงแรม", jpName:"錦市場", category:"shopping", lat:35.005, lng:135.7649, desc:"Keihan Fushimi-inari → Gion-shijo แล้วเดิน 15–20 นาที เผื่อถึงตลาด 10:15; ชิม/กินสั้น 10:15–11:15 ร้านเปิดต่างกันตามร้าน รับประทานในพื้นที่ร้าน ไม่รอคิวยาว; ออกจากตลาดไม่เกิน 11:15 กลับโรงแรมราว 12:00 งด Higashi Honganji; Ippodo เป็นตัวเลือกแทนตลาดเท่านั้น ดูรายละเอียดในแผนต้นฉบับ", transportInfo:"Keihan → Gion-shijo แล้วเดิน; กลับ Subway Shijo → Kyoto และเดินถึงโรงแรม", cost:"อาหารตามจริง; รถรวมในงบประมาณ", link:"https://www.kyoto-nishiki.or.jp/en/contact/", optionalActivities:["Ippodo แทน Nishiki เพียงแห่งเดียว ไม่ทำทั้งสองแห่ง"], choiceNote:"ออกจากตลาดไม่เกิน 11:15; ถ้าออกจาก Fushimi หลัง 09:30 ให้งดตลาด" },
         { id:"pa-d6-4", order:4, time:"12:00–13:00", name:"รับกระเป๋าและเตรียมขึ้น Haruka", jpName:"京都駅", category:"transport", lat:34.9858, lng:135.7588, desc:"รับกระเป๋าและเข้าสถานี ไม่เริ่มกิจกรรมใหม่; เลือก/จอง Haruka จริงช่วงประมาณ 13:30–14:00 ให้ถึงสถานี KIX ราว 15:00–15:30 ตารางนี้ไม่ยืนยันว่ามีขบวน 14:00 พอดี", transportInfo:"JR Haruka; จองขากลับและตรวจผลิตภัณฑ์ตั๋ว", cost:"Haruka 2,700 JPY รวมในงบ (ซื้อใหม่ตั้งแต่ 1 พ.ย. 2026)", link:"https://www.westjr.co.jp/travel-information/en/tickets-passes/oneway/haruka/" },
         { id:"pa-d6-5", order:5, time:"15:00–16:00", name:"Aeroplaza ชั้น 1 → Shuttle ฟรี → KIX T2 International", jpName:"関西国際空港 第2ターミナル", category:"transport", lat:34.4389, lng:135.2323, desc:"เป้าหมายถึง T2 ไม่เกิน 16:00 เผื่อเดิน/รอ Shuttle รวมประมาณ 30 นาที; ยืนยันสินค้าคืนภาษีก่อนโหลดกระเป๋าที่บรรจุสินค้า แล้วเช็คอินตามขั้นตอนที่เปิดจริง", transportInfo:"Aeroplaza ชั้น 1 → Free Shuttle ไป T2", cost:"0 JPY (Shuttle ฟรี)", link:"https://www.kansai-airport.or.jp/en/faq/1101" },
         { id:"pa-d6-6", order:6, time:"16:00–19:15", name:"KIX T2 International และ Peach MM091", jpName:"関西国際空港 第2ターミナル", category:"transport", lat:34.4389, lng:135.2323, desc:"Tax-free Refund Method: จ่ายรวมภาษีก่อน ยืนยันการนำออกภายใน 90 วันก่อนโหลดกระเป๋าที่บรรจุสินค้า ใช้ Kiosk หรือ VJW ในพื้นที่ Wi-Fi ที่กำหนดก่อนจุดตรวจความปลอดภัย หากถูกเลือกตรวจให้นำสินค้าไปศุลกากร ร้านคืนเงินตามวิธีที่ลงทะเบียน; Peach เช็คอิน 150–50 นาทีก่อนออก (16:45–18:25 สำหรับ 19:15) ให้เสร็จก่อนปิด ตรวจร้าน International แยกจาก Domestic", transportInfo:"Peach MM091 ออก 19:15; ตรวจข้อมูลวันเดินทาง", cost:"0 JPY", link:"https://www.flypeach.com/sg/lm/ai/airports/airportguide_international/kix" }
@@ -411,7 +416,7 @@ const PLAN_A_DAILY_SOURCE_NOTES = [
     "",
     "- **07:45–08:45:** ออกจากโรงแรม ขึ้น JR Nara Line ไป **JR Uji** เผื่อรอรถและเดินจากสถานี ไม่สับสนกับสถานี Keihan Uji",
     "- **08:45–10:15:** [Byodoin](https://www.google.com/maps/search/?api=1&query=Byodoin+Temple+Uji) สวนเปิด **08:45** พิพิธภัณฑ์ 09:00 ตั๋วสวนและพิพิธภัณฑ์ **700 เยน** [เวลาและราคา](https://www.byodoin.or.jp/guide/)",
-    "  - ถ้าจะเข้า **ภายใน Phoenix Hall** จ่ายเพิ่ม **300 เยน** รับตั๋วรอบเวลาในสวนตั้งแต่ 09:10 เริ่มชม 09:30 จองหน้างานตามที่ว่าง หากรอบชนพิธีชาให้เลือกสวน/พิพิธภัณฑ์เป็นหลัก [Phoenix Hall](https://www.byodoin.or.jp/en/guide/internal-view/)",
+    "  - ถ้าจะเข้า **ภายใน Phoenix Hall** จ่ายเพิ่ม **300 เยน** รับตั๋วรอบเวลาในสวนตั้งแต่ 09:10 เริ่มชม 09:30 ทุก 20 นาที จองหน้างานตามที่ว่าง เพื่อให้ทัน Taiho-an 10:30 ต้องได้รอบ **09:30 หรือ 09:50** หากรอบชนพิธีชาให้เลือกสวน/พิพิธภัณฑ์เป็นหลัก [Phoenix Hall](https://www.byodoin.or.jp/en/guide/internal-view/)",
     "  - ตั้งแต่ **16 ต.ค. 2026 จำกัด 35 คน/รอบ** จากเดิม 50 คน อาจรอนานขึ้น; เลือกรอบที่จบก่อนพิธีชา พลาดรอบแล้วเปลี่ยนเวลาหรือคืนเงินไม่ได้ [ประกาศจำนวนคน](https://www.byodoin.or.jp/news/cat23/20261016/)",
     "- **ประมาณ 10:30–11:15:** [Taiho-an](https://www.google.com/maps/search/?api=1&query=Taiho-an+Tea+House+Uji) ใช้เวลาตามรอบที่จองจริง",
     "  - แผนหลัก **Usucha 1,500 เยน/คน** โดยทั่วไปประมาณ 20–30 นาที ตรวจวันว่าจัดมัทฉะหรือชาแบบอื่น และจองผ่านเว็บไซต์",
@@ -432,7 +437,7 @@ const PLAN_A_DAILY_SOURCE_NOTES = [
     "**งบรถสาธารณะ:** 2,000 เยน รวมเงินเผื่อรถบัส Nara"
   ].join("\n"),
   [
-    "### Day 3 | พฤหัสบดี 3 ธันวาคม — Arashiyama, Randen และ Kinkakuji",
+    "### Day 3 | พฤหัสบดี 3 ธันวาคม — Arashiyama, Randen, Kinkakuji และ Shimogamo ช่วงสั้น",
     "",
     "- **07:45–08:30:** JR Sagano Line จาก Kyoto → Saga-Arashiyama แล้วเดินเข้าย่านป่าไผ่",
     "- **08:30–11:15:** [Bamboo Grove](https://www.google.com/maps/search/?api=1&query=Arashiyama+Bamboo+Grove) → [Tenryuji Garden](https://www.google.com/maps/search/?api=1&query=Tenryuji+Temple) สวนเปิด 08:30 ค่าเข้า 500 เยน (เปิดพิเศษ 07:30 จบ 30 พ.ย. ไม่ครอบคลุมวันนี้) [Tenryuji](https://www.tenryuji.com/visit/) → [Togetsukyo Bridge](https://www.google.com/maps/search/?api=1&query=Togetsukyo+Bridge)",
@@ -441,26 +446,26 @@ const PLAN_A_DAILY_SOURCE_NOTES = [
     "  - [eX café Arashiyama](https://www.google.com/maps/search/?api=1&query=eX+cafe+Arashiyama): ดังโงะ/มัทฉะ งบประมาณ 1,500 เยน ถ้าเลือกร้านนี้เป็นหลักให้จัดมื้อกลางวันสั้นเพิ่มเติม",
     "  - อีกร้านแวะได้เฉพาะเมื่อคิวสั้น ถ้ารอเกิน 30 นาทีให้เปลี่ยนร้าน ไม่บังคับกินสองร้านให้ทันใน 90 นาที",
     "- **13:00–14:15:** Randen จาก Arashiyama **เปลี่ยนขบวนที่ Katabiranotsuji** ไป Kitanohakubaicho แล้วต่อรถสาธารณะสู่วัดทอง ตรวจสายและเวลาเดินรถจริง",
-    "- **14:15–15:30:** [Kinkakuji](https://www.google.com/maps/search/?api=1&query=Kinkakuji+Temple) งบเข้า 500 เยน",
-    "- **15:30–17:00:** กลับ Kyoto Station เผื่อรถติด/รอรถ",
-    "- **17:00–19:00:** Kyoto Ramen Koji หรือ Kyotofu Fujino ในสถานี เลือกหนึ่งแห่งแล้วกลับพัก — Night 3; **Honke Daiichi Asahi สาขาหลักหยุดพฤหัสบดี** จึงไม่ใช้เป็นร้านสำรองวันนี้ [เว็บไซต์ร้าน](https://www.honke-daiichiasahi.com/shop.html)",
+    "- **14:15–15:15:** [Kinkakuji](https://www.google.com/maps/search/?api=1&query=Kinkakuji+Temple) งบเข้า 500 เยน",
+    "- **15:15–16:00:** City Bus จาก **Kinkakuji-michi → Shimogamo-jinja-mae** สาย 205 ผ่านทั้งสองป้าย เวลาเดินทางเป็นค่าประมาณ ตรวจรอบและค่าโดยสารจริง [Kyoto City Bus 205](https://www2.city.kyoto.lg.jp/kotsu/busdia/keitou/kto/20500.htm)",
+    "- **16:00–16:50:** [Shimogamo Shrine](https://www.shimogamo-jinja.or.jp/prayers/question) และ **Tadasu no Mori ช่วงสั้น** เข้าสักการะฟรี เวลา 06:30–17:00 ส่วนการเข้าชมพิเศษจ่ายแยก; **ออกจาก Kinkakuji หลัง 15:30 ให้งด Shimogamo** แล้วกลับ Kyoto Station",
+    "- **16:50–17:45:** กลับ Kyoto Station ด้วยรถบัส หรือเดินไป Demachiyanagi แล้วต่อรถไฟ เผื่อรถติด/รอรถ",
+    "- **17:45–19:15:** Kyoto Ramen Koji หรือ Kyotofu Fujino ในสถานี เลือกหนึ่งแห่งแล้วกลับพัก — Night 3; **Honke Daiichi Asahi สาขาหลักหยุดพฤหัสบดี** จึงไม่ใช้เป็นร้านสำรองวันนี้ [เว็บไซต์ร้าน](https://www.honke-daiichiasahi.com/shop.html)",
     "",
-    "**เก็บวัดทองเป็นจุดหลัก:** คง Arashiyama → Randen → Kinkakuji ตามตารางนี้ หากคิวมื้อกลางวันยาวให้ลดร้านเสริม ไม่เพิ่ม Shimogamo วันนี้ เพราะย้ายไป Day 4 แล้ว",
+    "**เก็บวัดทองเป็นจุดหลัก:** คง Arashiyama → Randen → Kinkakuji ตามตารางนี้ ส่วน Shimogamo เป็นจุดต่อท้ายที่งดได้ หากคิวมื้อกลางวันยาวให้ลดร้านเสริม ใบไม้ที่ Arashiyama น่าจะเป็นปลายช่วงแล้ว (ตรวจ 14 พ.ย.) ส่วน Tadasu no Mori ปกติสวยต้น–กลาง ธ.ค.",
     "",
-    "**งบรถสาธารณะ:** 1,200 เยน หากเปลี่ยนเส้นทางให้ปรับตามจริง"
+    "**งบรถสาธารณะ:** 1,500 เยน รวมรถบัสไปและกลับจาก Shimogamo หากเปลี่ยนเส้นทางให้ปรับตามจริง"
   ].join("\n"),
   [
-    "### Day 4 | ศุกร์ 4 ธันวาคม — Kiyomizu → Shimogamo Shrine → Nanzenji → Eikando รอบค่ำ",
+    "### Day 4 | ศุกร์ 4 ธันวาคม — Kiyomizu → ถนนเก่า → Nanzenji → Eikando รอบค่ำ",
     "",
     "- **07:15–08:00:** ออกจากโรงแรม เดินทางไป Kiyomizu เผื่อรอรถและเดินขึ้นเนิน หากเลือกแท็กซี่ให้คิดค่าใช้จ่ายเพิ่มและยังเผื่อเดินช่วงสุดท้าย",
     "- **08:00–09:20:** [Kiyomizu-dera](https://www.google.com/maps/search/?api=1&query=Kiyomizu-dera) ย้ายจาก Day 1 งบเข้าชม 500 เยน วัดเปิดตั้งแต่ **06:00** ตาม [เว็บไซต์วัด](https://www.kiyomizudera.or.jp/en/location/) จึงเข้าวัดก่อนร้านค้าได้; ไฟประดับฤดูใบไม้แดงปี 2026 จบ **30 พ.ย.** จึงไม่มีรอบค่ำในทริปนี้ [ปฏิทินวัด](https://www.kiyomizudera.or.jp/event/)",
-    "- **09:30–10:15:** แวะ [Asahido สาขาหลัก](https://www.asahido.co.jp/shops/) 15–25 นาที แล้วเดิน Sannenzaka / Ninenzaka สั้น ๆ ตามแรง ร้านหลักเปิด **09:30–18:00** ตามข้อมูลที่ตรวจ 21 ต.ค. 2026 ไม่เพิ่มคาเฟ่คิวยาวหรือกิจกรรมปั้นเซรามิกในช่วงนี้",
-    "- **10:15–11:30:** เดินลงไป **Keihan Kiyomizu-gojo → Demachiyanagi** แล้วเดินเข้าสู่ Shimogamo เผื่อรวมประมาณ 75 นาที ทั้งเดินลงเนิน รอรถ และเดินจากสถานี เลือกขบวนที่จอด Kiyomizu-gojo ไม่เพิ่มร้านแวะระหว่างทาง [Keihan Kiyomizu-gojo](https://www.keihan.co.jp/traffic/station/161/info.html) / [การเดินทางเข้าศาลเจ้า](https://www.shimogamo-jinja.or.jp/access)",
-    "- **11:30–12:30:** [Shimogamo Shrine](https://www.shimogamo-jinja.or.jp/prayers/question) และ **Tadasu no Mori ช่วงสั้น** เข้าสักการะฟรี เวลา 06:30–17:00 ส่วนการเข้าชมพิเศษจ่ายแยก ใช้เวลานี้แทน **Ginkakuji / Omen / Philosopher’s Path** ไม่เพิ่มทั้งสองเส้นทาง",
-    "- **12:30–13:30:** มื้อกลางวันและนั่งพักแถว Shimogamo / Demachiyanagi งบประมาณ 1,000–2,000 เยน รวมเวลาเดินออกจากศาลเจ้า เลือกร้านคิวสั้น ไม่ผูกกับร้านที่ต้องรอนาน",
-    "- **13:30–14:30:** เดินทางไป Nanzenji เช่น **Keihan Demachiyanagi → Sanjo → เดินเชื่อม Subway Sanjo Keihan → Keage → เดินไป Nanzenji** เผื่อรวมประมาณ 60 นาที ไม่เดินจาก Shimogamo ไป Nanzenji ทั้งระยะ [Keihan](https://www.keihan.co.jp/traffic/station/) / [Subway Tozai](https://www2.city.kyoto.lg.jp/kotsu/tikadia/hyperdia/line01.htm)",
-    "- **14:30–15:30:** [Nanzenji และ Suirokaku](https://www.google.com/maps/search/?api=1&query=Nanzenji+Temple) แผนหลักชมภายนอก ส่วนอาคาร/สวนที่มีค่าเข้าเป็นตัวเสริม",
-    "- **15:30–16:30:** พัก **Blue Bottle Kyoto / คาเฟ่ใกล้เคียง** ตามคิว เป็นแผนหลัก หากเลือก **Murin-an แทนคาเฟ่** ให้จองรอบ **16:00** ตามที่ว่าง ถึงก่อนรอบและออกประมาณ 16:30 เพื่อไป Eikando; ค่าเข้า **1,500 เยน** ในวันที่ 4 ธ.ค. ตรวจแพ็กเกจเครื่องดื่มแยก เปิดจองล่วงหน้า 30 วันและยกเลิกเสียค่าธรรมเนียม 100% หากต้องการชมสวนนานกว่านี้ให้ลดจุดก่อนหน้าแล้วจองรอบเร็วขึ้น [Murin-an](https://murin-an.jp/info/)",
+    "- **09:30–11:00:** แวะ [Asahido สาขาหลัก](https://www.asahido.co.jp/shops/) 15–25 นาที แล้วเดิน Sannenzaka / Ninenzaka ตามแรงโดยไม่ต้องเร่ง ร้านหลักเปิด **09:30–18:00** ตามข้อมูลที่ตรวจ 21 ต.ค. 2026 ไม่เพิ่มคาเฟ่คิวยาวหรือกิจกรรมปั้นเซรามิกในช่วงนี้",
+    "- **11:00–12:30:** มื้อกลางวันและนั่งพักแถว Gion / Higashiyama งบประมาณ 1,000–2,000 เยน เดินลงจากถนนเก่าทาง Yasaka Shrine / Maruyama Park ตามแรง เลือกร้านคิวสั้น ไม่ผูกกับร้านที่ต้องรอนาน",
+    "- **12:30–13:15:** เดินไป **Subway Higashiyama → Keage** (สาย Tozai หนึ่งสถานี) แล้วเดินไป Nanzenji เผื่อรวมประมาณ 45 นาที ตรวจขบวนจริง [Subway Tozai](https://www2.city.kyoto.lg.jp/kotsu/tikadia/hyperdia/line01.htm)",
+    "- **13:15–14:30:** [Nanzenji และ Suirokaku](https://www.google.com/maps/search/?api=1&query=Nanzenji+Temple) แผนหลักชมภายนอก ส่วนอาคาร/สวนที่มีค่าเข้าเป็นตัวเสริม",
+    "- **14:30–16:30:** พักยาว **Blue Bottle Kyoto / คาเฟ่ใกล้เคียง** ตามคิว เป็นแผนหลัก หากเลือก **Murin-an แทนคาเฟ่** ให้จองรอบ **16:00** ตามที่ว่าง ถึงก่อนรอบและออกประมาณ 16:30 เพื่อไป Eikando; ค่าเข้า **1,500 เยน** ในวันที่ 4 ธ.ค. ตรวจแพ็กเกจเครื่องดื่มแยก เปิดจองล่วงหน้า 30 วันและยกเลิกเสียค่าธรรมเนียม 100% หากต้องการชมสวนนานกว่านี้ให้ลดจุดก่อนหน้าแล้วจองรอบเร็วขึ้น [Murin-an](https://murin-an.jp/info/)",
     "- **16:30–17:00:** เดินไป Eikando เผื่อประมาณ 20–30 นาทีจากจุดพัก ไม่ใช้เวลา 5 นาทีแบบเหมารวมทั้งบริเวณ Nanzenji",
     "- **17:00–ประมาณ 19:00:** ต่อคิวและชม [Eikando รอบค่ำ](https://www.google.com/maps/search/?api=1&query=Eikando+Temple)",
     "  - **ประกาศปี 2026:** 20 พ.ย.–6 ธ.ค. รับเข้าชม **17:30–20:30 ปิด 21:00** ค่าเข้า **1,000 เยน** รอบกลางวันและรอบค่ำแยกตั๋ว ตรวจประกาศก่อนวันจริงเผื่อการเปลี่ยนแปลง [Eikando Official](https://www.eikando.or.jp/osirase.html)",
@@ -469,9 +474,9 @@ const PLAN_A_DAILY_SOURCE_NOTES = [
     "- **ประมาณ 20:00–21:00:** [Menami Obanzai](https://www.google.com/maps/search/?api=1&query=Menami+Obanzai+Kyoto) งบเดิม 2,500–4,000 เยน หากจองได้ เลือกเวลาจองที่เผื่อออกจาก Eikando แล้ว; ร้านเปิด 15:00–22:00 สั่งสุดท้าย 21:30 หยุดพุธ รับจองทางโทรศัพท์เท่านั้น หากไม่ได้จองให้มีร้านสำรอง [Menami](https://www.menami.jp/)",
     "- **21:00–21:45:** กลับโรงแรม เลือก Subway จาก Kyoto Shiyakusho-mae → เปลี่ยนสายที่ **Karasuma Oike** → Kyoto หรือเส้นทางที่สะดวกจากร้านจริง — Night 4",
     "",
-    "**เมื่อช้า/เหนื่อย:** เก็บ Kiyomizu / Shimogamo / Eikando เป็นจุดหลัก ลดการเดิน Tadasu no Mori และเวลาชม Nanzenji ก่อน งด Murin-an แต่เก็บเวลานั่งพัก ถ้าออกจากถนนเก่าหลัง 11:00 ให้เลื่อน Shimogamo ตามจริงและกินมื้อสั้นโดยไม่ต่อคิวยาว ไม่ชดเชยด้วยการเพิ่มวัดเงินหรือ Philosopher’s Path; ถ้าคิว Eikando ชนมื้อเย็นที่จอง ให้ปรับตามเงื่อนไขร้าน",
+    "**เมื่อช้า/เหนื่อย:** เก็บ Kiyomizu / Eikando เป็นจุดหลัก ลดเวลาเดินถนนเก่าและเวลาชม Nanzenji ก่อน งด Murin-an แต่เก็บเวลานั่งพัก ไม่ชดเชยด้วยการเพิ่มวัดเงิน Philosopher’s Path หรือ Shimogamo; ถ้าคิว Eikando ชนมื้อเย็นที่จอง ให้ปรับตามเงื่อนไขร้าน",
     "",
-    "**งบรถสาธารณะ:** **1,700 เยน** รวมเงินเผื่อ Keihan และ Subway ตามเส้นทางใหม่ ไม่ใช่ยอดค่าโดยสารยืนยันทุกช่วง ไม่รวมแท็กซี่; ค่าเข้าสักการะ Shimogamo ฟรี"
+    "**งบรถสาธารณะ:** **1,400 เยน** รวมเงินเผื่อรถไป Kiyomizu และ Subway ตามเส้นทางใหม่ ไม่ใช่ยอดค่าโดยสารยืนยันทุกช่วง ไม่รวมแท็กซี่"
   ].join("\n"),
   [
     "### Day 5 | เสาร์ 5 ธันวาคม — Osaka Castle → Osaka Aquarium Kaiyukan → Dotonbori",
@@ -528,24 +533,6 @@ const PLAN_A_DAILY_SOURCE_NOTES = [
 ];
 
 PLAN_A_DATA.dailySourceNotes = PLAN_A_DAILY_SOURCE_NOTES;
-
-const checkpointById = id => PLAN_A_DATA.days.flatMap(day => day.checkpoints).find(checkpoint => checkpoint.id === id);
-checkpointById('pa-d1-5').optionalActivities = ['งดเที่ยวเย็นได้ทั้งหมดเมื่อเพลีย', 'Gion Tsujiri เฉพาะเมื่อเปิดและคิวสั้น'];
-checkpointById('pa-d1-6').choiceNote = 'เลือกร้าน Pontocho หรือมื้อใกล้โรงแรมตามแรง';
-checkpointById('pa-d2-2').optionalActivities = ['เข้าชมภายใน Phoenix Hall · เพิ่ม 300 เยน'];
-checkpointById('pa-d2-3').choiceNote = 'เลือก Usucha 1,500 เยน หรือคอร์สลงมือชง 3,600 เยน · ต้องจองรอบจริง';
-checkpointById('pa-d2-4').time = '11:15–12:15 · มื้อกลางวัน / 12:15–13:45 · เดินทาง Uji → Nara';
-checkpointById('pa-d2-4').desc = 'มื้อกลางวันโซบะมัทฉะและเดิน Uji Omotesando/ริมแม่น้ำสั้น ๆ เวลา 11:15–12:15; ตั้งเป้าออกจาก Uji ไม่เกิน 12:30–13:00 แล้วเผื่อรถและเดินทางต่อไป Nara ช่วง 12:15–13:45';
-checkpointById('pa-d2-4').transportInfo = 'เดินกลับ JR Uji แล้วต่อรถไฟไป Nara; เผื่อรอรถและเดินทาง';
-checkpointById('pa-d3-2').choiceNote = 'เลือกร้านหลักหนึ่งร้าน: Yoshimura หรือ eX café; ร้านที่สองแวะเมื่อคิวสั้นเท่านั้น';
-checkpointById('pa-d4-6').choiceNote = 'คาเฟ่เป็นหลัก; Murin-an จองรอบ 16:00 ตามที่ว่าง ออกประมาณ 16:30 เพื่อไป Eikando';
-checkpointById('pa-d4-6').optionalActivities = ['Murin-an ค่าเข้า 1,500 เยน · ยกเลิกเสียค่าธรรมเนียม 100%'];
-checkpointById('pa-d4-8').desc = 'เผื่อเดินไป Keage ต่อ Subway Tozai → Sanjo Keihan; เลือกรอบ Menami ที่เผื่อออกจาก Eikando ร้านเปิด 15:00–22:00 สั่งสุดท้าย 21:30 หยุดพุธ รับจองทางโทรศัพท์เท่านั้น หากจองไม่ได้ให้เลือกร้านสำรอง; ขากลับขึ้น Subway จาก Kyoto Shiyakusho-mae เปลี่ยนสายที่ Karasuma Oike แล้วไป Kyoto';
-checkpointById('pa-d4-8').transportInfo = 'เดินไป Keage → Subway Tozai → Sanjo Keihan; ขากลับ Kyoto Shiyakusho-mae → เปลี่ยนสาย Karasuma Oike → Kyoto';
-checkpointById('pa-d5-2').optionalActivities = ['ขึ้น Tenshukaku 1,200 เยนแทนเดินสวนยาว · เผื่อคิวให้ทัน Kaiyukan'];
-checkpointById('pa-d5-3').choiceNote = 'รอบเป้าหมาย 13:00 ตามที่ว่าง · ตรวจราคาและเวลาเปิดวันที่ 5 ธ.ค. ก่อนซื้อ';
-checkpointById('pa-d6-3').optionalActivities = ['Ippodo แทน Nishiki เพียงแห่งเดียว ไม่ทำทั้งสองแห่ง'];
-checkpointById('pa-d6-3').choiceNote = 'ออกจากตลาดไม่เกิน 11:15; ถ้าออกจาก Fushimi หลัง 09:30 ให้งดตลาด';
 
 // 🌐 MASTER PLANS REGISTRY (Designed for easy future expansion)
 const PLANS_REGISTRY = {
