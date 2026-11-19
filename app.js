@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const THEME_KEY = 'kyoto-handbook-theme';
   const defaultRate = Number(plan.exchangeRate) || 0.212;
   const validRate = value => Number.isFinite(value) && value >= 0.1 && value <= 0.5;
-  const applyRate = value => { plan.exchangeRate = value; if (plan.budget) plan.budget.exchangeRate = value; };
+  const applyRate = value => { plan.exchangeRate = value; };
   const saveRate = value => { try { if (value === defaultRate) localStorage.removeItem(RATE_KEY); else localStorage.setItem(RATE_KEY, String(value)); } catch (error) { /* storage unavailable */ } };
   try { const saved = Number(localStorage.getItem(RATE_KEY)); if (localStorage.getItem(RATE_KEY) !== null && validRate(saved)) applyRate(saved); } catch (error) { /* storage unavailable */ }
   const fmt = jpy => state.currency === 'JPY' ? `${formatNumber(jpy)} JPY` : `≈ ${formatNumber(Math.round(jpy * plan.exchangeRate))} THB`;
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const query = checkpoint.navigationQuery || (Number.isFinite(checkpoint.lat) && Number.isFinite(checkpoint.lng) ? `${checkpoint.lat},${checkpoint.lng}` : checkpoint.name);
     return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
   };
-  const checkpointMatches = cp => (state.category === 'all' || cp.category === state.category) && (!state.query || `${cp.name} ${cp.jpName || ''} ${cp.desc} ${cp.transportInfo} ${cp.cost}`.toLocaleLowerCase().includes(state.query));
+  const checkpointMatches = cp => (state.category === 'all' || cp.category === state.category) && (!state.query || `${cp.name} ${cp.jpName || ''} ${cp.desc} ${cp.transportInfo} ${cp.cost || ''} ${transitText(cp)}`.toLocaleLowerCase().includes(state.query));
   const safeLink = (url, label) => `<a href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(label)} ↗</a>`;
 
   function showToast(message) {
@@ -108,14 +108,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (state.day === 0) { renderOverview(host); return; }
     const day = currentDay(); if (!day) return;
     const intro = document.createElement('header'); intro.className = 'day-intro';
-    intro.innerHTML = `<div class="date">DAY ${day.dayNum} / ${escapeHTML(day.date)} · งบรถ ${fmt(day.totalFareJPY)} / คน</div><h2>${escapeHTML(day.title)}</h2><p class="route-summary">${escapeHTML(day.routeSummary || '')}</p>`; host.append(intro);
+    intro.innerHTML = `<div class="date">DAY ${day.dayNum} / ${escapeHTML(day.date)} · งบรถ ${fmt(day.totalFareJPY)} / คน</div><h2>${escapeHTML(day.title)}</h2><p class="route-summary">เส้นทางรถตรวจ 19 พ.ย. 2026 · ดูชานชาลาและป้ายหน้ารถจริงก่อนขึ้น</p>`; host.append(intro);
     const notice = document.createElement('aside'); notice.className = 'critical-note'; notice.innerHTML = `<strong>${escapeHTML(day.critical || '')}</strong>${escapeHTML(day.risk || '')}`; host.append(notice);
     const shown = day.checkpoints.filter(checkpointMatches).sort((a, b) => a.order - b.order);
     shown.forEach(cp => host.append(makeCheckpoint(day, cp)));
     announceResults(shown.length);
     if (!shown.length) host.insertAdjacentHTML('beforeend', '<div class="empty-state"><p>ไม่พบจุดที่ตรงกับการค้นหาหรือตัวกรอง</p><button type="button" class="text-button" id="resetFilters">ล้างการค้นหาและตัวกรอง</button></div>');
     const reset = $('#resetFilters', host); if (reset) reset.addEventListener('click', clearFilters);
-    host.append(makeSourceNotes(day));
   }
   function renderOverview(host) {
     const intro = document.createElement('header'); intro.className = 'day-intro'; intro.innerHTML = `<div class="date">KYOTO · UJI · NARA · OSAKA · 1–6 ธันวาคม 2026</div><h2>ภาพรวมทั้งทริป</h2><p class="route-summary">เดินทางช้าได้ ตัดกิจกรรมเสริมได้ และรักษาเวลาเดินทางสำคัญของแต่ละวัน</p>`; host.append(intro);
@@ -126,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const wrap = document.createElement('section'); wrap.className = 'overview-day'; wrap.innerHTML = `<header class="day-intro"><div class="date">DAY ${day.dayNum} · ${escapeHTML(day.date)} · งบรถ ${fmt(day.totalFareJPY)} / คน</div><h2>${escapeHTML(day.title)}</h2></header>`;
       const note = document.createElement('aside'); note.className = 'critical-note'; note.innerHTML = `<strong>${escapeHTML(day.critical || '')}</strong>${escapeHTML(day.risk || '')}`; wrap.append(note);
       checkpoints.forEach(cp => wrap.append(makeCheckpoint(day, cp)));
-      wrap.append(makeSourceNotes(day)); host.append(wrap);
+      host.append(wrap);
     });
     announceResults(visibleCount);
     if (!visibleCount) host.insertAdjacentHTML('beforeend', '<div class="empty-state"><p>ไม่พบจุดที่ตรงกับการค้นหาหรือตัวกรอง</p><button type="button" class="text-button" id="resetFilters">ล้างการค้นหาและตัวกรอง</button></div>');
@@ -148,41 +147,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const more = rest.length ? `<details><summary>รายละเอียดเพิ่มเติม</summary><ul class="long-detail">${rest.map(part => `<li>${escapeHTML(part)}</li>`).join('')}</ul></details>` : '';
     const options = (cp.optionalActivities || []).map(item => `<span class="optional-tag">เสริม: ${escapeHTML(item)}</span>`).join(' ');
     const choice = cp.choiceNote ? `<p class="choice-note">${escapeHTML(cp.choiceNote)}</p>` : '';
-    card.innerHTML = `<div class="time-col">${escapeHTML(cp.time)}<br><span>${escapeHTML(cat?.name || '')}</span></div><div class="stop-card"><h3>${escapeHTML(cp.name)}</h3>${cp.jpName ? `<p class="jp">${escapeHTML(cp.jpName)}</p>` : ''}<p class="desc">${escapeHTML(summary)}</p>${options ? `<div class="activity-options">${options}</div>` : ''}${choice}${warning}${more}<div class="stop-meta"><span>การเดินทาง: ${escapeHTML(cp.transportInfo || 'ตรวจเส้นทางจริง')}</span><span>ค่าใช้จ่าย: ${escapeHTML(costText(cp.cost))}</span></div><div class="stop-actions"><button type="button" data-map-id="${escapeHTML(cp.id)}">แสดงบนแผนที่</button>${safeLink(navUrl(cp), 'นำทาง Google Maps')}${safeLink(mapSearchUrl(cp), 'ค้นหาสถานที่')}${cp.link && !isMapLink(cp.link) ? safeLink(cp.link, 'แหล่งข้อมูล') : ''}${(cp.bookingLinks || []).map(item => safeLink(item.url, item.label)).join('')}</div></div>`;
+    card.innerHTML = `<div class="time-col">${escapeHTML(cp.time)}<br><span>${escapeHTML(cat?.name || '')}</span></div><div class="stop-card"><h3>${escapeHTML(cp.name)}</h3>${cp.jpName ? `<p class="jp">${escapeHTML(cp.jpName)}</p>` : ''}<p class="desc">${escapeHTML(summary)}</p>${options ? `<div class="activity-options">${options}</div>` : ''}${choice}${warning}${more}${transitHTML(cp)}<div class="stop-meta">${cp.transit ? '' : `<span>การเดินทาง: ${escapeHTML(cp.transportInfo || 'ตรวจเส้นทางจริง')}</span>`}${cp.cost ? `<span>ค่าใช้จ่าย: ${escapeHTML(costText(cp.cost))}</span>` : ''}</div><div class="stop-actions"><button type="button" data-map-id="${escapeHTML(cp.id)}">แสดงบนแผนที่</button>${safeLink(navUrl(cp), 'นำทาง Google Maps')}${safeLink(mapSearchUrl(cp), 'ค้นหาสถานที่')}${cp.link && !isMapLink(cp.link) ? safeLink(cp.link, 'แหล่งข้อมูล') : ''}${(cp.bookingLinks || []).map(item => safeLink(item.url, item.label)).join('')}</div></div>`;
     $('[data-map-id]', card).addEventListener('click', () => focusCheckpoint(cp)); return card;
   }
-  function inlineMarkdown(text) {
-    const links = [];
-    let html = escapeHTML(text).replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, (_, label, url) => {
-      const key = `%%LINK${links.length}%%`;
-      links.push(`<a href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`);
-      return key;
-    });
-    html = html.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\*(.+?)\*/g, '<em>$1</em>');
-    return html.replace(/%%LINK(\d+)%%/g, (_, index) => links[Number(index)]);
-  }
-  function markdownToHtml(markdown) {
-    const output = []; let paragraph = []; let inList = false;
-    const closeParagraph = () => { if (paragraph.length) output.push(`<p>${paragraph.map(inlineMarkdown).join(' ')}</p>`); paragraph = []; };
-    const closeList = () => { if (inList) output.push('</ul>'); inList = false; };
-    markdown.split(/\r?\n/).forEach(line => {
-      const heading = line.match(/^#{3,6}\s+(.+)$/);
-      const item = line.match(/^\s*[-*]\s+(.+)$/);
-      if (heading) { closeParagraph(); closeList(); output.push(`<h4>${inlineMarkdown(heading[1])}</h4>`); }
-      else if (item) { closeParagraph(); if (!inList) { output.push('<ul>'); inList = true; } output.push(`<li>${inlineMarkdown(item[1])}</li>`); }
-      else if (/^\s*[-*_]{3,}\s*$/.test(line) || !line.trim()) { closeParagraph(); closeList(); }
-      else { closeList(); paragraph.push(line.trim()); }
-    });
-    closeParagraph(); closeList();
-    return output.join('');
-  }
-  function makeSourceNotes(day) {
-    const details = document.createElement('details'); details.className = 'source-notes';
-    details.innerHTML = `<summary>อ่านแผนต้นฉบับของวันนี้ · Day ${day.dayNum}</summary><div class="source-note-content">${markdownToHtml(plan.dailySourceNotes?.[day.dayNum - 1] || '')}</div>`;
-    return details;
-  }
-  function markdownToPlainText(markdown) {
-    return markdown.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '$1 ($2)').replace(/\*\*(.+?)\*\*/g, '$1').replace(/\*(.+?)\*/g, '$1');
+  const TRANSIT_MODES = { walk:'เดิน', train:'รถไฟ', subway:'Subway', bus:'บัส', shuttle:'ชัทเทิล' };
+  const legText = leg => leg.mode === 'walk' ? `เดิน ~${leg.min} นาที · ${leg.from} → ${leg.to}${leg.tip ? ` (${leg.tip})` : ''}` : `${leg.line}: ${leg.from} → ${leg.to} · ~${leg.min} นาที · ${[leg.board, leg.dir, leg.tip].filter(Boolean).join(' · ')}`;
+  const transitText = cp => (cp.transit || []).map(legText).join(' ');
+  const shortLine = line => line.replace(/s*[぀-ヿ一-鿿].*$/, '');
+  // transit = ขาเดินทางจากจุดก่อนหน้ามาถึงจุดนี้; ขาที่ต่อกันโดยไม่เดินคั่น = เปลี่ยนสายที่สถานีนั้น
+  function transitHTML(cp) {
+    const legs = cp.transit || []; if (!legs.length) return '';
+    const footer = cp.transportInfo ? `<p class="transit-note">${escapeHTML(cp.transportInfo)}</p>` : '';
+    if (legs.every(leg => leg.mode === 'walk')) return `<p class="transit-walk"><span class="transit-mode mode-walk">เดิน</span>${legs.map(leg => escapeHTML(`~${leg.min} นาที · ${leg.from} → ${leg.to}${leg.tip ? ` · ${leg.tip}` : ''}`)).join('<br>')}</p>`;
+    const chain = legs.map(leg => leg.mode === 'walk' ? `เดิน ${leg.min}′` : shortLine(leg.line)).join(' → ');
+    const steps = legs.map((leg, i) => {
+      const prev = legs[i - 1];
+      const marker = leg.back ? '<li class="transit-marker">ขากลับ</li>' : (prev && prev.mode !== 'walk' && leg.mode !== 'walk' ? `<li class="transit-marker">เปลี่ยนสายที่ ${escapeHTML(leg.from)}</li>` : '');
+      const body = leg.mode === 'walk'
+        ? `<span class="transit-route">~${escapeHTML(String(leg.min))} นาที · ${escapeHTML(leg.from)} → ${escapeHTML(leg.to)}</span>`
+        : `<strong>${escapeHTML(leg.line)}</strong><span class="transit-route">${escapeHTML(leg.from)} → ${escapeHTML(leg.to)} · ~${escapeHTML(String(leg.min))} นาที</span><span class="transit-dir">${escapeHTML([leg.board, leg.dir].filter(Boolean).join(' · '))}</span>`;
+      return `${marker}<li class="transit-leg"><span class="transit-mode mode-${escapeHTML(leg.mode)}">${escapeHTML(TRANSIT_MODES[leg.mode] || leg.mode)}</span><div class="transit-body">${body}${leg.tip ? `<span class="transit-tip">${escapeHTML(leg.tip)}</span>` : ''}</div></li>`;
+    }).join('');
+    return `<details class="transit"><summary><span class="transit-label">วิธีไปจุดนี้</span> ${escapeHTML(chain)}</summary><ol class="transit-steps">${steps}</ol>${footer}</details>`;
   }
   function clearFilters() { state.category = 'all'; state.query = ''; $('#searchInput').value = ''; $('#clearSearch').hidden = true; renderFilters(); renderTimeline(); renderMap(); }
   function selectDay(day) { state.day = day; syncUrl(); renderDayTabs(); renderTimeline(); renderRail(); renderMap(); if (state.map) fitMap(); }
@@ -274,7 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <p>${escapeHTML(flight.departure.from)}
           ${escapeHTML(flight.departure.to)}
           ไปสุวรรณภูมิคืนวันที่ 30 พ.ย. และเผื่อเวลา Shuttle ที่ KIX T2</p>
-          ${safeLink(flight.sourceLink, 'ตารางฤดูหนาว Peach · อ้างอิง 16 ก.ย. 2026')}
+          ${safeLink(flight.sourceLink, 'ตารางฤดูหนาว Peach · ฉบับ 21 ต.ค. 2026')}
         </section>
         <section class="info-card">
           <h3>ขากลับ · ${escapeHTML(flight.return.flight)}</h3>
@@ -288,10 +274,6 @@ document.addEventListener('DOMContentLoaded', () => {
           <p>${escapeHTML(hotel.address)}
           ${escapeHTML(hotel.nights)} · ${escapeHTML(hotel.features)}</p>
           ${safeLink(hotel.sourceLink, 'เว็บไซต์โรงแรม')} · ${safeLink(hotel.mapLink, 'ค้นหาสถานที่')}
-        </section>
-        <section class="info-card">
-          <h3>เวลาตามแผน</h3>
-          <p>${escapeHTML(plan.revisionNote || '')}</p>
         </section>
       </div>`;
     const tips = (plan.travelTips || []).map(tip => `<section class="info-card"><h3>${escapeHTML(tip.title)}</h3><p>${escapeHTML(tip.desc)}</p>${tip.link ? safeLink(tip.link, tip.linkLabel || 'แหล่งข้อมูล') : ''}${tip.secondaryLink ? ` · ${safeLink(tip.secondaryLink, tip.secondaryLinkLabel || 'ข้อมูลเพิ่มเติม')}` : ''}</section>`).join('');
@@ -326,7 +308,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   function renderBudget() {
     const data = plan.budget; const host = $('#budgetContent'); if (!data) return;
-    const rows = [['รถสาธารณะ รวม Haruka', data.transport], ['อาหารและคาเฟ่', data.meals], ['ค่าเข้าชม + Taiho-an + Kaiyukan', data.admissions], ['ภาษีที่พัก · สมมติ 400 × 5 คืน', data.accommodationTax], ['รวมก่อนเงินสำรอง', data.beforeReserve], ['เงินสำรอง', data.reserve], ['รวมพร้อมเงินสำรอง', data.total]];
+    const rows = [['รถสาธารณะ รวม Haruka', data.transport], ['อาหารและคาเฟ่', data.meals], ['ค่าเข้าชม + CHAZUNA + Kaiyukan', data.admissions], ['ภาษีที่พัก · สมมติ 400 × 5 คืน', data.accommodationTax], ['รวมก่อนเงินสำรอง', data.beforeReserve], ['เงินสำรอง', data.reserve], ['รวมพร้อมเงินสำรอง', data.total]];
     const budgetRows = rows.map(([label, item], index) => {
       return `<div class="budget-row ${index === rows.length - 1 ? 'total' : ''}">
         <span>${escapeHTML(label)}</span>
@@ -385,8 +367,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const days = state.day === 0 ? allDays() : [currentDay()];
     days.filter(Boolean).forEach(day => {
       lines.push('', `DAY ${day.dayNum} · ${day.date}`, day.title, `งบรถโดยประมาณ ${formatNumber(day.totalFareJPY)} JPY / คน`);
-      day.checkpoints.forEach(cp => lines.push(`${cp.time} · ${cp.name}`, cp.desc, `การเดินทาง: ${cp.transportInfo}`, `ค่าใช้จ่าย: ${cp.cost}`));
-      lines.push('', 'รายละเอียดจากแผนต้นฉบับ:', markdownToPlainText(plan.dailySourceNotes?.[day.dayNum - 1] || ''));
+      day.checkpoints.forEach(cp => lines.push(`${cp.time} · ${cp.name}`, cp.desc, `การเดินทาง: ${cp.transportInfo}`, ...(cp.transit || []).map(leg => `  · ${legText(leg)}`), ...(cp.cost ? [`ค่าใช้จ่าย: ${cp.cost}`] : [])));
     });
     try { if (navigator.clipboard?.writeText) { await navigator.clipboard.writeText(lines.join('\n')); showToast('คัดลอกแผนแล้ว'); return; } } catch (_) { /* use fallback below for denied clipboard and file URLs */ }
     const textarea = document.createElement('textarea'); textarea.value = lines.join('\n'); textarea.setAttribute('readonly', ''); textarea.style.position = 'fixed'; textarea.style.opacity = '0'; document.body.append(textarea); textarea.select();

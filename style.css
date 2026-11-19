@@ -8,6 +8,10 @@
   --accent:#a74630;
   --soft:#f7e9dc;
   --green:#e8ede2;
+  --transit-train:#2f6b9a;
+  --transit-subway:#2f8a5b;
+  --transit-bus:#b5651d;
+  --transit-walk:#637065;
   --shadow:0 8px 28px #28382f0a;
   font-family:Tahoma,"Noto Sans Thai",Arial,sans-serif;
   font-size:15px;
@@ -35,6 +39,10 @@ body {
   --accent:#f5aa8e;
   --soft:#45372b;
   --green:#354333;
+  --transit-train:#8cc4ee;
+  --transit-subway:#8fd6ad;
+  --transit-bus:#f0b27a;
+  --transit-walk:#b3beb1;
   --shadow:0 8px 28px #0003
 }
 .shell {
@@ -407,38 +415,6 @@ main {
   color:var(--muted);
   margin:4px 0 0;
   padding-left:18px
-}
-.source-notes {
-  border-top:1px solid var(--line);
-  margin-top:20px;
-  padding-top:12px
-}
-.source-notes>summary {
-  color:var(--accent);
-  cursor:pointer;
-  min-height:44px;
-  font-size:13px
-}
-.source-note-content {
-  padding:4px 0 10px;
-  max-width:850px
-}
-.source-note-content h4 {
-  font-size:14px;
-  margin:12px 0 5px
-}
-.source-note-content p,.source-note-content li {
-  color:var(--muted);
-  font-size:12px
-}
-.source-note-content p {
-  margin:7px 0
-}
-.source-note-content ul {
-  padding-left:20px
-}
-.source-note-content a {
-  color:var(--accent)
 }
 .activity-options {
   display:flex;
@@ -1078,4 +1054,92 @@ main {
   margin:8px 0 0;
   color:var(--muted);
   font-size:.9em
+}
+.transit {
+  margin-top:8px;
+  font-size:12px;
+  border:1px solid var(--line);
+  border-radius:4px;
+  background:var(--surface);
+  padding:0 10px
+}
+.stop-card .transit>summary {
+  width:auto;
+  min-height:44px;
+  padding:10px 0;
+  color:var(--ink);
+  overflow-wrap:anywhere
+}
+.transit-label {
+  color:var(--accent);
+  font-weight:600
+}
+.transit-steps {
+  list-style:none;
+  margin:0;
+  padding:0 0 4px
+}
+.transit-leg {
+  display:flex;
+  gap:8px;
+  padding:6px 0;
+  border-top:1px solid var(--line)
+}
+.transit-body {
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+  overflow-wrap:anywhere
+}
+.transit-body strong {
+  font-weight:600
+}
+.transit-dir,.transit-tip {
+  color:var(--muted)
+}
+.transit-tip:before {
+  content:"→ "
+}
+.transit-mode {
+  flex:none;
+  align-self:flex-start;
+  min-width:52px;
+  text-align:center;
+  font-size:11px;
+  font-weight:600;
+  line-height:1.6;
+  border:1px solid currentColor;
+  border-radius:3px;
+  padding:0 4px;
+  color:var(--transit-walk)
+}
+.mode-train,.mode-shuttle {
+  color:var(--transit-train)
+}
+.mode-subway {
+  color:var(--transit-subway)
+}
+.mode-bus {
+  color:var(--transit-bus)
+}
+.transit-marker {
+  font-size:11px;
+  font-weight:600;
+  color:var(--accent);
+  padding:4px 0 2px 60px
+}
+.transit-note {
+  color:var(--muted);
+  font-size:12px;
+  margin:0;
+  padding:6px 0 8px;
+  border-top:1px solid var(--line)
+}
+.transit-walk {
+  display:flex;
+  gap:8px;
+  margin:7px 0 0;
+  font-size:12px;
+  color:var(--muted);
+  overflow-wrap:anywhere
 }
