@@ -72,7 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   function renderDayTabs() {
     const host = $('#dayTabs');
-    if (!host.children.length) {
+    const firstRender = !host.children.length;
+    if (firstRender) {
       allDays().forEach(day => {
         const button = document.createElement('button');
         button.type = 'button'; button.className = 'day-tab'; button.dataset.day = String(day.dayNum);
@@ -82,9 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
     $$('.day-tab', host).forEach(button => button.setAttribute('aria-pressed', String(Number(button.dataset.day) === state.day)));
-    // keep the selected day visible when the tabs are a swipeable row (phones); scrollLeft only, so the page never jumps
+    // on load only: bring the selected day into view in the swipeable row (phones); later taps leave the row where it is
     const active = $('.day-tab[aria-pressed=true]', host);
-    if (active && host.scrollWidth > host.clientWidth) host.scrollLeft += active.getBoundingClientRect().left - host.getBoundingClientRect().left - 16;
+    if (firstRender && active && host.scrollWidth > host.clientWidth) host.scrollLeft += active.getBoundingClientRect().left - host.getBoundingClientRect().left - 16;
     $('#overviewToggle').setAttribute('aria-pressed', String(state.day === 0));
   }
   function renderFilters() {
