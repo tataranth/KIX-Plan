@@ -18,7 +18,7 @@
 }
 html {
   scroll-behavior:smooth;
-  scroll-padding-top:18px
+  scroll-padding-top:110px
 }
 body {
   margin:0;
@@ -148,7 +148,7 @@ main {
   min-height:55vh
 }
 .day-switcher {
-  padding:18px 32px 10px
+  padding:18px 32px 0
 }
 .section-label {
   display:flex;
@@ -156,7 +156,7 @@ main {
   justify-content:space-between;
   color:var(--muted);
   font-size:12px;
-  margin-bottom:9px
+  margin-bottom:1px
 }
 .text-button {
   border:0;
@@ -167,7 +167,13 @@ main {
 .day-tabs {
   display:grid;
   grid-template-columns:repeat(6,minmax(0,1fr));
-  gap:8px
+  gap:8px;
+  /* sticks only after the page scrolls past it; below the expanded map (1100) */
+  position:sticky;
+  top:0;
+  z-index:1050;
+  background:var(--paper);
+  padding:8px 32px 10px
 }
 .day-tab {
   min-height:68px;
@@ -825,14 +831,28 @@ main {
     font-size:13px;
     white-space:nowrap
   }
-  .day-switcher {
-    padding:13px 16px 8px
+  html {
+    scroll-padding-top:95px
   }
+  .day-switcher {
+    padding:13px 16px 0
+  }
+  /* one swipeable row on phones so the sticky bar stays short */
   .day-tabs {
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    gap:5px
+    display:flex;
+    overflow-x:auto;
+    scroll-snap-type:x proximity;
+    scrollbar-width:none;
+    gap:5px;
+    padding:6px 16px 8px;
+    scroll-padding-inline:16px
+  }
+  .day-tabs::-webkit-scrollbar {
+    display:none
   }
   .day-tab {
+    flex:0 0 31%;
+    scroll-snap-align:start;
     min-height:57px;
     padding:6px
   }

@@ -82,6 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
     $$('.day-tab', host).forEach(button => button.setAttribute('aria-pressed', String(Number(button.dataset.day) === state.day)));
+    // keep the selected day visible when the tabs are a swipeable row (phones); scrollLeft only, so the page never jumps
+    const active = $('.day-tab[aria-pressed=true]', host);
+    if (active && host.scrollWidth > host.clientWidth) host.scrollLeft += active.getBoundingClientRect().left - host.getBoundingClientRect().left - 16;
     $('#overviewToggle').setAttribute('aria-pressed', String(state.day === 0));
   }
   function renderFilters() {
@@ -344,11 +347,10 @@ document.addEventListener('DOMContentLoaded', () => {
         </section>
         <section>
           <h3>ตัวเลือกที่ยังไม่รวมทั้งหมด</h3>
-          <p>ฐานค่าเข้า ${fmt(data.admissionBaseJPY)}: Kiyomizu 500 + Byodoin 700 + Todaiji 800 + Tenryuji Garden 500 + Kinkakuji 500 + Shimogamo เข้าสักการะฟรี + Eikando Night 1,000 + Kaiyukan งบเผื่อ ${fmt(data.kaiyukanEstimateJPY)}; รวม Taiho-an Usucha ${fmt(data.usuchaJPY)} เป็น ${fmt(data.admissionBaseJPY + data.usuchaJPY)}.</p>
+          <p>ฐานค่าเข้า ${fmt(data.admissionBaseJPY)}: Kiyomizu 500 + Byodoin 700 + Todaiji 800 + Tenryuji Garden 500 + Kinkakuji 500 + Shimogamo เข้าสักการะฟรี + Eikando Night 1,000 + Kaiyukan งบเผื่อ ${fmt(data.kaiyukanEstimateJPY)}; รวม CHAZUNA งบเผื่อ ${fmt(data.chazunaEstimateJPY)} เป็น ${fmt(data.admissionBaseJPY + data.chazunaEstimateJPY)}.</p>
           <ul>
             <li>Phoenix Hall เพิ่ม ${fmt(data.phoenixHallExtraJPY)}</li>
-            <li>เปลี่ยนเป็นคอร์สลงมือชงเพิ่ม ${fmt(data.handsOnTeaExtraJPY)}</li>
-            <li>งบสูงสุด ${fmt(data.admissions.maxJPY)} รองรับสองตัวเลือกข้างต้นตามสมมติฐาน Kaiyukan 3,500 JPY ซึ่งต้องปรับตามราคาจริง; ยังไม่รวม Murin-an, Nishinomaru หรือ Tenshukaku; หักค่าเข้า Ginkakuji ออกแล้วและเก็บ Kinkakuji ตามแผน</li>
+            <li>งบสูงสุด ${fmt(data.admissions.maxJPY)} เหลือเผื่อสำหรับกรณี CHAZUNA แพงกว่างบเผื่อ ค่าเข้า Tenjuan หรือ Tenshukaku 1,200 JPY ตามสมมติฐาน Kaiyukan 3,500 JPY ซึ่งต้องปรับตามราคาจริง; ยังไม่รวม Nishinomaru; หักค่าเข้า Ginkakuji ออกแล้วและเก็บ Kinkakuji ตามแผน</li>
           </ul>
           <p>เงินสำรองรองรับค่าใช้จ่ายเพิ่มบางส่วนเท่านั้น. ไม่รวมเที่ยวบิน ค่าห้อง และช้อปปิ้ง.</p>
         </section>
