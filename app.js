@@ -171,7 +171,16 @@ document.addEventListener('DOMContentLoaded', () => {
     return `<details class="transit"><summary><span class="transit-label">วิธีไปจุดนี้</span> ${escapeHTML(chain)}</summary><ol class="transit-steps">${steps}</ol>${footer}</details>`;
   }
   function clearFilters() { state.category = 'all'; state.query = ''; $('#searchInput').value = ''; $('#clearSearch').hidden = true; renderFilters(); renderTimeline(); renderMap(); }
-  function selectDay(day) { state.day = day; syncUrl(); renderDayTabs(); renderTimeline(); renderRail(); renderMap(); if (state.map) fitMap(); }
+  // ถ้าเลื่อนผ่านแท็บวัน (แท็บติดอยู่บนสุด) ให้เลื่อนกลับมาให้เนื้อหาเริ่มต่อจากแท็บพอดี ไม่ขึ้นสุดหน้า
+  function scrollToDayContent() {
+    const tabs = $('#dayTabs'), content = $('#planColumn');
+    const target = window.scrollY + content.getBoundingClientRect().top - tabs.offsetHeight - 8;
+    if (window.scrollY <= target) return;
+    // CSS ตั้ง scroll-behavior:smooth ไว้ จึงปิดชั่วคราวเพื่อเลื่อนทันที (ไม่ใช้ behavior:'instant' เพราะเบราว์เซอร์เก่าอาจ throw)
+    const root = document.documentElement, prev = root.style.scrollBehavior;
+    root.style.scrollBehavior = 'auto'; window.scrollTo(0, Math.max(0, target)); root.style.scrollBehavior = prev;
+  }
+  function selectDay(day) { state.day = day; syncUrl(); renderDayTabs(); renderTimeline(); renderRail(); renderMap(); if (state.map) fitMap(); scrollToDayContent(); }
   function renderRail() {
     if (state.day === 0) { $('#routeList').innerHTML = '<li><span>06</span><span>ภาพรวม · Kyoto / Uji / Nara / Osaka</span></li>'; $('#dayFare').textContent = state.currency === 'JPY' ? formatNumber(plan.totalICCardCostJPY) : formatNumber(Math.round(plan.totalICCardCostJPY * plan.exchangeRate)); $('#fareUnit').textContent = state.currency; $('#contingencySummary').textContent = 'เลือกวันด้านบนเพื่ออ่านเส้นทาง เวลาเตือน และแผนสำรองรายวัน'; return; }
     const day = currentDay(); if (!day) return;
