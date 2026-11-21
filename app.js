@@ -317,11 +317,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   function renderBudget() {
     const data = plan.budget; const host = $('#budgetContent'); if (!data) return;
+    const travelers = data.travelers || 1;
     const rows = [['รถสาธารณะ รวม Haruka', data.transport], ['อาหารและคาเฟ่', data.meals], ['ค่าเข้าชม + CHAZUNA + Kaiyukan', data.admissions], ['ภาษีที่พัก · สมมติ 400 × 5 คืน', data.accommodationTax], ['รวมก่อนเงินสำรอง', data.beforeReserve], ['เงินสำรอง', data.reserve], ['รวมพร้อมเงินสำรอง', data.total]];
     const budgetRows = rows.map(([label, item], index) => {
       return `<div class="budget-row ${index === rows.length - 1 ? 'total' : ''}">
         <span>${escapeHTML(label)}</span>
-        <strong>${moneyRange(item.minJPY, item.maxJPY)}</strong>
+        <strong>${moneyRange(item.minJPY, item.maxJPY)}<span class="budget-group">${travelers} คน ${moneyRange(item.minJPY * travelers, item.maxJPY * travelers)}</span></strong>
         <small>${escapeHTML(item.note || '')}</small>
       </div>`;
     }).join('');
@@ -339,10 +340,10 @@ document.addEventListener('DOMContentLoaded', () => {
         </section>
         <section>
           <h3>ตัวเลือกที่ยังไม่รวมทั้งหมด</h3>
-          <p>ฐานค่าเข้า ${fmt(data.admissionBaseJPY)}: Kiyomizu 500 + Byodoin 700 + Todaiji 800 + Tenryuji Garden 500 + Kinkakuji 500 + Shimogamo เข้าสักการะฟรี + Eikando Night 1,000 + Kaiyukan งบเผื่อ ${fmt(data.kaiyukanEstimateJPY)}; รวม CHAZUNA งบเผื่อ ${fmt(data.chazunaEstimateJPY)} เป็น ${fmt(data.admissionBaseJPY + data.chazunaEstimateJPY)}.</p>
+          <p>ฐานค่าเข้า ${fmt(data.admissionBaseJPY)}: Kiyomizu 500 + Byodoin 700 + Todaiji 800 + Tenryuji Garden 500 + Kinkakuji 500 + Shimogamo เข้าสักการะฟรี + Eikando Night 1,000 + Kaiyukan งบเผื่อ ${fmt(data.kaiyukanEstimateJPY)}; รวม CHAZUNA ${fmt(data.chazunaJPY)} (ราคาจริง) เป็น ${fmt(data.admissionBaseJPY + data.chazunaJPY)}.</p>
           <ul>
             <li>Phoenix Hall เพิ่ม ${fmt(data.phoenixHallExtraJPY)}</li>
-            <li>งบสูงสุด ${fmt(data.admissions.maxJPY)} เหลือเผื่อสำหรับกรณี CHAZUNA แพงกว่างบเผื่อ ค่าเข้า Tenjuan หรือ Tenshukaku 1,200 JPY ตามสมมติฐาน Kaiyukan 3,500 JPY ซึ่งต้องปรับตามราคาจริง; ยังไม่รวม Nishinomaru; หักค่าเข้า Ginkakuji ออกแล้วและเก็บ Kinkakuji ตามแผน</li>
+            <li>งบสูงสุด ${fmt(data.admissions.maxJPY)} รวม Phoenix Hall และค่าเข้า Tenjuan หรือ Tenshukaku 1,200 JPY ตามสมมติฐาน Kaiyukan 3,500 JPY ซึ่งต้องปรับตามราคาจริง; ยังไม่รวม Nishinomaru; หักค่าเข้า Ginkakuji ออกแล้วและเก็บ Kinkakuji ตามแผน</li>
           </ul>
           <p>เงินสำรองรองรับค่าใช้จ่ายเพิ่มบางส่วนเท่านั้น. ไม่รวมเที่ยวบิน ค่าห้อง และช้อปปิ้ง.</p>
         </section>
@@ -352,9 +353,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const input = $('#rateInput'); const note = $('#rateNote'); const reset = $('#rateReset');
     if (!input || !note) return;
     const updateNote = () => {
-      const rate = plan.exchangeRate; const total = plan.budget && plan.budget.total;
+      const rate = plan.exchangeRate; const total = plan.budget && plan.budget.total; const people = (plan.budget && plan.budget.travelers) || 1;
       const custom = rate !== defaultRate ? ' · ใช้เรทที่กรอกเอง' : ' · ค่าเริ่มต้น (อ้างอิง 6 พ.ย. 2026)';
-      note.textContent = (total ? `งบรวมพร้อมสำรอง ${formatNumber(total.minJPY)}–${formatNumber(total.maxJPY)} JPY ≈ ${formatNumber(Math.round(total.minJPY * rate))}–${formatNumber(Math.round(total.maxJPY * rate))} THB` : '') + ` (1 THB ≈ ${(1 / rate).toFixed(3)} JPY)${custom}`;
+      note.textContent = (total ? `งบพร้อมสำรองต่อคน ${formatNumber(total.minJPY)}–${formatNumber(total.maxJPY)} JPY ≈ ${formatNumber(Math.round(total.minJPY * rate))}–${formatNumber(Math.round(total.maxJPY * rate))} THB` + (people > 1 ? ` · รวม ${people} คน ${formatNumber(total.minJPY * people)}–${formatNumber(total.maxJPY * people)} JPY ≈ ${formatNumber(Math.round(total.minJPY * people * rate))}–${formatNumber(Math.round(total.maxJPY * people * rate))} THB` : '') : '') + ` (1 THB ≈ ${(1 / rate).toFixed(3)} JPY)${custom}`;
     };
     const rerenderAll = () => { renderTimeline(); renderRail(); renderBudget(); renderMap(); };
     input.value = String(plan.exchangeRate); updateNote();

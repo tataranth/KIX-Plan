@@ -636,6 +636,12 @@ main {
   color:var(--muted);
   font-size:12px
 }
+.budget-group {
+  display:block;
+  color:var(--muted);
+  font-size:12px;
+  font-weight:400
+}
 .budget-row.total {
   color:var(--accent);
   font-size:16px

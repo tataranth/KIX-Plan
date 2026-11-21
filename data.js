@@ -13,13 +13,14 @@ const PLAN_A_DATA = {
 
   // Numeric values are canonical for both currency views; the published totals are plan estimates.
   budget: {
+    travelers: 2, // ตัวเลขทุกแถวเป็นต่อคน หน้า Budget คูณจำนวนคนให้
     transport: { minJPY: 13900, maxJPY: 13900, note: "รวม Haruka ซื้อใหม่ 2,700 เยน × 2 เที่ยวและเงินเผื่อรายวัน; หากมีตั๋วเดิมให้ปรับตามราคาซื้อจริง ไม่รวมแท็กซี่" },
     meals: { minJPY: 25000, maxJPY: 34000, note: "ไม่รวม CHAZUNA ซึ่งนับรวมในค่าเข้าชมและกิจกรรมชา" },
-    admissions: { minJPY: 9000, maxJPY: 11500, note: "รวม CHAZUNA งบเผื่อ 1,500 และ Kaiyukan งบเผื่อ 3,500; ปรับตามราคาจริง" },
+    admissions: { minJPY: 10300, maxJPY: 11800, note: "รวม CHAZUNA 2,800 (ราคาจริง ตรวจ 21 พ.ย.) และ Kaiyukan งบเผื่อ 3,500; เพดานรวม Phoenix Hall 300 และ Tenjuan / Tenshukaku 1,200" },
     accommodationTax: { minJPY: 2000, maxJPY: 2000, note: "สมมติ 400 เยน × 5 คืน; ยืนยันจากราคาห้องต่อคนต่อคืน" },
-    beforeReserve: { minJPY: 49900, maxJPY: 61400 },
+    beforeReserve: { minJPY: 51200, maxJPY: 61700 },
     reserve: { minJPY: 5000, maxJPY: 5000, note: "เงินสำรองบางส่วน ไม่ใช่งบรับประกันกิจกรรมเสริม" },
-    total: { minJPY: 54900, maxJPY: 66400 },
+    total: { minJPY: 56200, maxJPY: 66700 },
     accommodationTaxBands: [
       { threshold: "ต่ำกว่า 6,000 เยน", amountJPY: 200 },
       { threshold: "6,000–ต่ำกว่า 20,000 เยน", amountJPY: 400 },
@@ -29,7 +30,7 @@ const PLAN_A_DATA = {
     ],
     admissionBaseJPY: 7500,
     kaiyukanEstimateJPY: 3500,
-    chazunaEstimateJPY: 1500,
+    chazunaJPY: 2800,
     phoenixHallExtraJPY: 300
   },
 
