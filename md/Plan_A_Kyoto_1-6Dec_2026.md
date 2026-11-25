@@ -1,8 +1,8 @@
 # 🍁 แผน Kyoto Trip — พัก Kyoto 5 คืน (6 วัน 5 คืน)
 
 📅 **เดินทาง:** 1–6 ธันวาคม 2026  
-📝 **ปรับแผนล่าสุด:** 23 พฤศจิกายน 2026<br>
-🔎 **ตรวจข้อมูล:** 14–23 พฤศจิกายน 2026 ตามแหล่งที่แนบ ไม่ใช่การยืนยันการจองหรือรอบรถ<br>
+📝 **ปรับแผนล่าสุด:** 25 พฤศจิกายน 2026<br>
+🔎 **ตรวจข้อมูล:** 14–25 พฤศจิกายน 2026 ตามแหล่งที่แนบ ไม่ใช่การยืนยันการจองหรือรอบรถ<br>
 🏨 **ที่พัก:** [APA Hotel Kyoto Ekihigashi](https://www.google.com/maps/search/?api=1&query=APA+Hotel+Kyoto+Ekihigashi) ตลอด 5 คืน — JR Kyoto Station **Central Gate** เดินประมาณ 3 นาที / Subway **Exit A5** เดินประมาณ 1 นาที ตาม [ข้อมูลโรงแรม](https://www3.apahotel.com/hotel/kansai/kyoto/kyoto-ekihigashi/)  
 🍵 **ธีม:** ธรรมชาติและวัดในเกียวโต ชาเมือง Uji กวางที่ Nara และปราสาท / พิพิธภัณฑ์สัตว์น้ำ / อาหาร Osaka
 
@@ -49,8 +49,8 @@
 | :--- | :--- | :--- | ---: |
 | **Day 1 — อ. 1 ธ.ค.** | KIX → ฝากกระเป๋า → กินใกล้สถานี → เช็คอิน 15:00 / นอนพัก → Gion หัวค่ำตามแรง | Sushi no Musashi ที่สถานี; Kappa Sushi ที่ Pontocho เป็นตัวเลือก | **3,200 เยน** |
 | **Day 2 — พ. 2 ธ.ค.** | Kiyomizu เช้า → Asahido / ถนนเก่า → Nanzenji → Tenjuan → พักยาว → Eikando รอบค่ำ | กลางวัน Hisago (โอยาโกะดง); คาเฟ่พักขา / เย็น Sushi no Musashi Sanjo หรือ Katsukura Sanjo หรือ Chojiro ที่สถานี | **1,400 เยน** |
-| **Day 3 — พฤ. 3 ธ.ค.** | Arashiyama → Randen เปลี่ยนที่ Katabiranotsuji → Kinkakuji → Shimogamo ช่วงสั้น (งดได้) | เลือก Yoshimura หรือ eX café เป็นร้านหลัก; เย็น Katsugyu ที่สถานี | **1,500 เยน** |
-| **Day 4 — ศ. 4 ธ.ค.** | Kyoto → Uji: Byodoin + CHAZUNA → Nara: Todaiji + กวาง → Kyoto | กิจกรรมชาที่จองไว้ / โซบะมัทฉะ / เย็น Chojiro Sushi ที่สถานี | **2,000 เยน** |
+| **Day 3 — พฤ. 3 ธ.ค.** | Arashiyama → Randen เปลี่ยนที่ Katabiranotsuji → Kinkakuji → Shimogamo ช่วงสั้น (งดได้) | กลางวัน Taisho HANANA, ของหวาน % ARABICA หรือ Bread, Espresso & Arashiyama Garden ตามแรง; เย็น Katsugyu ที่สถานี | **1,500 เยน** |
+| **Day 4 — ศ. 4 ธ.ค.** | Kyoto → Nara: Todaiji + Kasuga + กวาง → Uji: Byodoin + CHAZUNA → Kyoto | กลางวันที่ Nara / CHAZUNA 14:45 (จองแล้ว) / เย็น Chojiro Sushi ที่สถานี | **2,000 เยน** |
 | **Day 5 — ส. 5 ธ.ค.** | Osaka Castle → Osaka Aquarium Kaiyukan → Dotonbori → Kyoto | กลางวันแถว Tempozan / ปลาดิบที่ตลาด Kuromon ก่อนค่ำ / Takoyaki หรือ Okonomiyaki เย็น | **2,500 เยน** |
 | **Day 6 — อา. 6 ธ.ค.** | เช็คเอาท์ → Fushimi Inari ช่วงล่าง → Nishiki สั้น ๆ → รับกระเป๋า → Haruka → KIX T2 เป้าหมาย 16:00 | ชิม/มื้อกลางวันสั้นที่ Nishiki; ร้านรอบสถานีเป็นสำรอง | **3,300 เยน** |
 | **รวมงบตั้งไว้** | รวมเงินเผื่อรถสาธารณะ ไม่รวมแท็กซี่ | | **13,900 เยน** |
@@ -106,10 +106,9 @@
 
 - **07:45–08:30:** JR Sagano Line จาก Kyoto → Saga-Arashiyama แล้วเดินเข้าย่านป่าไผ่
 - **08:30–11:15:** [Bamboo Grove](https://www.google.com/maps/search/?api=1&query=Arashiyama+Bamboo+Grove) → [Tenryuji Garden](https://www.google.com/maps/search/?api=1&query=Tenryuji+Temple) สวนเปิด 08:30 ค่าเข้า 500 เยน [Tenryuji](https://www.tenryuji.com/visit/) → [Togetsukyo Bridge](https://www.google.com/maps/search/?api=1&query=Togetsukyo+Bridge)
-- **11:15–12:45:** เลือกร้านหลัก **หนึ่งร้าน**
-  - [Arashiyama Yoshimura](https://www.google.com/maps/search/?api=1&query=Arashiyama+Yoshimura): โซบะ ตั้งงบ 1,800–3,000 เยน มีเมนูพิเศษฤดูใบไม้แดง [เว็บไซต์ร้าน](https://www.yoshimura-gr.com/arashiyama/shop/)
-  - [eX café Arashiyama](https://www.google.com/maps/search/?api=1&query=eX+cafe+Arashiyama): ดังโงะ/มัทฉะ งบประมาณ 1,500 เยน ถ้าเลือกร้านนี้เป็นหลักให้จัดมื้อกลางวันสั้นเพิ่มเติม
-  - อีกร้านแวะได้เฉพาะเมื่อคิวสั้น ถ้ารอเกิน 30 นาทีให้เปลี่ยนร้าน ไม่บังคับกินสองร้านให้ทันใน 90 นาที
+- **11:15–12:45:** มื้อกลางวัน [Taisho HANANA 鯛匠 HANANA](https://www.google.com/maps/search/?api=1&query=Taisho+Hanana+Arashiyama) เซ็ตข้าวหน้าปลาไท 鯛茶漬け御膳 ราว 2,900 เยน เปิด 11:00–15:30 หรือจนของหมด หยุดไม่แน่นอน คิวมักราว 1 ชม. (ข้อมูลจากรีวิว ตรวจ 25 พ.ย.) ไปต่อคิวทันทีหลังสะพาน โทรเช็ก 075-862-8771 รอเกินราว 60 นาทีให้เปลี่ยนร้าน
+  - ของหวานไม่บังคับ: [% ARABICA Kyoto Arashiyama](https://www.google.com/maps/search/?api=1&query=%25+ARABICA+Kyoto+Arashiyama) ริมแม่น้ำข้างสะพาน Togetsukyo ซื้อลาเต้ถือเดินกิน เครื่องดื่มราว 400–800 เยน เปิดราว 08:00/09:00–18:00 (แหล่งข้อมูลไม่ตรงกัน)
+  - หรือ [Bread, Espresso & Arashiyama Garden](https://www.google.com/maps/search/?api=1&query=Bread+Espresso+and+Arashiyama+Garden) ใกล้สถานี Randen Arashiyama เปิด 08:00–18:00 เฟรนช์โทสต์มัทฉะเริ่ม 14:00 ช้ากว่าเวลาออกจากย่าน ให้ซื้อขนมปัง/เครื่องดื่มแทน
 - **13:00–14:15:** Randen จาก Arashiyama **เปลี่ยนขบวนที่ Katabiranotsuji** ไป Kitanohakubaicho แล้วต่อรถสาธารณะสู่วัดทอง ตรวจสายและเวลาเดินรถจริง
 - **14:15–15:15:** [Kinkakuji](https://www.google.com/maps/search/?api=1&query=Kinkakuji+Temple) งบเข้า 500 เยน
 - **15:15–16:00:** City Bus จาก **Kinkakuji-michi → Shimogamo-jinja-mae** สาย 205 ผ่านทั้งสองป้าย เวลาเดินทางเป็นค่าประมาณ ตรวจรอบและค่าโดยสารจริง [Kyoto City Bus 205](https://www2.city.kyoto.lg.jp/kotsu/busdia/keitou/kto/20500.htm)
@@ -121,30 +120,32 @@
 
 **งบรถสาธารณะ:** 1,500 เยน รวมรถบัสไปและกลับจาก Shimogamo หากเปลี่ยนเส้นทางให้ปรับตามจริง
 
-### Day 4 | ศุกร์ 4 ธันวาคม — Uji (CHAZUNA) และ Nara
+### Day 4 | ศุกร์ 4 ธันวาคม — Nara ช่วงเช้า แล้ว Uji (Byodoin + CHAZUNA) ช่วงบ่าย
 
-- **07:45–08:45:** ออกจากโรงแรม ขึ้น JR Nara Line ไป **JR Uji** เผื่อรอรถและเดินจากสถานี ไม่สับสนกับสถานี Keihan Uji
-- **08:45–10:30:** [Byodoin](https://www.google.com/maps/search/?api=1&query=Byodoin+Temple+Uji) สวนเปิด **08:45** พิพิธภัณฑ์ 09:00 ตั๋วสวนและพิพิธภัณฑ์ **700 เยน** [เวลาและราคา](https://www.byodoin.or.jp/guide/)
-  - ถ้าจะเข้า **ภายใน Phoenix Hall** จ่ายเพิ่ม **300 เยน** รับตั๋วรอบเวลาในสวนตั้งแต่ 09:10 เริ่มชม 09:30 ทุก 20 นาที จองหน้างานตามที่ว่าง เลือกรอบที่จบไม่เกิน 10:30 เพื่อเดินถึง CHAZUNA ก่อน 10:45 หากรอบชนกิจกรรมชาให้เลือกสวน/พิพิธภัณฑ์เป็นหลัก [Phoenix Hall](https://www.byodoin.or.jp/en/guide/internal-view/)
-  - จำกัด **35 คน/รอบ** พลาดรอบแล้วเปลี่ยนเวลาหรือคืนเงินไม่ได้ [จำนวนคนต่อรอบ](https://www.byodoin.or.jp/news/cat23/20261016/)
-- **10:45 ลงทะเบียน · 11:00–ราว 12:30:** [CHAZUNA](https://www.google.com/maps/search/?api=1&query=CHAZUNA+Uji) กิจกรรมโม่มัทฉะด้วยหินแล้วชงดื่มเอง (茶臼から抹茶づくり体験) **รอบ 11:00** ถึงจุดลงทะเบียนหน้าทางเข้า 10:45
-  - ราคา **2,800 เยน/ผู้ใหญ่** รวมตั๋วพิพิธภัณฑ์ชา คืนเงินไม่ได้ รอบอื่นวันนั้น 13:00 / 14:45 (ตรวจ 21 พ.ย.) [หน้าจอง](https://uji-chazuna.kyoto/event/#experience)
-  - ต้องจองล่วงหน้าผ่านเว็บไซต์ CHAZUNA เปิด 09:00–17:00 ไม่มีวันหยุดประจำ แต่อาจปิดชั่วคราวเพราะตรวจอาคารหรือสภาพอากาศ [ตารางเดือน ธ.ค.](https://uji-chazuna.kyoto/3221/) / [หน้าจอง](https://uji-chazuna.kyoto/event/#experience)
-  - กิจกรรมราว 60 นาที + พิพิธภัณฑ์ชาราว 30 นาที (ยังไม่ยืนยันจากร้าน) ถ้าเลยเวลาให้ตัดพิพิธภัณฑ์ก่อน สอบถาม 0774-24-2700
-- **12:30–13:15:** มื้อกลางวันโซบะมัทฉะ เลือกร้านคิวสั้นใกล้ทางกลับสถานี งบอาหาร 1,500–2,500 เยน เวลาเดินเล่น Uji Omotesando เหลือน้อย
-- **13:15–14:45:** เดินกลับ JR Uji และต่อรถไป Nara **ออกจาก Uji ช่วง 13:30–13:45 ไม่เกินนี้** แล้วเผื่อรถบัส/เดินเข้าวัด
-- **14:45–15:45:** [Todaiji Daibutsuden](https://www.google.com/maps/search/?api=1&query=Todaiji+Temple) เข้าวิหารก่อนเดินเล่นกวาง เพราะพระอาทิตย์ตกราว 16:45 ค่าเข้า **800 เยน รับเงินสด** ฤดูหนาววิหารเปิด **08:00–17:00** ส่วนพิพิธภัณฑ์รับเข้าถึง 16:30 เป็นคนละเวลาบริการ [Todaiji](https://www.todaiji.or.jp/information/haikan/)
-- **15:45–16:30:** [Nara Park](https://www.google.com/maps/search/?api=1&query=Nara+Park) และกวาง ตามแสงและสภาพอากาศ
-- **16:30–17:15:** เดินกลับทาง Sanjo-dori หรือใช้รถบัสเมื่อเหนื่อย
-- **17:15–18:30:** รถไฟกลับ Kyoto รวมเวลารอรถและเดินถึงโรงแรม
-- **18:30–20:00:** มื้อเย็นรอบสถานี Kyoto — Night 4
+- **07:15–08:15:** ออกจากโรงแรม เดินไป **Kintetsu Kyoto** ฝั่ง Hachijo ขึ้น Express 急行 ไป **Kintetsu Nara** (หรือเปลี่ยนที่ Yamato-Saidaiji) สถานีอยู่ติด Nara Park เดินถึงวัดได้โดยไม่ต้องต่อรถบัส; Limited Express ต้องซื้อตั๋วเพิ่ม
+- **08:15–09:30:** [Todaiji Daibutsuden](https://www.google.com/maps/search/?api=1&query=Todaiji+Temple) เข้าวิหารช่วงเช้าก่อนคนแน่น ค่าเข้า **800 เยน รับเงินสด** ฤดูหนาววิหารเปิด **08:00–17:00** ส่วนพิพิธภัณฑ์รับเข้าถึง 16:30 เป็นคนละเวลาบริการ [Todaiji](https://www.todaiji.or.jp/information/haikan/) ซื้อขนมกวางระหว่างเดินเข้าวัด ช่วงเช้ากวางยังหิวและเข้าหาคน
+- **09:30–10:45:** เดินขึ้น **Nigatsudo** ชมวิวเมือง แล้วเดินทางป่าไป [Kasuga Taisha](https://www.kasugataisha.or.jp/) บริเวณทั่วไปเข้าฟรี ส่วนที่เก็บค่าเข้าเป็นตัวเลือก ตรวจราคาและเวลาหน้างาน — **งดได้เป็นอย่างแรกเมื่อช้า**
+- **10:45–11:45:** [Nara Park](https://www.google.com/maps/search/?api=1&query=Nara+Park) ทุ่งหญ้า Tobihino และกวาง แล้วเดินกลับทาง Sanjo-dori ระวังอาหารและของในมือ ขนมหมดให้แบมือโชว์
+- **11:45–12:30:** มื้อกลางวันร้านคิวสั้นแถว Sanjo-dori งบอาหาร 1,500–2,500 เยน คิวยาวให้ซื้อของกินไปกินที่ Uji
+- **12:30–13:20:** JR Nara → **JR Uji** ด้วย Miyakoji Rapid ซึ่งเร็วที่สุด **ขึ้นรถไฟไม่เกิน 12:45** เพื่อมีเวลาใน Byodoin ก่อนกิจกรรมชา ลงที่ JR Uji ไม่ใช่ Keihan Uji
+- **13:30–14:20:** [Byodoin](https://www.google.com/maps/search/?api=1&query=Byodoin+Temple+Uji) เดินจาก JR Uji ราว 10 นาที สวนและพิพิธภัณฑ์ Hoshokan ตั๋ว **700 เยน** สวนเปิด **08:45–17:30 รับเข้าถึง 17:15** พิพิธภัณฑ์ **09:00–17:00 รับเข้าถึง 16:45** (ตรวจ 25 พ.ย.) [เวลาและราคา](https://www.byodoin.or.jp/guide/)
+  - **ภายใน Phoenix Hall** เพิ่ม **300 เยน** รับตั๋วรอบในสวน ทุก 20 นาที จำกัด **35 คน/รอบ** เลือก **รอบ 13:50** หรือรอบที่จบก่อน 14:20 ตั๋วรอบหมดก่อนได้ พลาดรอบแล้วเปลี่ยนเวลาหรือคืนเงินไม่ได้ [Phoenix Hall](https://www.byodoin.or.jp/en/guide/internal-view/)
+  - **ออกจาก Byodoin ไม่เกิน 14:20** เพื่อถึงจุดลงทะเบียน CHAZUNA 14:30
+- **14:30 ลงทะเบียน · 14:45–ราว 16:15:** [CHAZUNA](https://www.google.com/maps/search/?api=1&query=CHAZUNA+Uji) กิจกรรมโม่มัทฉะด้วยหินแล้วชงดื่มเอง (茶臼から抹茶づくり体験) — **จองแล้ว รอบ 14:45**
+  - 2 คน ภาษาอังกฤษ ชำระแล้ว **5,600 เยน** (2,800 × 2) รวมตั๋วพิพิธภัณฑ์ชา
+  - ถึงจุดรับลงทะเบียนหน้าทางเข้า (front entrance) **14:30** แสดง QR ในตั๋ว PDF จุดนัด 京都府宇治市莵道丸山203-1
+  - ยกเลิกก่อนวันงานอย่างน้อย 1 วันได้เงินคืน ภายใน 24 ชั่วโมงหรือไม่มาไม่คืนเงิน
+  - กิจกรรมราว 60 นาที + พิพิธภัณฑ์ชาราว 30 นาที (ยังไม่ยืนยันจากร้าน) ไปสายโทร 0774-24-2700 (09:00–17:00)
+- **16:15–17:15:** เดินริมแม่น้ำ Uji และ Uji Omotesando ช่วงพระอาทิตย์ตกราว 16:45 ซื้อชาตามแรง
+- **17:15–18:00:** เดินไป JR Uji แล้ว JR Nara Line กลับ Kyoto ราว 20–30 นาที
+- **18:00–20:00:** มื้อเย็นรอบสถานี Kyoto — Night 4
   - **ซื้อชากลับบ้าน:** Nakamura Tokichi สาขาสถานี Kyoto (中村藤吉 京都駅店) มุมขายชา 銘茶売場 อยู่ชั้น 3 โซน Eat Paradise ใน JR Kyoto Isetan หน้าประตูตรวจตั๋ว JR ฝั่งตะวันตก (JR西口改札前) มุมขายชาเปิด 11:00–21:00 คาเฟ่ 11:00–22:00 วันหยุดตาม Isetan (ตรวจ 21 พ.ย.) อยู่ฝั่งตรงข้ามกับ Chojiro ให้แวะก่อนข้ามไปกินมื้อเย็น หรือหลังกินให้ถึงก่อน 21:00 [หน้าร้าน](https://tokichi.jp/pages/kyoto-station-store-page)
 
 **ร้านเย็น:** แผนหลัก [Chojiro Sushi](https://www.google.com/maps/search/?api=1&query=Chojiro+Sushi+Kyoto+Station) ซูชิสายพานเกรดดีในห้าง Avanti ฝั่ง Hachijo เผื่อเวลาเดินข้ามสถานี สำรอง Sushi no Musashi / Katsugyu / Porta
 
-**เมื่อช้า:** คงรอบ CHAZUNA ที่จองไว้ ตัด Phoenix Hall ภายในและการช้อปก่อน ออก Uji ไม่เกิน 13:45 แล้วไป Todaiji ก่อนจุดอื่น รถบัสใน Nara อาจล่าช้าจากจราจรตาม [Nara Kotsu](https://www.narakotsu.co.jp/route/) ตรวจค่าโดยสารและสายจริง
+**เมื่อช้า:** เข้า Todaiji ก่อนจุดอื่น ตัด Nigatsudo / Kasuga Taisha ก่อน และรักษาขบวน JR Nara → Uji ไม่เกิน 12:45 ; ถ้าถึง Uji ช้าให้ตัด Byodoin ก่อนแล้วไปลงทะเบียน CHAZUNA 14:30 แล้วเข้าสวน Byodoin หลังกิจกรรม (รับเข้าถึง 17:15)
 
-**งบรถสาธารณะ:** 2,000 เยน รวมเงินเผื่อรถบัส Nara
+**งบรถสาธารณะ:** 2,000 เยน รวม Kintetsu Kyoto → Nara, JR Nara → Uji → Kyoto และเงินเผื่อ
 
 ### Day 5 | เสาร์ 5 ธันวาคม — Osaka Castle → Osaka Aquarium Kaiyukan → Dotonbori
 
@@ -201,7 +202,7 @@
 | :--- | :--- | :--- |
 | **Kenninji** | Kiyomizu ใน Day 2 เมื่อฝนตก/ไม่ไหวกับเนิน | เปิด 10:00 จึงใช้แผนสาย: งด Kiyomizu / Asahido ชม Kenninji แล้วกินกลางวัน ก่อนต่อ Nanzenji / Eikando ตามแผน รับเข้าถึง 16:30 ปิด 17:00 ค่าเข้า **800 เยน**; งดกิจกรรมคัดพระสูตรช่วงทริป [เวลา/ราคา](https://www.kenninji.jp/access/) |
 | **Ippodo / Kaboku** | Nishiki ใน Day 6 เมื่อให้ความสำคัญกับชา | เลือกแห่งเดียว: หลัง Fushimi นั่ง Keihan ไป Sanjo ต่อ Subway Tozai ไป Kyoto Shiyakusho-mae แล้วเดิน ถึงราว 10:30; ซื้อชา/ดื่มสั้น 10:30–11:15 ตามคิว (งด Tearoom หากรอคิว) แล้วกลับ Kyoto ทาง Subway เปลี่ยนสายที่ Karasuma Oike ถึงโรงแรมราว 12:00 ร้านเปิด 10:00–17:00 สั่งสุดท้าย 16:30 หยุดพุธที่สองของเดือน ตรวจประกาศพิเศษ [เว็บไซต์ร้าน](https://global.ippodo-tea.co.jp/pages/store-kyoto) |
-| **Taiho-an** | CHAZUNA ใน Day 4 เมื่อจองไม่ได้ | ร้านชาของเมือง Uji ใกล้ Byodoin: Usucha 1,500 เยน ราว 20–30 นาที หรือคอร์สลงมือชง 3,600 เยน ราว 40 นาที (จองก่อนอย่างน้อย 3 วัน) ต้องจองรอบ หากยังไป Nara ให้ออก Uji ไม่เกิน 13:00 [Uji Tourist Association](https://www.kyoto-uji-kankou.or.jp/taihoan-en.html) / [ฟอร์มจอง Usucha](https://select-type.com/rsv/?id=Ws7OUpqMtgo&c_id=430293&w_flg=1) |
+| **Taiho-an** | CHAZUNA ใน Day 4 เมื่อจองไม่ได้ | ร้านชาของเมือง Uji ใกล้ Byodoin: Usucha 1,500 เยน ราว 20–30 นาที หรือคอร์สลงมือชง 3,600 เยน ราว 40 นาที (จองก่อนอย่างน้อย 3 วัน) ต้องจองรอบ เลือกรอบหลังถึง Uji ราว 13:20 และจบก่อน Byodoin ปิดรับ 17:15 [Uji Tourist Association](https://www.kyoto-uji-kankou.or.jp/taihoan-en.html) / [ฟอร์มจอง Usucha](https://select-type.com/rsv/?id=Ws7OUpqMtgo&c_id=430293&w_flg=1) |
 
 ---
 
@@ -246,7 +247,7 @@
 
 - **ใบจองเที่ยวบิน:** เทียบ MM092/MM091 เวลา กระเป๋าและเงื่อนไขเช็คอินกับข้อมูลล่าสุด
 - **โรงแรม:** ยืนยันฝากกระเป๋าก่อนเช็คอิน/หลังเช็คเอาท์ และยอดภาษีจากราคาต่อคนต่อคืน
-- **กิจกรรมชา (Day 4):** จอง CHAZUNA กิจกรรมโม่มัทฉะวันที่ 4 ธ.ค. รอบ 11:00 ผ่าน [หน้าจอง](https://uji-chazuna.kyoto/event/#experience) ราคา 2,800 เยน/ผู้ใหญ่ คืนเงินไม่ได้ ถ้าจองไม่ได้ให้ใช้ Taiho-an เป็นตัวสำรอง
+- **กิจกรรมชา (Day 4):** ✅ จอง CHAZUNA แล้ว 4 ธ.ค. รอบ 14:45 2 คน ภาษาอังกฤษ ชำระแล้ว 5,600 เยน เก็บตั๋ว PDF (มี QR) ไว้ในมือถือแบบออฟไลน์ ยกเลิกก่อนวันงานอย่างน้อย 1 วันได้เงินคืน
 - **Haruka:** ซื้อก่อนออกเดินทาง (ตั๋วส่วนลดซื้อในญี่ปุ่นไม่ได้) 2,700 เยน/เที่ยว จองขากลับให้ถึง T2 ไม่เกิน 16:00; ขาไปเผื่อ ตม. และเที่ยวบินล่าช้า
 - **Day 3:** Shimogamo ต่อท้าย Kinkakuji ตรวจรอบรถบัสสาย 205 และทางกลับ Kyoto Station จริง
 - **Day 2:** ตรวจ Subway Higashiyama → Keage จริง; โทรยืนยันว่า Hisago เปิดวันพุธ 2 ธ.ค. (075-561-2109); ตรวจเวลาเปิด Sushi no Musashi Sanjo / Katsukura Sanjo
