@@ -13,7 +13,7 @@
 ## 🔎 ข้อมูลที่ต้องรู้
 
 - **ใบไม้แดง (ตรวจ 14 พ.ย.):** Arashiyama / Tenryuji วันที่ 3 ธ.ค. น่าจะเป็นปลายช่วง; Eikando คาดสวยปลาย พ.ย.–ต้น ธ.ค.; Shimogamo ปกติสวยต้น–กลาง ธ.ค. เป็นพยากรณ์ ตรวจสภาพจริงอีกครั้ง **24–27 พ.ย.** [tenki.jp](https://tenki.jp/kouyou/6/29/) / [Weathernews — Eikando](https://weathernews.jp/koyo/spot/26120/)
-- **ยังต้องยืนยัน:** ระยะเวลากิจกรรม CHAZUNA, เวลาเปิดร้านมื้อเย็น 2 ธ.ค., รอบและราคา Kaiyukan 5 ธ.ค., วันหยุดร้านเดือน ธ.ค., ขบวน Haruka จริง, เวลาเที่ยวบินตามใบจอง และตำแหน่งจุด Tax-free ที่ KIX T2 International
+- **ยังต้องยืนยัน:** ระยะเวลากิจกรรม CHAZUNA, เวลาเปิดร้านมื้อเย็น 2 ธ.ค., วันเปิดและเวลาเปิด Taisho HANANA / % ARABICA 3 ธ.ค., รอบ ราคา และเวลาปิด Kaiyukan 5 ธ.ค., ค่า Osaka Metro วันที่ 5, วันหยุดร้านเดือน ธ.ค., ขบวน Haruka จริง, เวลาเที่ยวบินตามใบจอง และตำแหน่งจุด Tax-free ที่ KIX T2 International
 
 ---
 
@@ -38,7 +38,7 @@
   - **JR-WEST Online / Exchange Order:** มีขั้นตอนรับหรือแลกตั๋วตามช่องทาง อย่าเหมารวมว่า QR ทุกชนิดใช้ผ่านประตูได้ทันที [JR-WEST — Haruka](https://www.westjr.co.jp/travel-information/en/tickets-passes/oneway/haruka/)
 - **KIX T2 Shuttle ฟรี:** จุดต่อรถจากสถานีสนามบินอยู่ที่ **Aeroplaza ชั้น 1** ใช้เวลาบนรถประมาณ 7–9 นาที ตั้งเวลาเผื่อเดิน รอ และขึ้นรถรวมประมาณ 30 นาที [KIX Shuttle](https://www.kansai-airport.or.jp/en/faq/1101)
 - **IC Card:** ใช้ ICOCA / Suica / PASMO กับรถไฟและรถบัสทั่วไปในเส้นทางตามเงื่อนไขผู้ให้บริการ Haruka ซื้อแยก เติมเริ่มต้นประมาณ **3,000–5,000 เยน** แล้วเติมเพิ่มตามใช้
-- **เงินสด:** เตรียมสำหรับวัดและร้านที่รับเฉพาะเงินสด เช่น Todaiji ตามเว็บไซต์สถานที่
+- **เงินสด:** เตรียมสำหรับวัดและร้านที่รับเฉพาะเงินสด เช่น ร้านในตลาด Kuromon และ Todaiji ตามเว็บไซต์สถานที่
 - **งบรถสาธารณะตั้งไว้ 13,900 เยน/คน:** รวม Haruka สองเที่ยวและเงินเผื่อการเดินทางทั่วไป ไม่รวมแท็กซี่
 
 ---
@@ -51,8 +51,8 @@
 | **Day 2 — พ. 2 ธ.ค.** | Kiyomizu เช้า → Asahido / ถนนเก่า → Nanzenji → Tenjuan → พักยาว → Eikando รอบค่ำ | กลางวัน Hisago (โอยาโกะดง); คาเฟ่พักขา / เย็น Sushi no Musashi Sanjo หรือ Katsukura Sanjo หรือ Chojiro ที่สถานี | **1,400 เยน** |
 | **Day 3 — พฤ. 3 ธ.ค.** | Arashiyama → Randen เปลี่ยนที่ Katabiranotsuji → Kinkakuji → Shimogamo ช่วงสั้น (งดได้) | กลางวัน Taisho HANANA, ของหวาน % ARABICA หรือ Bread, Espresso & Arashiyama Garden ตามแรง; เย็น Katsugyu ที่สถานี | **1,500 เยน** |
 | **Day 4 — ศ. 4 ธ.ค.** | Kyoto → Nara: Todaiji + Kasuga + กวาง → Uji: Byodoin + CHAZUNA → Kyoto | กลางวันที่ Nara / CHAZUNA 14:45 (จองแล้ว) / เย็น Chojiro Sushi ที่สถานี | **2,000 เยน** |
-| **Day 5 — ส. 5 ธ.ค.** | Osaka Castle → Osaka Aquarium Kaiyukan → Dotonbori → Kyoto | กลางวันแถว Tempozan / ปลาดิบที่ตลาด Kuromon ก่อนค่ำ / Takoyaki หรือ Okonomiyaki เย็น | **2,500 เยน** |
-| **Day 6 — อา. 6 ธ.ค.** | เช็คเอาท์ → Fushimi Inari ช่วงล่าง → Nishiki สั้น ๆ → รับกระเป๋า → Haruka → KIX T2 เป้าหมาย 16:00 | ชิม/มื้อกลางวันสั้นที่ Nishiki; ร้านรอบสถานีเป็นสำรอง | **3,300 เยน** |
+| **Day 5 — ส. 5 ธ.ค.** | Kuromon → Osaka Castle → Osaka Aquarium Kaiyukan → Dotonbori → Kyoto | มื้อเช้าควบกลางวันที่ตลาด Kuromon / ของว่างแถว Tempozan / Takoyaki หรือ Okonomiyaki เย็น | **2,500 เยน** |
+| **Day 6 — อา. 6 ธ.ค.** | Fushimi Inari เช้ามืดถึง Yotsutsuji → อาบน้ำ เช็คเอาท์ → Nishiki สั้น ๆ → รับกระเป๋า → Haruka → KIX T2 เป้าหมาย 16:00 | ชิม/มื้อกลางวันสั้นที่ Nishiki; ร้านรอบสถานีเป็นสำรอง | **3,300 เยน** |
 | **รวมงบตั้งไว้** | รวมเงินเผื่อรถสาธารณะ ไม่รวมแท็กซี่ | | **13,900 เยน** |
 
 ---
@@ -102,23 +102,24 @@
 
 **งบรถสาธารณะ:** **1,400 เยน** รวมเงินเผื่อรถไป Kiyomizu และ Subway ไม่รวมแท็กซี่
 
-### Day 3 | พฤหัสบดี 3 ธันวาคม — Arashiyama, Randen, Kinkakuji และ Shimogamo ช่วงสั้น
+### Day 3 | พฤหัสบดี 3 ธันวาคม — Arashiyama, Taisho HANANA, Randen, Kinkakuji และ Shimogamo ช่วงสั้น
 
-- **07:45–08:30:** JR Sagano Line จาก Kyoto → Saga-Arashiyama แล้วเดินเข้าย่านป่าไผ่
-- **08:30–11:15:** [Bamboo Grove](https://www.google.com/maps/search/?api=1&query=Arashiyama+Bamboo+Grove) → [Tenryuji Garden](https://www.google.com/maps/search/?api=1&query=Tenryuji+Temple) สวนเปิด 08:30 ค่าเข้า 500 เยน [Tenryuji](https://www.tenryuji.com/visit/) → [Togetsukyo Bridge](https://www.google.com/maps/search/?api=1&query=Togetsukyo+Bridge)
-- **11:15–12:45:** มื้อกลางวัน [Taisho HANANA 鯛匠 HANANA](https://www.google.com/maps/search/?api=1&query=Taisho+Hanana+Arashiyama) เซ็ตข้าวหน้าปลาไท 鯛茶漬け御膳 ราว 2,900 เยน เปิด 11:00–15:30 หรือจนของหมด หยุดไม่แน่นอน คิวมักราว 1 ชม. (ข้อมูลจากรีวิว ตรวจ 25 พ.ย.) ไปต่อคิวทันทีหลังสะพาน โทรเช็ก 075-862-8771 รอเกินราว 60 นาทีให้เปลี่ยนร้าน
-  - ของหวานไม่บังคับ: [% ARABICA Kyoto Arashiyama](https://www.google.com/maps/search/?api=1&query=%25+ARABICA+Kyoto+Arashiyama) ริมแม่น้ำข้างสะพาน Togetsukyo ซื้อลาเต้ถือเดินกิน เครื่องดื่มราว 400–800 เยน เปิดราว 08:00/09:00–18:00 (แหล่งข้อมูลไม่ตรงกัน)
-  - หรือ [Bread, Espresso & Arashiyama Garden](https://www.google.com/maps/search/?api=1&query=Bread+Espresso+and+Arashiyama+Garden) ใกล้สถานี Randen Arashiyama เปิด 08:00–18:00 เฟรนช์โทสต์มัทฉะเริ่ม 14:00 ช้ากว่าเวลาออกจากย่าน ให้ซื้อขนมปัง/เครื่องดื่มแทน
-- **13:00–14:15:** Randen จาก Arashiyama **เปลี่ยนขบวนที่ Katabiranotsuji** ไป Kitanohakubaicho แล้วต่อรถสาธารณะสู่วัดทอง ตรวจสายและเวลาเดินรถจริง
-- **14:15–15:15:** [Kinkakuji](https://www.google.com/maps/search/?api=1&query=Kinkakuji+Temple) งบเข้า 500 เยน
+- **07:45–08:25:** JR Sagano Line จาก Kyoto → Saga-Arashiyama แล้วเดินเข้าย่านป่าไผ่
+- **08:25–10:20:** [Bamboo Grove](https://www.google.com/maps/search/?api=1&query=Arashiyama+Bamboo+Grove) → เข้า [Tenryuji Garden](https://www.google.com/maps/search/?api=1&query=Tenryuji+Temple) ทางประตูเหนือฝั่งป่าไผ่ ชมสวนแล้วออกประตูหลัก สวนเปิด 08:30 ค่าเข้า 500 เยน [Tenryuji](https://www.tenryuji.com/visit/); **ออกจากวัดไม่เกิน 10:20** สะพาน Togetsukyo ไปหลังกินข้าว
+- **10:30–11:50:** มื้อกลางวัน [Taisho HANANA 鯛匠 HANANA](https://www.google.com/maps/search/?api=1&query=Taisho+Hanana+Arashiyama) **ต่อคิวราว 10:30 ให้ได้รอบแรกตอนเปิด 11:00** เซ็ตข้าวหน้าปลาไท 鯛茶漬け御膳 ราว 2,900–3,000 เยน เปิด 11:00–15:30 หรือจนของหมด หยุดไม่แน่นอน คิวมักราว 1 ชม. (ข้อมูลจากรีวิว ตรวจ 25 พ.ย.) โทรเช็ก 075-862-8771 ไม่ได้รอบแรกและรอเกินราว 60 นาทีให้เปลี่ยนร้าน
+- **11:55–12:55:** เดินลงใต้ชม [Togetsukyo Bridge](https://www.google.com/maps/search/?api=1&query=Togetsukyo+Bridge) และของหวานตามแรง ไปถึงสถานี Randen Arashiyama ไม่เกิน 12:55
+  - [% ARABICA Kyoto Arashiyama](https://www.google.com/maps/search/?api=1&query=%25+ARABICA+Kyoto+Arashiyama) ริมแม่น้ำข้างสะพาน ซื้อลาเต้ถือเดินกิน เครื่องดื่มราว 400–800 เยน เปิดราว 08:00/09:00–18:00 (แหล่งข้อมูลไม่ตรงกัน) คิวช่วงใบไม้แดงอาจยาว **เกินราว 20 นาทีให้ข้าม**
+  - หรือ [Bread, Espresso & Arashiyama Garden](https://www.google.com/maps/search/?api=1&query=Bread+Espresso+and+Arashiyama+Garden) ใกล้สถานี Randen Arashiyama เปิด 08:00–18:00 ซื้อขนมปัง/เครื่องดื่มกลับ (เฟรนช์โทสต์มัทฉะเริ่ม 14:00 ช้ากว่าเวลาออก)
+- **13:00–14:00:** Randen จาก Arashiyama **เปลี่ยนขบวนที่ Katabiranotsuji** ไป Kitanohakubaicho แล้วต่อรถบัส 204/205 หรือเดินราว 20 นาทีสู่วัดทอง ตรวจสายและเวลาเดินรถจริง; **ออกจาก Arashiyama หลัง 13:15 ให้นั่งแท็กซี่ไป Kinkakuji** ราว 20–30 นาที 3,000–3,500 เยน/คัน (ประมาณการ ใช้เงินสำรอง)
+- **14:00–15:15:** [Kinkakuji](https://www.google.com/maps/search/?api=1&query=Kinkakuji+Temple) งบเข้า 500 เยน
 - **15:15–16:00:** City Bus จาก **Kinkakuji-michi → Shimogamo-jinja-mae** สาย 205 ผ่านทั้งสองป้าย เวลาเดินทางเป็นค่าประมาณ ตรวจรอบและค่าโดยสารจริง [Kyoto City Bus 205](https://www2.city.kyoto.lg.jp/kotsu/busdia/keitou/kto/20500.htm)
-- **16:00–16:50:** [Shimogamo Shrine](https://www.shimogamo-jinja.or.jp/prayers/question) และ **Tadasu no Mori ช่วงสั้น** เข้าสักการะฟรี เวลา 06:30–17:00 ส่วนการเข้าชมพิเศษจ่ายแยก; **ออกจาก Kinkakuji หลัง 15:30 ให้งด Shimogamo** แล้วกลับ Kyoto Station
-- **16:50–17:45:** กลับ Kyoto Station ด้วยรถบัส หรือเดินไป Demachiyanagi แล้วต่อรถไฟ เผื่อรถติด/รอรถ
-- **17:45–19:15:** [GYUKATSU Kyoto Katsugyu](https://www.google.com/maps/search/?api=1&query=Gyukatsu+Kyoto+Katsugyu+Kyoto+Ekimae) กิวคัตสึย่างต่อเองบนหินร้อนพร้อมข้าว ใกล้สถานี แล้วกลับพัก — Night 3; สำรอง Sushi no Musashi / Porta
+- **16:00–16:40:** [Shimogamo Shrine](https://www.shimogamo-jinja.or.jp/prayers/question) และ **Tadasu no Mori ช่วงสั้น** ก่อนฟ้ามืดราว 16:45 เข้าสักการะฟรี เวลา 06:30–17:00 ส่วนการเข้าชมพิเศษจ่ายแยก; **ออกจาก Kinkakuji หลัง 15:30 ให้งด Shimogamo** แล้วกลับ Kyoto Station
+- **16:40–17:30:** เดินผ่าน Tadasu no Mori ลงใต้ไป **Demachiyanagi** ราว 15 นาที → Keihan ไป **Tofukuji** → JR Nara Line ไป Kyoto (Keihan ไม่เข้าสถานี Kyoto) หรือรถบัส 4 / 205 จาก Shimogamo-jinja-mae
+- **17:30–19:00:** [GYUKATSU Kyoto Katsugyu](https://www.google.com/maps/search/?api=1&query=Gyukatsu+Kyoto+Katsugyu+Kyoto+Ekimae) กิวคัตสึย่างต่อเองบนหินร้อนพร้อมข้าว ใกล้สถานี แล้วกลับพัก — Night 3; ถ้างด Shimogamo มาต่อคิวได้ตั้งแต่ราว 16:30 คิวสั้นกว่าช่วง 18:00; สำรอง Sushi no Musashi / Porta
 
-**เก็บวัดทองเป็นจุดหลัก:** คง Arashiyama → Randen → Kinkakuji ตามตารางนี้ ส่วน Shimogamo เป็นจุดต่อท้ายที่งดได้ หากคิวมื้อกลางวันยาวให้ลดร้านเสริม
+**เก็บวัดทองเป็นจุดหลัก:** คง Arashiyama → Randen → Kinkakuji ตามตารางนี้ ส่วน Shimogamo เป็นจุดต่อท้ายที่งดได้ หากคิวมื้อกลางวันยาวให้งดของหวานก่อน
 
-**งบรถสาธารณะ:** 1,500 เยน รวมรถบัสไปและกลับจาก Shimogamo หากเปลี่ยนเส้นทางให้ปรับตามจริง
+**งบรถสาธารณะ:** 1,500 เยน รวมรถบัสไป Shimogamo และขากลับด้วย Keihan + JR หรือรถบัส หากเปลี่ยนเส้นทางให้ปรับตามจริง
 
 ### Day 4 | ศุกร์ 4 ธันวาคม — Nara ช่วงเช้า แล้ว Uji (Byodoin + CHAZUNA) ช่วงบ่าย
 
@@ -147,34 +148,37 @@
 
 **งบรถสาธารณะ:** 2,000 เยน รวม Kintetsu Kyoto → Nara, JR Nara → Uji → Kyoto และเงินเผื่อ
 
-### Day 5 | เสาร์ 5 ธันวาคม — Osaka Castle → Osaka Aquarium Kaiyukan → Dotonbori
+### Day 5 | เสาร์ 5 ธันวาคม — Kuromon → Osaka Castle → Osaka Aquarium Kaiyukan → Dotonbori
 
-เที่ยวหลักเพียง **3 จุด** โดย Osaka Castle เน้นสวนและภายนอก
+ไป Kuromon ช่วงเช้าที่ร้านเปิดครบและคิวสั้น แล้วไปถึง Dotonbori หลังฟ้ามืด
 
-- **08:00–09:30:** ออกจากโรงแรม JR Special Rapid Kyoto → Osaka แล้ว JR Loop Line → Osakajokoen เผื่อเดินเข้าบริเวณปราสาท เวลาเป็นกรอบเดินทาง ไม่ใช่ขบวนที่จองแล้ว
-- **09:30–11:00:** [Osaka Castle Park](https://www.osakacastlepark.jp/) เดินสวน ถ่ายรูปคูน้ำและปราสาทภายนอก สวนทั่วไปฟรี เลือกเส้นทางผ่านปราสาทแล้วออกทาง Morinomiya ไม่เดินวนครบสวน
-  - หากต้องการ **เข้า Tenshukaku** ผู้ใหญ่ **1,200 เยน** เปิด 09:00–18:00 รับเข้าถึง 17:30 ให้ใช้ช่วงนี้เข้าตัวปราสาทแทนการเดินสวนยาวและซื้อตั๋วล่วงหน้า; หากคิวยาวต้องลดการเดินสวนหรือขยับรอบ Kaiyukan ตามเงื่อนไขตั๋วก่อน อย่าเร่งมื้อกลางวัน [เว็บไซต์ปราสาท](https://www.osakacastle.net/guide/)
-- **11:00–12:00:** เดินไป **Morinomiya → Osaka Metro Chuo Line → Osakako** แล้วเดินจากทางออก 1 ประมาณ 5 นาทีถึง Kaiyukan ใช้สาย Chuo ตรงโดยไม่ต้องเปลี่ยนสาย [การเดินทางจาก Kaiyukan](https://www.kaiyukan.com/info/access/)
-- **12:00–13:00:** มื้อกลางวันและนั่งพักแถว **Tempozan Marketplace** เลือกร้านคิวสั้น งบประมาณ 1,000–2,000 เยน
-- **13:00–15:30:** [Osaka Aquarium Kaiyukan](https://www.kaiyukan.com/info/ticket/kaiyukan/) เผื่อชม **2.5 ชั่วโมง**
-  - เลือก e-ticket **วันที่ 5 ธ.ค. รอบเป้าหมาย 13:00** หากมีที่ว่าง เว็บไซต์แนะนำตั๋วระบุวันและเวลา; ตั๋วหน้างานอาจไม่ได้เข้ารอบที่ต้องการ ราคาปรับตามวัน **ตั้งงบเผื่อ 3,500 เยน/คน** ตรวจราคาและที่ว่างก่อนชำระเงิน; **ออกแล้วกลับเข้าซ้ำไม่ได้** กินกลางวันและเข้าห้องน้ำก่อนเข้า (ตรวจ 23 พ.ย.) [ราคา/ตั๋ว](https://www.kaiyukan.com/info/ticket/kaiyukan/) / [เวลาเปิด](https://www.kaiyukan.com/info/hours/)
-- **15:30–16:15:** เดินกลับ Osakako → Chuo Line ไป **Sakaisuji-Hommachi → เปลี่ยน Sakaisuji Line ไป Nippombashi** ทางออก 10 ติดตลาด Kuromon
-- **16:15–17:15:** [ตลาด Kuromon](https://www.google.com/maps/search/?api=1&query=Kuromon+Market+Osaka) แวะกินปลาดิบ ไคเซนดง หรือเนื้อวากิวเสียบไม้ในร้านที่มีที่นั่งกิน เช่น Kuromon Sanpei (黒門三平) ซึ่งเว็บท่องเที่ยวระบุว่าเปิด 09:00–18:30 นั่งกินได้ถึง 18:00 และ **ปิดเมื่อของหมด** [gltjp](https://www.gltjp.com/ja/directory/item/14539/) (ตรวจ 19 พ.ย.); ร้านในตลาดมักปิดหรือของหมดช่วง 17:00–18:00 **ถ้าถึงหลัง 16:45 ให้ข้ามไป Dotonbori เลย**
-- **17:15–19:15:** เดินจาก Kuromon ไป [Dotonbori / Glico Sign](https://www.google.com/maps/search/?api=1&query=Dotonbori+Glico+Sign) เดินริมคลอง ถ่ายป้ายไฟ กินมื้อเย็นและซื้อของในย่านนี้
+- **08:00–09:10:** JR Special Rapid Kyoto → Osaka เดินไป Metro Umeda → Midosuji Line ไป **Namba** แล้วเดินไปตลาด Kuromon ราว 10 นาที รวม 60–70 นาที เวลาเป็นกรอบเดินทาง ไม่ใช่ขบวนที่จองแล้ว
+- **09:10–10:45:** [ตลาด Kuromon](https://www.google.com/maps/search/?api=1&query=Kuromon+Market+Osaka) มื้อเช้าควบกลางวัน ปลาดิบ ไคเซนดง หรือเนื้อวากิวเสียบไม้ในร้านที่มีที่นั่งกิน เช่น Kuromon Sanpei (黒門三平) ซึ่งเว็บท่องเที่ยวระบุว่าเปิด 09:00–18:30 นั่งกินได้ถึง 18:00 และ **ปิดเมื่อของหมด** [gltjp](https://www.gltjp.com/ja/directory/item/14539/) (ตรวจ 19 พ.ย.); หลายร้านเปิด 09:00–10:00 ถ้าร้านที่อยากกินยังไม่เปิดให้เดินรอบตลาดก่อนแล้วกลับมา; **หลายร้านรับเฉพาะเงินสด**
+- **10:45–11:10:** เดินไป Nippombashi → **Sakaisuji Line → เปลี่ยน Chuo Line ที่ Sakaisuji-Hommachi → Morinomiya**
+- **11:10–12:45:** [Osaka Castle Park](https://www.osakacastlepark.jp/) เดินเข้าฝั่ง Morinomiya ถ่ายรูปปราสาทภายนอกและสวน สวนทั่วไปฟรี แล้วเดินกลับออกทาง Morinomiya
+  - หากต้องการ **เข้า Tenshukaku** ผู้ใหญ่ **1,200 เยน** เปิด 09:00–18:00 รับเข้าถึง 17:30 ใช้ช่วงนี้แทนการเดินสวนยาว [เว็บไซต์ปราสาท](https://www.osakacastle.net/guide/)
+- **12:45–13:30:** **Morinomiya → Osaka Metro Chuo Line → Osakako** แล้วเดินจากทางออก 1 ประมาณ 5 นาที [การเดินทางจาก Kaiyukan](https://www.kaiyukan.com/info/access/)
+- **13:30–14:00:** ของว่าง ของหวาน หรือกาแฟที่ **Tempozan Marketplace** และเข้าห้องน้ำก่อนเข้า Kaiyukan **กินให้อิ่มพอ** เพราะมื้อที่ Kuromon กับมื้อเย็นห่างกันเกือบ 7 ชม.
+- **14:00–16:30:** [Osaka Aquarium Kaiyukan](https://www.kaiyukan.com/info/ticket/kaiyukan/) เผื่อชม **2.5 ชั่วโมง**
+  - เลือก e-ticket **วันที่ 5 ธ.ค. รอบเป้าหมาย 14:00** ถ้ามีรอบ 13:30 ให้เลือกรอบนั้น วันเสาร์บ่ายคนเยอะ เว็บไซต์แนะนำตั๋วระบุวันและเวลา; ตั๋วหน้างานอาจไม่ได้เข้ารอบที่ต้องการ ราคาปรับตามวัน **ตั้งงบเผื่อ 3,500 เยน/คน** ตรวจราคาและที่ว่างก่อนชำระเงิน; **ออกแล้วกลับเข้าซ้ำไม่ได้** (ตรวจ 23 พ.ย.) [ราคา/ตั๋ว](https://www.kaiyukan.com/info/ticket/kaiyukan/) / [เวลาเปิด](https://www.kaiyukan.com/info/hours/)
+- **16:30–17:15:** Osakako → Chuo Line → **Hommachi → เปลี่ยน Midosuji Line → Namba** แล้วเดินเข้า Dotonbori
+- **17:15–19:15:** [Dotonbori / Glico Sign](https://www.google.com/maps/search/?api=1&query=Dotonbori+Glico+Sign) ถึงหลังฟ้ามืด ป้ายไฟเปิดแล้ว เดินริมคลอง กินมื้อเย็นและซื้อของในย่านนี้
   - เลือก Takoyaki / Okonomiyaki ตามคิว เช่น Wanaka หรือ Mizuno ถ้าคิวเกิน 30 นาทีให้เปลี่ยนร้าน
 - **19:15–20:45:** เดินไป Namba → Metro Midosuji นั่งเลย Umeda ไปลง **Shin-Osaka** → JR Special Rapid Kyoto → โรงแรม เผื่อ **60–90 นาที** — Night 5
+  - **ออกจาก Dotonbori ไม่เกิน 19:45** ถึงโรงแรมราว 20:45 แล้วอาบน้ำและ **เก็บกระเป๋าคืนนี้** เข้านอนราว 22:00 เพื่อตื่น 05:45 ขึ้นขบวน 06:24 วันที่ 6
 
-**เมื่อช้า/เหนื่อยหรือฝนหนัก:** ลดการเดินสวนปราสาทก่อน รักษารอบ Kaiyukan ที่ซื้อไว้และมื้อพักกลางวัน; กลับจาก Dotonbori เร็วขึ้นได้
+**เมื่อช้า/เหนื่อยหรือฝนหนัก:** ลดการเดินสวนปราสาทก่อน รักษารอบ Kaiyukan ที่ซื้อไว้และของว่างก่อนเข้า; กลับจาก Dotonbori เร็วขึ้นได้
 
-**งบรถสาธารณะ:** **2,500 เยน** รวมเงินเผื่อเส้นทางไปอ่าว Osaka และกลับ Kyoto; **ค่า Kaiyukan ตั้งไว้แยก 3,500 เยน** รวมในงบกิจกรรมทั้งทริปแล้ว ส่วน Tenshukaku 1,200 เยนยังเป็นตัวเลือก
+**งบรถสาธารณะ:** **2,500 เยน** ประมาณการ JR ไป-กลับ + Metro 5 เที่ยว ราว 2,500 เยน (ค่า Metro ยังไม่ได้ตรวจ ส่วนเกินเล็กน้อยใช้เงินสำรอง); **ค่า Kaiyukan ตั้งไว้แยก 3,500 เยน** รวมในงบกิจกรรมทั้งทริปแล้ว ส่วน Tenshukaku 1,200 เยนยังเป็นตัวเลือก
 
-### Day 6 | อาทิตย์ 6 ธันวาคม — Fushimi ช่วงล่าง → Nishiki แบบสั้น และกลับไทย
+### Day 6 | อาทิตย์ 6 ธันวาคม — Fushimi Inari เช้ามืดถึง Yotsutsuji → อาบน้ำ เช็คเอาท์ → Nishiki แบบสั้น และกลับไทย
 
-- **07:30–08:00:** เช็คเอาท์ ฝากกระเป๋าและยืนยันเวลารับกลับ โรงแรมกำหนดเช็คเอาท์ 10:00
-- **08:00–08:30:** JR Nara Line Kyoto → **Inari** เลือกขบวนที่จอดสถานีนี้
-- **08:30–09:15:** [Fushimi Inari Taisha](https://www.google.com/maps/search/?api=1&query=Fushimi+Inari+Taisha) ชมศาลเจ้าและเสาโทริอิช่วงล่างแบบสั้น **ไม่ขึ้นยอดเขาในวันบินกลับ** ถ้าอยากเดินนานกว่านี้ให้งด Nishiki
-- **09:15–10:15:** เดินไป **Keihan Fushimi-inari → Gion-shijo** แล้วเดินไปตลาด Nishiki เผื่อรอรถและเดิน 15–20 นาทีจากย่าน Shijo ไม่ต้องย้อนกลับ Kyoto Station ก่อน และไม่สับสน JR Inari กับ Keihan Fushimi-inari ตรวจขบวนจริง
-- **10:15–11:15:** [Nishiki Market](https://www.kyoto-nishiki.or.jp/en/) เดินตลาดและชิม/กินมื้อสั้นในพื้นที่ร้าน ไม่เดินกิน ร้านค้าเปิดไม่พร้อมกันและมีวันหยุดแยกตาม [FAQ ตลาด](https://www.kyoto-nishiki.or.jp/en/contact/) หากร้านที่อยากกินยังไม่เปิดหรือคิวยาว ไม่รอจนเกินเวลา
+- **06:15–06:30:** ออกโรงแรม ขึ้น JR Nara Line ขบวน **Local 06:24** จาก Kyoto ถึง **Inari 06:30** (ตาราง JR วันเสาร์/วันหยุด ตรวจ 25 พ.ย. [JR West](https://timetable.jr-odekake.net/line-timetable/2300?date=2026-12-05)) ขบวน Rapid / Miyakoji Rapid ไม่จอด Inari
+- **06:30–08:15:** [Fushimi Inari Taisha](https://www.google.com/maps/search/?api=1&query=Fushimi+Inari+Taisha) เดินผ่าน Senbon Torii → Okusha → **จุดชมวิว Yotsutsuji** ขึ้นราว 40–45 นาที ลงราว 30–40 นาที (ตรวจ 25 พ.ย. [veltra](https://www.veltra.com/jp/yokka/article/fushimi-hiking/)) เข้าฟรีตลอด 24 ชม. พระอาทิตย์ขึ้นราว 06:50 ช่วงแรกฟ้ายังสลัว; หลัง Okusha เป็นบันไดหินต่อเนื่อง ใส่เสื้อบางทับเสื้อกันหนาวที่ถอดได้; **ถึง 07:30 แล้วยังไม่ถึง Yotsutsuji ให้หันกลับ**; ฝนตกเบา ๆ บันไดหินลื่น ให้เดินแค่ช่วง Senbon Torii ถึง Okusha แล้วกลับ
+- **08:15–08:40:** JR Inari → Kyoto (ขบวน Local ราวทุก 15 นาที) แล้วเดินกลับโรงแรม
+- **08:40–10:00:** อาบน้ำ พัก **เช็คเอาท์ก่อน 10:00** ตามที่โรงแรมกำหนด ฝากกระเป๋าและยืนยันเวลารับกลับ; เก็บกระเป๋าให้เสร็จตั้งแต่คืนก่อน และถามเรื่อง late check-out ตอนเช็คอินได้
+- **10:00–10:15:** Subway **Kyoto → Shijo** แล้วเดินไปตลาด
+- **10:15–11:15:** [Nishiki Market](https://www.kyoto-nishiki.or.jp/en/) เดินตลาดและชิม/กินมื้อสั้นในพื้นที่ร้าน ไม่เดินกิน ร้านค้าเปิดไม่พร้อมกันและมีวันหยุดแยกตาม [FAQ ตลาด](https://www.kyoto-nishiki.or.jp/en/contact/) หากร้านที่อยากกินยังไม่เปิดหรือคิวยาว ไม่รอจนเกินเวลา; เหนื่อยจากเขาให้งดตลาดแล้วพักรอบสถานี
 - **11:15–12:00:** ออกจากตลาด เดินไป Subway **Shijo → Kyoto** แล้วกลับโรงแรม รับประทานมื้อสั้นรอบสถานีได้เฉพาะเมื่อยังมีเวลา ไม่เพิ่มร้านจองยาว
 - **12:00–13:00:** รับกระเป๋าและเข้าสถานี เตรียมขึ้น Haruka ไม่เริ่มกิจกรรมใหม่
   - ถ้ายังไม่ได้ซื้อชาเมื่อวันที่ 4 แวะ Nakamura Tokichi สาขาสถานี Kyoto มุมขายชาชั้น 3 Eat Paradise ใน JR Kyoto Isetan เปิด 11:00 (ตรวจ 21 พ.ย.) ใช้เวลาไม่เกิน 15 นาทีแล้วไปชานชาลา Haruka
@@ -188,7 +192,7 @@
 - **19:15:** Peach **MM091** ออกจาก KIX T2
 - **23:55:** ถึง BKK คืนวันที่ 6 ธ.ค.
 
-**เวลาที่ต้องรักษา:** ออกจาก Nishiki **ไม่เกิน 11:15** กลับถึงโรงแรมราว **12:00** และรับกระเป๋า/เข้าสถานีช่วง **12:00–13:00** หากออกจาก Fushimi หลัง 09:30 ให้ตัด Nishiki แล้วกลับสถานี ไม่บีบเวลา Haruka เพื่อชดเชยตลาด
+**เวลาที่ต้องรักษา:** ออกจาก Nishiki **ไม่เกิน 11:15** กลับถึงโรงแรมราว **12:00** และรับกระเป๋า/เข้าสถานีช่วง **12:00–13:00** หากกลับถึงโรงแรมหลัง 09:00 ให้ตัด Nishiki แล้วพักรอบสถานี ไม่บีบเวลา Haruka เพื่อชดเชยตลาด
 
 **เมื่อฝนตก/รถมีปัญหา:** ตัด Fushimi และ Nishiki แล้วอยู่รอบสถานี ถ้า Haruka มีปัญหาให้ตัดกิจกรรม/มื้อยาวแล้วหาวิธีไปสนามบินจากข้อมูลผู้ให้บริการทันที ไม่รอถึงช่วงบ่าย Sanjusangendo ใช้แทน Fushimi เฉพาะเมื่อเลือกไว้ก่อนและตรวจเวลา/ราคาแล้ว โดยงด Nishiki ด้วย
 
@@ -201,7 +205,7 @@
 | สถานที่ | ใช้แทน | ข้อมูลและข้อจำกัด |
 | :--- | :--- | :--- |
 | **Kenninji** | Kiyomizu ใน Day 2 เมื่อฝนตก/ไม่ไหวกับเนิน | เปิด 10:00 จึงใช้แผนสาย: งด Kiyomizu / Asahido ชม Kenninji แล้วกินกลางวัน ก่อนต่อ Nanzenji / Eikando ตามแผน รับเข้าถึง 16:30 ปิด 17:00 ค่าเข้า **800 เยน**; งดกิจกรรมคัดพระสูตรช่วงทริป [เวลา/ราคา](https://www.kenninji.jp/access/) |
-| **Ippodo / Kaboku** | Nishiki ใน Day 6 เมื่อให้ความสำคัญกับชา | เลือกแห่งเดียว: หลัง Fushimi นั่ง Keihan ไป Sanjo ต่อ Subway Tozai ไป Kyoto Shiyakusho-mae แล้วเดิน ถึงราว 10:30; ซื้อชา/ดื่มสั้น 10:30–11:15 ตามคิว (งด Tearoom หากรอคิว) แล้วกลับ Kyoto ทาง Subway เปลี่ยนสายที่ Karasuma Oike ถึงโรงแรมราว 12:00 ร้านเปิด 10:00–17:00 สั่งสุดท้าย 16:30 หยุดพุธที่สองของเดือน ตรวจประกาศพิเศษ [เว็บไซต์ร้าน](https://global.ippodo-tea.co.jp/pages/store-kyoto) |
+| **Ippodo / Kaboku** | Nishiki ใน Day 6 เมื่อให้ความสำคัญกับชา | เลือกแห่งเดียว: หลังเช็คเอาท์ขึ้น Subway Karasuma ไป Karasuma Oike ต่อ Tozai ไป Kyoto Shiyakusho-mae แล้วเดิน ถึงราว 10:30; ซื้อชา/ดื่มสั้น 10:30–11:15 ตามคิว (งด Tearoom หากรอคิว) แล้วกลับ Kyoto ทาง Subway เปลี่ยนสายที่ Karasuma Oike ถึงโรงแรมราว 12:00 ร้านเปิด 10:00–17:00 สั่งสุดท้าย 16:30 หยุดพุธที่สองของเดือน ตรวจประกาศพิเศษ [เว็บไซต์ร้าน](https://global.ippodo-tea.co.jp/pages/store-kyoto) |
 | **Taiho-an** | CHAZUNA ใน Day 4 เมื่อจองไม่ได้ | ร้านชาของเมือง Uji ใกล้ Byodoin: Usucha 1,500 เยน ราว 20–30 นาที หรือคอร์สลงมือชง 3,600 เยน ราว 40 นาที (จองก่อนอย่างน้อย 3 วัน) ต้องจองรอบ เลือกรอบหลังถึง Uji ราว 13:20 และจบก่อน Byodoin ปิดรับ 17:15 [Uji Tourist Association](https://www.kyoto-uji-kankou.or.jp/taihoan-en.html) / [ฟอร์มจอง Usucha](https://select-type.com/rsv/?id=Ws7OUpqMtgo&c_id=430293&w_flg=1) |
 
 ---
@@ -249,10 +253,11 @@
 - **โรงแรม:** ยืนยันฝากกระเป๋าก่อนเช็คอิน/หลังเช็คเอาท์ และยอดภาษีจากราคาต่อคนต่อคืน
 - **กิจกรรมชา (Day 4):** ✅ จอง CHAZUNA แล้ว 4 ธ.ค. รอบ 14:45 2 คน ภาษาอังกฤษ ชำระแล้ว 5,600 เยน เก็บตั๋ว PDF (มี QR) ไว้ในมือถือแบบออฟไลน์ ยกเลิกก่อนวันงานอย่างน้อย 1 วันได้เงินคืน
 - **Haruka:** ซื้อก่อนออกเดินทาง (ตั๋วส่วนลดซื้อในญี่ปุ่นไม่ได้) 2,700 เยน/เที่ยว จองขากลับให้ถึง T2 ไม่เกิน 16:00; ขาไปเผื่อ ตม. และเที่ยวบินล่าช้า
-- **Day 3:** Shimogamo ต่อท้าย Kinkakuji ตรวจรอบรถบัสสาย 205 และทางกลับ Kyoto Station จริง
+- **Day 3:** Shimogamo ต่อท้าย Kinkakuji ตรวจรอบรถบัสสาย 205 และทางกลับ Kyoto Station จริง; โทรเช็กว่า Taisho HANANA เปิดวันพฤหัส 3 ธ.ค. (075-862-8771) ถ้าสลับ Day 2 ↔ Day 3 ให้เช็กวันพุธแทน
+- **Day 6:** ถามโรงแรมเรื่อง late check-out และฝากกระเป๋าหลังเช็คเอาท์ถึงราว 12:00; คืนวันที่ 5 เก็บกระเป๋าให้เสร็จก่อนนอน
 - **Day 2:** ตรวจ Subway Higashiyama → Keage จริง; โทรยืนยันว่า Hisago เปิดวันพุธ 2 ธ.ค. (075-561-2109); ตรวจเวลาเปิด Sushi no Musashi Sanjo / Katsukura Sanjo
 - **29–30 พ.ย.:** ดูพยากรณ์ tenki.jp ตัดสินใจว่าจะสลับ Day 2 ↔ Day 3 หรือไม่
-- **Day 5:** ซื้อ e-ticket Kaiyukan แบบระบุเวลา วันที่ 5 ธ.ค. รอบเป้าหมาย 13:00 ตามที่ว่าง ตรวจราคาและเวลาเปิดจริงก่อนซื้อ; หากเข้า Tenshukaku เพิ่ม 1,200 เยนและใช้แทนช่วงเดินสวน
-- **24–27 พ.ย.:** ตรวจวันหยุดร้านหลัก (Hisago, Katsugyu, Chojiro, Sushi no Musashi) รอบรถ/ค่าโดยสาร สภาพใบไม้และประกาศไฟประดับ
+- **Day 5:** ซื้อ e-ticket Kaiyukan แบบระบุเวลา วันที่ 5 ธ.ค. รอบเป้าหมาย 14:00 (หรือ 13:30) ตามที่ว่าง ตรวจราคาและเวลาเปิด-ปิดวันนั้นก่อนซื้อ; หากเข้า Tenshukaku เพิ่ม 1,200 เยนและใช้แทนช่วงเดินสวน
+- **24–27 พ.ย.:** ตรวจวันหยุดร้านหลัก (Hisago, Taisho HANANA, Katsugyu, Chojiro, Sushi no Musashi) รอบรถ/ค่าโดยสาร สภาพใบไม้และประกาศไฟประดับ
 - **Tax-free ก่อนเดินทาง:** เตรียม VJW และวิธีรับเงินคืนตามร้าน; ยืนยันสินค้าก่อนโหลดกระเป๋าที่บรรจุสินค้า
 - **ก่อนแต่ละวัน:** ดูฝนและสถานะรถ กำหนดจุดหลักหนึ่งถึงสองแห่งและตัดกิจกรรมเสริมเมื่อช้า
