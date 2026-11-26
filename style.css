@@ -1,19 +1,22 @@
 :root {
   color-scheme:light;
-  --paper:#f7f4ed;
-  --surface:#fffdf8;
-  --ink:#28382f;
-  --muted:#637065;
-  --line:#dcded3;
-  --accent:#a74630;
-  --soft:#f7e9dc;
-  --green:#e8ede2;
-  --transit-train:#2f6b9a;
+  /* washi, sumi ink and shu (torii vermilion); dark theme is ai-zome indigo */
+  --paper:#eeefea;
+  --surface:#f8f8f4;
+  --ink:#23272b;
+  --muted:#5f6560;
+  --line:#d2d5ce;
+  --accent:#b0341f;
+  --soft:#f4e2da;
+  --green:#e1e6d6;
+  --sans:"Leelawadee UI","Thonburi","Noto Sans Thai","Sukhumvit Set",Tahoma,Arial,sans-serif;
+  --mincho:"Yu Mincho","YuMincho","Hiragino Mincho ProN","Noto Serif JP","Noto Serif CJK JP","Source Han Serif JP",Georgia,serif;
+  --transit-train:#2d5d8c;
   --transit-subway:#2f8a5b;
   --transit-bus:#b5651d;
   --transit-walk:#637065;
   --shadow:0 8px 28px #28382f0a;
-  font-family:Tahoma,"Noto Sans Thai",Arial,sans-serif;
+  font-family:var(--sans);
   font-size:15px;
   line-height:1.7
 }
@@ -31,18 +34,18 @@ body {
 }
 :root.dark {
   color-scheme:dark;
-  --paper:#232821;
-  --surface:#2b3129;
-  --ink:#f1f1e6;
-  --muted:#b3beb1;
-  --line:#465043;
-  --accent:#f5aa8e;
-  --soft:#45372b;
-  --green:#354333;
+  --paper:#111922;
+  --surface:#18222e;
+  --ink:#e8e6df;
+  --muted:#a0a9b2;
+  --line:#2c3947;
+  --accent:#ee7058;
+  --soft:#33221f;
+  --green:#1c2b28;
   --transit-train:#8cc4ee;
   --transit-subway:#8fd6ad;
   --transit-bus:#f0b27a;
-  --transit-walk:#b3beb1;
+  --transit-walk:#a0a9b2;
   --shadow:0 8px 28px #0003
 }
 .shell {
@@ -58,13 +61,23 @@ body {
   gap:28px
 }
 .brand {
-  font:22px Georgia,serif;
-  letter-spacing:-.5px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font:600 21px var(--mincho);
   color:var(--ink);
   text-decoration:none
 }
 .brand span {
-  color:var(--accent)
+  /* the one hanko seal on the page */
+  display:grid;
+  place-items:center;
+  width:30px;
+  height:30px;
+  border-radius:3px;
+  background:var(--accent);
+  color:var(--surface);
+  font-size:17px
 }
 .edition {
   font-size:11px;
@@ -94,21 +107,25 @@ body {
 .hero {
   padding:30px 32px 25px;
   display:grid;
-  grid-template-columns:1fr auto;
+  grid-template-columns:auto 1fr auto;
   gap:30px;
   align-items:end
 }
-.eyebrow {
-  margin:0;
-  color:var(--accent);
-  font-size:11px;
-  font-weight:bold;
-  letter-spacing:1.8px
-}
 .hero h1 {
-  font:400 clamp(32px,4.4vw,50px)/1.1 Georgia,serif;
-  letter-spacing:-1.4px;
-  margin:9px 0 8px
+  font:500 clamp(30px,4vw,46px)/1.15 var(--mincho);
+  letter-spacing:-.5px;
+  margin:0 0 8px
+}
+.hero-plaque {
+  align-self:stretch;
+  writing-mode:vertical-rl;
+  font:600 26px/1 var(--mincho);
+  letter-spacing:.3em;
+  padding:12px 9px;
+  border:1px solid var(--ink);
+  outline:1px solid var(--line);
+  outline-offset:3px;
+  text-align:center
 }
 .hero-copy {
   margin:0;
@@ -188,9 +205,8 @@ main {
   text-align:left;
   background:var(--surface);
   border:1px solid var(--line);
-  border-radius:5px;
-  padding:9px 11px;
-  box-shadow:var(--shadow)
+  border-radius:2px;
+  padding:9px 11px
 }
 .day-tab small {
   display:block;
@@ -339,6 +355,7 @@ main {
 }
 .time-col {
   font-size:12px;
+  line-height:1.6;
   color:var(--muted);
   font-variant-numeric:tabular-nums;
   padding-top:3px
@@ -347,16 +364,22 @@ main {
   border-left:1px solid var(--line);
   padding:0 0 0 19px;
   position:relative;
-  min-width:0
+  min-width:0;
+  /* text on the left, the Japanese name as a vertical signboard on the right */
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  column-gap:18px
+}
+.stop-card>* {
+  grid-column:1
 }
 .stop-card:before {
   content:"";
   position:absolute;
-  width:8px;
-  height:8px;
-  border-radius:50%;
+  width:7px;
+  height:7px;
   background:var(--accent);
-  left:-4.5px;
+  left:-4px;
   top:9px
 }
 .stop-card h3 {
@@ -366,9 +389,20 @@ main {
   font-weight:600
 }
 .stop-card .jp {
-  font-size:12px;
-  color:var(--muted);
-  margin:0 0 5px
+  grid-column:2;
+  grid-row:1 / span 12;
+  align-self:start;
+  writing-mode:vertical-rl;
+  /* one column like a real signboard; the card grows to fit it */
+  white-space:nowrap;
+  margin:2px 0 0;
+  padding:10px 6px;
+  border:1px solid var(--line);
+  border-top:3px solid var(--ink);
+  background:var(--surface);
+  font:600 15px/1.5 var(--mincho);
+  letter-spacing:.12em;
+  color:var(--ink)
 }
 .stop-card .desc {
   font-size:13px;
@@ -476,11 +510,11 @@ main {
   font-size:11px
 }
 .fare {
-  font:28px Georgia,serif;
+  font:500 30px var(--mincho);
   margin:5px 0 0
 }
 .fare small {
-  font:12px Tahoma,sans-serif;
+  font:12px var(--sans);
   color:var(--muted)
 }
 .muted {
@@ -562,9 +596,6 @@ main {
 .content-page {
   padding:30px 32px 40px
 }
-.content-page>.eyebrow {
-  margin-bottom:4px
-}
 .content-page>h2 {
   font-size:28px
 }
@@ -596,6 +627,11 @@ main {
 .info-card a {
   color:var(--accent);
   font-size:12px
+}
+.info-card hr {
+  border:0;
+  border-top:1px solid var(--line);
+  margin:10px 0
 }
 .info-card ul {
   padding-left:20px;
@@ -699,7 +735,7 @@ main {
   display:none!important
 }
 .leaflet-container {
-  font:12px Tahoma,sans-serif
+  font:12px var(--sans)
 }
 .numbered-marker span {
   display:grid;
@@ -708,7 +744,7 @@ main {
   height:32px;
   border:2px solid #fff;
   border-radius:50%;
-  background:#a74630;
+  background:#b0341f;
   color:#fff;
   box-shadow:0 1px 5px #0008;
   font:bold 11px Tahoma,sans-serif
@@ -774,8 +810,22 @@ main {
   }
   .hero {
     padding:16px 16px 18px;
-    grid-template-columns:1fr;
+    grid-template-columns:auto 1fr;
     gap:14px
+  }
+  .hero .base-card {
+    grid-column:1/-1
+  }
+  .hero-plaque {
+    font-size:20px;
+    padding:9px 6px
+  }
+  .stop-card .jp {
+    font-size:13px;
+    padding:8px 4px
+  }
+  .stop-card {
+    column-gap:10px
   }
   .hero h1 {
     font-size:29px;
@@ -784,10 +834,6 @@ main {
   }
   .hero-copy {
     font-size:13px
-  }
-  .eyebrow {
-    font-size:10px;
-    letter-spacing:1.1px
   }
   .base-card {
     font-size:12px;
@@ -929,7 +975,7 @@ main {
 }
 @media(max-width:350px) {
   .hero {
-    grid-template-columns:1fr
+    grid-template-columns:auto 1fr
   }
   .base-card {
     max-width:none

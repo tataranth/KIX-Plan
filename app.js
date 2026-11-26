@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!state.map || !state.markerGroup || !state.routeGroup) return;
     state.markerGroup.clearLayers(); state.routeGroup.clearLayers(); state.markers.clear();
     visibleDays().forEach(day => {
-      if (state.routes && day.routeCoords?.length > 1) L.polyline(day.routeCoords, { color: day.color || '#a74630', weight: 2, opacity: .65, dashArray: '5 7' }).addTo(state.routeGroup);
+      if (state.routes && day.routeCoords?.length > 1) L.polyline(day.routeCoords, { color: day.color || '#b0341f', weight: 2, opacity: .65, dashArray: '5 7' }).addTo(state.routeGroup);
       day.checkpoints.forEach((cp, index) => {
         if (!checkpointMatches(cp)) return;
         if (!Number.isFinite(cp.lat) || !Number.isFinite(cp.lng)) return;
@@ -399,7 +399,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function applyTheme(dark) {
     root.classList.toggle('dark', dark);
     $('#themeToggle').setAttribute('aria-pressed', String(dark)); $('#themeToggle').textContent = dark ? 'ธีมสว่าง' : 'ธีมมืด';
-    const meta = $('meta[name="theme-color"]'); if (meta) meta.content = dark ? '#232821' : '#f7f4ed';
+    const meta = $('meta[name="theme-color"]'); if (meta) meta.content = dark ? '#111922' : '#eeefea';
   }
   // ธีมเริ่มต้นถูกตั้งโดยสคริปต์ใน <head> (ค่าที่บันทึกไว้ หรือค่าของระบบ) ก่อนหน้าเว็บวาดครั้งแรก
   applyTheme(root.classList.contains('dark'));
