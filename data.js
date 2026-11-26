@@ -38,7 +38,7 @@ const PLAN_A_DATA = {
   tripStartDate: "2026-12-01",
 
   // ข้อความท้ายหน้า: ปรับเมื่อแก้แผน
-  footerNote: "ปรับแผนล่าสุด 25 พ.ย. 2026 · ข้อมูลตรวจ 14–25 พ.ย. ตามแหล่งที่แนบ · เวลารายวันเป็นกรอบวางแผน ไม่ใช่รอบรถที่จองแล้ว · ตรวจใบจองและประกาศก่อนเดินทาง",
+  footerNote: "ปรับแผนล่าสุด 26 พ.ย. 2026 · ข้อมูลตรวจ 14–26 พ.ย. ตามแหล่งที่แนบ · เวลารายวันเป็นกรอบวางแผน ไม่ใช่รอบรถที่จองแล้ว · ตรวจใบจองและประกาศก่อนเดินทาง",
 
 
   preTripChecklist: [
@@ -131,7 +131,7 @@ const PLAN_A_DATA = {
     },
     {"icon":"fa-landmark","title":"Byodoin — ภายใน Phoenix Hall","desc":"Day 4 เข้า Byodoin 13:30–14:20 ก่อน CHAZUNA: ภายใน Phoenix Hall เลือกรอบ 13:50 รับตั๋วรอบในสวน ทุก 20 นาที (รอบสุดท้าย 16:10) จำกัด 35 คน/รอบ ตั๋วหมดก่อนได้ พลาดรอบแล้วเปลี่ยนเวลาหรือคืนเงินไม่ได้ (ตรวจ 25 พ.ย.)","link":"https://www.byodoin.or.jp/news/cat23/20261016/","linkLabel":"Byodoin — จำนวนคนต่อรอบ"},
     {"icon":"fa-mug-hot","title":"CHAZUNA — กิจกรรมโม่มัทฉะ","desc":"จองแล้ว 4 ธ.ค. รอบ 14:45 2 คน ภาษาอังกฤษ ถึงจุดลงทะเบียนหน้าทางเข้า 14:30 แสดง QR ในตั๋ว; 2,800 เยน/ผู้ใหญ่ รวมตั๋วพิพิธภัณฑ์ชา ชำระแล้ว; ยกเลิกก่อนวันงานอย่างน้อย 1 วันได้เงินคืน ภายใน 24 ชม. หรือไม่มาไม่คืน; เปิด 09:00–17:00 ไม่มีวันหยุดประจำ; ระยะเวลากิจกรรมยังไม่ยืนยัน สอบถาม 0774-24-2700","link":"https://uji-chazuna.kyoto/event/#experience","linkLabel":"CHAZUNA — หน้าจอง","secondaryLink":"https://uji-chazuna.kyoto/3221/","secondaryLinkLabel":"CHAZUNA — ตารางเดือน ธ.ค."},
-    {"icon":"fa-leaf","title":"ใบไม้แดง — ตรวจ 14 พ.ย.","desc":"Arashiyama / Tenryuji วันที่ 3 ธ.ค. น่าจะเป็นปลายช่วง; Eikando คาดสวยปลาย พ.ย.–ต้น ธ.ค.; Shimogamo ปกติสวยต้น–กลาง ธ.ค.; เป็นพยากรณ์ ตรวจสภาพจริงอีกครั้ง 24–27 พ.ย.","link":"https://tenki.jp/kouyou/6/29/","linkLabel":"tenki.jp — Kyoto","secondaryLink":"https://weathernews.jp/koyo/spot/26120/","secondaryLinkLabel":"Weathernews — Eikando"}
+    {"icon":"fa-leaf","title":"ใบไม้แดง — ตรวจ 26 พ.ย.","desc":"ตอนนี้ Kiyomizu / Eikando / Nanzenji / Arashiyama / Tenryuji อยู่ช่วงสวย; Eikando และ Nanzenji คาดเริ่มร่วงราว 4–5 ธ.ค. จึงยังทัน Day 2; Arashiyama / Tenryuji วันที่ 3 ธ.ค. น่าจะยังสวยแต่เป็นช่วงท้าย; Shimogamo เพิ่งเริ่มเปลี่ยนสี ปกติสวยต้น–กลาง ธ.ค.; เป็นพยากรณ์ ตรวจอีกครั้ง 29–30 พ.ย.","link":"https://tenki.jp/kouyou/6/29/","linkLabel":"tenki.jp — Kyoto","secondaryLink":"https://weathernews.jp/koyo/spot/26120/","secondaryLinkLabel":"Weathernews — Eikando"}
   ],
 
   alternatives: [

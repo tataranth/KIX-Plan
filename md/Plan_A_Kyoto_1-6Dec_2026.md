@@ -1,8 +1,8 @@
 # 🍁 แผน Kyoto Trip — พัก Kyoto 5 คืน (6 วัน 5 คืน)
 
 📅 **เดินทาง:** 1–6 ธันวาคม 2026  
-📝 **ปรับแผนล่าสุด:** 25 พฤศจิกายน 2026<br>
-🔎 **ตรวจข้อมูล:** 14–25 พฤศจิกายน 2026 ตามแหล่งที่แนบ ไม่ใช่การยืนยันการจองหรือรอบรถ<br>
+📝 **ปรับแผนล่าสุด:** 26 พฤศจิกายน 2026<br>
+🔎 **ตรวจข้อมูล:** 14–26 พฤศจิกายน 2026 ตามแหล่งที่แนบ ไม่ใช่การยืนยันการจองหรือรอบรถ<br>
 🏨 **ที่พัก:** [APA Hotel Kyoto Ekihigashi](https://www.google.com/maps/search/?api=1&query=APA+Hotel+Kyoto+Ekihigashi) ตลอด 5 คืน — JR Kyoto Station **Central Gate** เดินประมาณ 3 นาที / Subway **Exit A5** เดินประมาณ 1 นาที ตาม [ข้อมูลโรงแรม](https://www3.apahotel.com/hotel/kansai/kyoto/kyoto-ekihigashi/)  
 🍵 **ธีม:** ธรรมชาติและวัดในเกียวโต ชาเมือง Uji กวางที่ Nara และปราสาท / พิพิธภัณฑ์สัตว์น้ำ / อาหาร Osaka
 
@@ -12,7 +12,7 @@
 
 ## 🔎 ข้อมูลที่ต้องรู้
 
-- **ใบไม้แดง (ตรวจ 14 พ.ย.):** Arashiyama / Tenryuji วันที่ 3 ธ.ค. น่าจะเป็นปลายช่วง; Eikando คาดสวยปลาย พ.ย.–ต้น ธ.ค.; Shimogamo ปกติสวยต้น–กลาง ธ.ค. เป็นพยากรณ์ ตรวจสภาพจริงอีกครั้ง **24–27 พ.ย.** [tenki.jp](https://tenki.jp/kouyou/6/29/) / [Weathernews — Eikando](https://weathernews.jp/koyo/spot/26120/)
+- **ใบไม้แดง (ตรวจ 26 พ.ย.):** ตอนนี้ Kiyomizu / Eikando / Nanzenji / Arashiyama / Tenryuji อยู่ช่วงสวย (見頃); Eikando และ Nanzenji คาดเริ่มร่วงราว **4–5 ธ.ค.** จึงยังทัน Day 2; Arashiyama / Tenryuji วันที่ 3 ธ.ค. น่าจะยังสวยแต่เป็นช่วงท้าย; Shimogamo เพิ่งเริ่มเปลี่ยนสี ปกติสวยต้น–กลาง ธ.ค.; เป็นพยากรณ์ ตรวจอีกครั้ง **29–30 พ.ย.** [tenki.jp](https://tenki.jp/kouyou/6/29/) / [Weathernews — Eikando](https://weathernews.jp/koyo/spot/26120/) / [Weathernews — Nanzenji](https://weathernews.jp/koyo/spot/26105/)
 - **ยังต้องยืนยัน:** ระยะเวลากิจกรรม CHAZUNA, เวลาเปิดร้านมื้อเย็น 2 ธ.ค., วันเปิดและเวลาเปิด Taisho HANANA / % ARABICA 3 ธ.ค., รอบ ราคา และเวลาปิด Kaiyukan 5 ธ.ค., ค่า Osaka Metro วันที่ 5, วันหยุดร้านเดือน ธ.ค., ขบวน Haruka จริง, เวลาเที่ยวบินตามใบจอง และตำแหน่งจุด Tax-free ที่ KIX T2 International
 
 ---
